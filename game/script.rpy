@@ -18,29 +18,24 @@ define ma       = Character("Totok & Aang", color="#7ABA78")
 define pb       = Character("Panitia beginner", color="#7ABA78")
 define su       = Character("Sutrisno", color="#7ABA78")
 
-# Define Variables
-$ pilihan = 0
-$ click = 0
-$ jawabbenar = 0
-
 # Define methods
 init python:
     import random
     def jawaban_benar():
         randombenar = random.randint(1, 2)
         if randombenar == 1:
-            renpy.say("kg", "Bagus sekali")
+            renpy.say("Kakek Gamelan", "Bagus sekali")
         elif randombenar == 2:
-            renpy.say("kg", "Yap, betul sekali")
+            renpy.say("Kakek Gamelan", "Yap, betul sekali")
 
     def jawaban_salah():
         randomsalah = random.randint(1, 3)
         if randomsalah == 1:
-            renpy.say("kg", "Tebakan yang bagus nak, tetapi")
+            renpy.say("Kakek Gamelan", "Tebakan yang bagus nak, tetapi")
         elif randomsalah == 2:
-            renpy.say("kg", "Haha, bukan gamelan yang itu nak,")
+            renpy.say("Kakek Gamelan", "Haha, bukan gamelan yang itu nak,")
         elif randomsalah == 3:
-            renpy.say("kg", "Tidak apa apa, kesalahan adalah bagian dari perjalanan,")
+            renpy.say("Kakek Gamelan", "Tidak apa apa, kesalahan adalah bagian dari perjalanan,")
 
 #sound & music effect
 define audio.bell = "sfx_bell.mp3"
@@ -48,6 +43,8 @@ define audio.bell = "sfx_bell.mp3"
 # The game starts here.
 
 label start:
+    $ click = 0
+    $ jawab_benar = 0
     scene bg stasiun
     with fade
 
@@ -797,7 +794,7 @@ label pertanyaan_gamelan_1:
         menu:
                 kg "apa nama dari gamelan ini?"
                 "Bonang":
-                    $ jawabbenar += 1
+                    $ jawab_benar += 1
                     python:
                         jawaban_benar()
                 "Gong":
@@ -1240,7 +1237,7 @@ label panggung:
     jump bantu_persiapan_gamelan
 
 label bantu_persiapan_gamelan:
-        while click <= 3:
+        while click <= 4:
                 if click == 0:
                         menu:
                                 "Kamu Memilih untuk:"
@@ -1285,10 +1282,10 @@ label bantu_persiapan_gamelan:
                                 "Membantu Persiapan Gamelan":
                                         jump bantu_gamelan
                                 "Akhhh Malassss":
-                                        jump bantu_persiapan_gamelan
+                                        show mc
+                                        mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
                                 "{color=#ff0000}Aku mengantuk, aku ingin istirahat":
-                                        jump balik_hotel
-        return
+                                        jump balik_hotel   
 
 label bantu_gamelan:
     show aang senyum
@@ -1383,7 +1380,7 @@ label tempat_duduk_gelap:
     with dissolve
     mc "Lihat itu, bapak gamelan sedang turun panggung, mari kita sambut"
 
-label panggung:
+label panggung2:
     show mc senyum
     with dissolve
     mc "Bapak, pertunjukan tadi sungguh luar biasa. Mereka benar-benar memainkan gamelan dengan begitu indah."
@@ -1455,7 +1452,7 @@ label panggung:
 
     su "Hestamma… Rasanya aku pernah mendengar nama itu"
 
-label tempat_duduk_pertunjukan_terang:
+label tempat_duduk_pertunjukan_terang2:
     show aang
     with dissolve
     aang "ngomong-ngomong sudah jam berapa ini? Ternyata sudah cukup larut. Mungkin sudah waktunya kamu kembali ke hotel untuk istirahat Tok"
