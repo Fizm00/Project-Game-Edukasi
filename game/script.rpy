@@ -893,8 +893,20 @@ label pertanyaan_gamelan_1:
                 kg "Kendhang dapat mengatur irama musik gamelan."
                 kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
             "Gong":
+                python:
+                    jawaban_salah()
+                kg "Kendhang dapat mengatur irama musik gamelan."
+                kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
             "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Kendhang dapat mengatur irama musik gamelan."
+                kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
             "Saron":
+                python:
+                    jawaban_salah()
+                kg "Kendhang dapat mengatur irama musik gamelan."
+                kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
             "Kendhang":
                 $ jawab_benar += 1
                 python:
