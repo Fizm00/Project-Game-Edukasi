@@ -21,6 +21,26 @@ define su       = Character("Sutrisno", color="#7ABA78")
 # Define Variables
 $ pilihan = 0
 $ click = 0
+$ jawabbenar = 0
+
+# Define methods
+python:
+    import random
+    def jawaban_benar():
+        randombenar = random.randint(1, 2)
+        if randombenar == 1:
+            renpy.say("kg", "Bagus sekali")
+        elif randombenar == 2:
+            renpy.say("kg", "Yap, betul sekali")
+
+    def jawaban_salah():
+        randomsalah = random.randint(1, 3)
+        if randomsalah == 1:
+            renpy.say("kg", "Tebakan yang bagus nak, tetapi")
+        elif randomsalah == 2:
+            renpy.say("kg", "Haha, bukan gamelan yang itu nak,")
+        elif randomsalah == 3:
+            renpy.say("kg", "Tidak apa apa, kesalahan adalah bagian dari perjalanan,")
 
 #sound & music effect
 define audio.bell = "sfx_bell.mp3"
@@ -762,11 +782,35 @@ label after_gamelan:
         kg "Ahaha, bagaimana kalau kita menguji pengetahuanmu? Ayo bermain tebak tebakan bersamaku untuk mengasah ingatan kalian. Jangan sampai kalian kalah dengan otak pak tua ini."
 
         if pilihan == 1:
-                "ini nanti 10 soal"
+                jump pertanyaan_gamelan_1:
         elif pilihan == 2:
                 "ini nanti 15 soal"
         elif pilihan == 3:
-                "ini nanti 20 soal" 
+                "ini nanti 20 soal"
+
+label pertanyaan_gamelan_1:
+        #tampilin gambar bonang
+        kg "Gamelan ini berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak)." 
+
+        kg "Gamelan ini termasuk pencon yaitu dari logam,"
+
+        menu:
+                kg "apa nama dari gamelan ini?"
+                "Bonang":
+                    $ jawabbenar += 1
+                    jawaban_benar():
+                "Gong":
+                    jawaban_salah():
+                    kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+                "Gambang":
+                    jawaban_salah():
+                    kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+                "Gender":
+                    jawaban_salah():
+                    kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+                "Saron":
+                    jawaban_salah():
+                    kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
 
 label alun_alun:
     scene bg jalanan
