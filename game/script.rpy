@@ -625,12 +625,14 @@ label joglo_keraton:
 
         "Penjelasan Singkat, aku hanya ingin tahu sedikit":
                 $ pilihan = 1
+                $ jumlah_soal = 10
                 show kg senyum
                 kg "Baik, akan ku mulai penjelasannya, perhatikan ya."
                 jump gamelan1
                 jump after_gamelan
         "Penjelasan sedang, ilmu ini pasti akan berguna bagiku":
                 $ pilihan = 2
+                $ jumlah_soal = 15
                 show kg senyum
                 kg "Baik, akan ku mulai penjelasannya, perhatikan ya."
                 jump gamelan1
@@ -638,6 +640,7 @@ label joglo_keraton:
                 jump after_gamelan
         "Penjelasan Lengkap, beri tahu aku semua gamelan": 
                 $ pilihan = 3
+                $ jumlah_soal = 20
                 show kg senyum
                 kg "Baik, akan ku mulai penjelasannya, perhatikan ya." 
                 jump gamelan1
@@ -780,6 +783,7 @@ label after_gamelan:
 
         if pilihan == 1:
                 jump pertanyaan_gamelan_1
+                jump hitung_skor_gaemlan
         elif pilihan == 2:
                 "ini nanti 15 soal"
         elif pilihan == 3:
@@ -1099,6 +1103,78 @@ label pertanyaan_gamelan_1:
                 python:
                     jawaban_salah()
                 kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam"
+
+label hitung_skor_gaemlan:
+    if jawab_benar == jumlah_soal:
+        show kg senyum
+        kg "Hahaha, kamu ini memang cocok sekali menjadi penerus bangsa, saya senang sekali melihat generasi muda seperti kalian sangat bersemangat mempelajari Gamelan."
+
+        show mc
+        mc "Terima kasih pak, senang sekali dapat mempelajari keragaman dan keunikan alat musik tradisional."
+
+        show aang
+        aang " Betul itu pak, saya orang Jogja aja baru tau ada Gamelan sebanyak itu"
+
+        show kg
+        kg "Sama-sama nak, senang bisa memberikan ilmu bermanfaat bagi kalian"
+
+        kg "Melihat antusiasme kalian membuatku semakin semangat untuk acara malam ini"
+
+        show aang
+        aang "Memangnya malam ini ada apa pak?"
+
+        show kg
+        kg "Kalian belum tahu kah? Malam ini akan ada pertunjukan Gamelan"
+
+        kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
+
+        #image pop up 2 tiket
+    elif jawab_benar > jumlah_soal / 2:
+        show kg
+        kg "Hebat sekali nak, saya senang sekali melihat generasi muda seperti kalian sangat bersemangat mempelajari Gamelan."
+
+        show mc
+        mc "Terima kasih pak, senang sekali dapat mempelajari keragaman dan keunikan alat musik tradisional."
+
+        show aang
+        aang "Betul itu pak, saya orang Jogja aja baru tau ada Gamelan sebanyak itu"
+
+        show kg
+        kg "Sama-sama nak, senang bisa memberikan ilmu bermanfaat bagi kalian"
+
+        kg "Melihat antusiasme kalian membuatku semakin semangat untuk acara malam ini"
+
+        show aang
+        aang "Memangnya malam ini ada apa pak?"
+
+        show kg
+        kg "Kalian belum tahu kah? Malam ini akan ada pertunjukan Gamelan"
+
+        kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
+
+        #image pop up 2 tiket
+    else:
+        show mc
+        mc "Aduh, banyak sekali jawabanku yang salah  tadi, sepertinya {color=#ff0000}aku harus lebih memperhatikan catatanku"
+
+        show aang
+        aang "Haha tidak apa apa Tok, kamu juga orang luar, bahkan aku yang orang Jogja pun tidak tau bahwa gamelan ada sebanyak itu"
+
+        show mc
+        mc "Mulai sekarang aku akan semakin rajin mencari tahu tentang budaya dan alat tradisional, semua hal ini begitu menarik bagiku"
+
+        show kg
+        kg "Wah, antusias sekali dirimu nak, melihat kalian membuatku semakin semangat untuk acara malam ini"
+
+        show aang
+        aang "Memangnya malam ini ada apa pak?"
+
+        show kg
+        kg "Kalian belum tahu kah? Malam ini akan ada pertunjukan Gamelan"
+
+        kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
+
+        #image pop up 2 tiket
 
 label alun_alun:
     scene bg jalanan
