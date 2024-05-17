@@ -783,11 +783,16 @@ label after_gamelan:
 
         if pilihan == 1:
                 jump pertanyaan_gamelan_1
-                jump hitung_skor_gaemlan
+                jump hitung_skor_gamelan
         elif pilihan == 2:
-                "ini nanti 15 soal"
+                jump pertanyaan_gamelan_1
+                jump pertanyaan_gamelan_2
+                jump hitung_skor_gamelan
         elif pilihan == 3:
-                "ini nanti 20 soal"
+                jump pertanyaan_gamelan_1
+                jump pertanyaan_gamelan_2
+                jump pertanyaan_gamelan_3
+                jump hitung_skor_gamelan
 
 label pertanyaan_gamelan_1:
         #pertanyaan 1
@@ -1610,7 +1615,7 @@ label pertanyaan_gamelan_3:
 
             kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
 
-label hitung_skor_gaemlan:
+label hitung_skor_gamelan:
     if jawab_benar == jumlah_soal:
         show kg senyum
         kg "Hahaha, kamu ini memang cocok sekali menjadi penerus bangsa, saya senang sekali melihat generasi muda seperti kalian sangat bersemangat mempelajari Gamelan."
@@ -1683,6 +1688,40 @@ label hitung_skor_gaemlan:
         kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
 
         #image pop up 2 tiket
+    
+    show mc senyum
+    mc "Waaaah, tiket gratis, terima kasih banyak bapak, kita pasti akan datang malam ini."
+
+    show aang
+    aang "Waw, sudah berapa tahun aku tidak melihat pertunjukan Gamelan"
+
+    show kg senyum
+    kg "Hahaha, jangan lupa menyemangati kakek tua ini di kursi paling depan, akan ku nantikan kehadiran kalian."
+
+    show mc
+    mc "Tentu saja pak, sekali lagi terima kasih, kita pamit dulu ya"
+
+    show kg senyum
+    kg "Sama-sama, hati-hati di jalan anak muda."
+
+    kg "(melihat penerus bangsa yang begitu bersemangat meyakinkanku dengan masa depan)"
+
+    show bg depan_keraton_yogyakarta with fade
+    
+    show aang 
+    aang "Sepertinya tidak sia sia kita pergi ke Keraton, apalagi setelah bertemu bapak baik itu."
+
+    show mc senyum
+    mc "Wah, semua tempat ini sungguh luar biasa!"
+
+    mc "Aku tidak bisa membayangkan betapa kaya akan sejarah dan budaya Jogja."
+
+    mc "Aku sangat beruntung bisa melihatnya dengan mata kepala sendiri."
+
+    show aang senyum
+    aang "Aku senang kamu merasa seperti itu."
+
+    aang "Hari sudah sore, Next stop, Alun-Alun skuy!"
 
 label alun_alun:
     scene bg jalanan
