@@ -1,0 +1,12 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 579: end of line expected.
+(Perhaps you left out a " at the end of the first line.)
+    kg "Karawitan adalah seni gamelan dan seni suara yang bertangga nada slendro dan pelog. Karawitan berasal dari bahasa Jawa yaitu kata "rawit" yang berarti
+                                                                                                                                           ^
+            halus dan lembut Jadi karawitan ini berarti kelembutan perasaan yang terkandung dalam seni gamelan."
+
+Ren'Py Version: Ren'Py 8.2.1.24030407
+Tue May 14 08:36:24 2024
