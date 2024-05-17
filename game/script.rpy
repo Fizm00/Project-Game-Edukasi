@@ -1116,6 +1116,254 @@ label pertanyaan_gamelan_1:
                     jawaban_salah()
                 kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam"
 
+label pertanyaan_gamelan_2:
+    #pertanyaan 11
+    #tampilin gambar Gender
+    kg "Gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya yang terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
+
+    kg "Cara memainkan gamelan adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa),"
+
+    menu:
+        kg "apa nama dari gamelan ini?"
+        "Gender":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+        "Kenong":
+            python:
+                jawaban_salah()
+            kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya."
+
+            kg "Gender terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
+
+            kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa)."
+
+            kg "Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
+        "Kempul":
+            python:
+                jawaban_salah()
+            kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya."
+
+            kg "Gender terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
+
+            kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa)."
+
+            kg "Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
+        "Rebab":
+            python:
+                jawaban_salah()
+            kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya."
+
+            kg "Gender terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
+
+            kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa)."
+
+            kg "Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
+        "Gong":
+            python:
+                jawaban_salah()
+            kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya."
+
+            kg "Gender terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
+
+            kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa)."
+
+            kg "Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
+
+    #pertanyaan 12
+    kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang sedang dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+
+    kg "Gamelan ini masuk dalam keluarga pencon, bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan,"
+
+    menu:
+        kg "manakah gamelan yang saya deskripsikan?"
+        #opsi dalam bentuk gambar
+        "Rebab":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Gong":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Kendhang":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Siter":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Kempul":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+    
+    #pertanyaan 13
+    #tampilin gambar Kenong
+    kg "Gamelan ini masuk dalam keluarga pencon dan memiliki bentuk fisik lebih gemuk dari gamelan pencon lainnya."
+
+    kg "Gamelan ini diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran saat ditabuh."
+
+    kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas,"
+
+    menu:
+        kg "apa nama dari gamelan ini?"
+        "Rebab":
+            python:
+                jawaban_salah()
+            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+
+            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+
+            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+
+            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+        "Kenong":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+        "Kendhang":
+            python:
+                jawaban_salah()
+            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+
+            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+
+            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+
+            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+        "Slenthem":
+            python:
+                jawaban_salah()
+            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+
+            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+
+            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+
+            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+        "Saron":
+            python:
+                jawaban_salah()
+            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+
+            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+
+            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+
+            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+    
+    #pertanyaan 14
+    kg "Gamelan ini penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+    kg "Cara memainkannya bisa dikreasikan secara bebas."
+
+    kg "Gamelan ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka,"
+
+    menu:
+        kg "manakah gamelan yang saya deskripsikan?"
+        #opsi dalam bentuk gambar
+        "Slenthem":
+            python:
+                jawaban_salah()
+            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+
+            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+        "Saron":
+            python:
+                jawaban_salah()
+            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+
+            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+        "Rebab":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+        "Kenong":
+            python:
+                jawaban_salah()
+            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+
+            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+        "Kendhang":
+            python:
+                jawaban_salah()
+            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+
+            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+
+    #pertanyaan 15
+    #tampilin gambar Kempul
+    kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang sedang dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+
+    kg "Gamelan ini masuk dalam keluarga pencon, bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan,"
+
+    menu:
+        kg "apa nama dari gamelan ini?"
+        "Rebab":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg " Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Gong":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg " Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Kendhang":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg " Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Siter":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg " Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Kempul":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+
+label pertanyaan_gamelan_3:
+
 label hitung_skor_gaemlan:
     if jawab_benar == jumlah_soal:
         show kg senyum
@@ -1141,6 +1389,7 @@ label hitung_skor_gaemlan:
         kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
 
         #image pop up 2 tiket
+
     elif jawab_benar > jumlah_soal / 2:
         show kg
         kg "Hebat sekali nak, saya senang sekali melihat generasi muda seperti kalian sangat bersemangat mempelajari Gamelan."
@@ -1165,6 +1414,7 @@ label hitung_skor_gaemlan:
         kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
 
         #image pop up 2 tiket
+
     else:
         show mc
         mc "Aduh, banyak sekali jawabanku yang salah  tadi, sepertinya {color=#ff0000}aku harus lebih memperhatikan catatanku"
