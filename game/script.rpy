@@ -24,7 +24,7 @@ $ click = 0
 $ jawabbenar = 0
 
 # Define methods
-python:
+init python:
     import random
     def jawaban_benar():
         randombenar = random.randint(1, 2)
@@ -782,7 +782,7 @@ label after_gamelan:
         kg "Ahaha, bagaimana kalau kita menguji pengetahuanmu? Ayo bermain tebak tebakan bersamaku untuk mengasah ingatan kalian. Jangan sampai kalian kalah dengan otak pak tua ini."
 
         if pilihan == 1:
-                jump pertanyaan_gamelan_1:
+                jump pertanyaan_gamelan_1
         elif pilihan == 2:
                 "ini nanti 15 soal"
         elif pilihan == 3:
@@ -798,18 +798,23 @@ label pertanyaan_gamelan_1:
                 kg "apa nama dari gamelan ini?"
                 "Bonang":
                     $ jawabbenar += 1
-                    jawaban_benar():
+                    python:
+                        jawaban_benar()
                 "Gong":
-                    jawaban_salah():
+                    python:
+                        jawaban_salah()
                     kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
                 "Gambang":
-                    jawaban_salah():
+                    python:
+                        jawaban_salah()
                     kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
                 "Gender":
-                    jawaban_salah():
+                    python:
+                        jawaban_salah()
                     kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
                 "Saron":
-                    jawaban_salah():
+                    python:
+                        jawaban_salah()
                     kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
 
 label alun_alun:
