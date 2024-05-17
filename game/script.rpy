@@ -786,6 +786,7 @@ label after_gamelan:
                 "ini nanti 20 soal"
 
 label pertanyaan_gamelan_1:
+        #pertanyaan 1
         #tampilin gambar bonang
         kg "Gamelan ini berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak)." 
 
@@ -813,6 +814,291 @@ label pertanyaan_gamelan_1:
                     python:
                         jawaban_salah()
                     kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+        
+        #pertanyaan 2
+        kg "Gamelan ini biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator,"
+
+        menu:
+            kg "manakah gamelan yang saya deskripsikan?"
+            #opsi dalam bentuk gambar
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+            "Saron":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Gambang":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+
+        #pertanyaan 3
+        #tampilin gambar gambang
+        kg "Bilahan gamelan ini terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada yang terletak di atas sebuah rak konektor berbentuk perahu."
+
+        kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang,"
+
+        menu:
+            kg "apa nama dari gamelan ini?"
+            "Gambang":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+                kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+                kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+                kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+                kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+
+        #pertanyaan 4
+        kg "Gamelan Jawa ini dapat mengatur irama musik gamelan."
+
+        kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan,"
+
+        menu:
+            kg "manakah gamelan yang saya deskripsikan?"
+            #opsi dalam bentuk gambar
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Kendhang dapat mengatur irama musik gamelan."
+                kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
+            "Gong":
+            "Bonang":
+            "Saron":
+            "Kendhang":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+        
+        #pertanyaan 5
+        #tampilin gambar Gong
+        kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+        
+        kg "Gamelan ini terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas."
+
+        kg "Gamelan ini dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus,"
+
+        menu:
+            kg "apa nama dari gamelan ini?"
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+            "Kendhang":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+            "Gong":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas."
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+
+        #pertanyaan 6
+        kg "Gamelan ini masuk dalam keluarga balungan.  Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain,"
+
+        menu:
+            kg "manakah gamelan yang saya deskripsikan?"
+            #opsi dalam bentuk gambar
+            "Kendhang":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+            "Slenthem":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+
+        #pertanyaan 7
+        #tampilin gambar Saron
+        kg "Gamelan ini biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator,"
+
+        menu:
+            kg "apa nama dari gamelan ini?"
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+            "Saron":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Gambang":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+
+        #pertanyaan 8
+        kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+
+        kg "Gamelan ini terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas."
+
+        kg "Gamelan ini dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus,"
+
+        menu:
+            kg "manakah gamelan yang saya deskripsikan?"
+            #opsi dalam bentuk gambar
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+            "Kendhang":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+            "Gong":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+        
+        #pertanyaan 9
+        #tampilin gambar Slenthem
+        kg "Gamelan ini masuk dalam keluarga balungan.  Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain,"
+
+        menu:
+            kg "apa nama dari gamelan ini?"
+            "Kendhang":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+            "Slenthem":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+
+        #pertanyaan 10
+        kg "Gamelan ini berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak)."
+
+        kg "Gamelan ini termasuk pencon yaitu dari logam,"
+
+        menu:
+            kg "manakah gamelan yang saya deskripsikan?"
+            #opsi dalam bentuk gambar
+            "Bonang":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+            "Gambang":
+                python:
+                    jawaban_salah()
+                kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam"
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam"
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam"
 
 label alun_alun:
     scene bg jalanan
