@@ -45,6 +45,7 @@ define audio.bell = "sfx_bell.mp3"
 label start:
     $ click = 0
     $ jawab_benar = 0
+    $ ulang_pertanyaan = 0
     scene bg stasiun
     with fade
 
@@ -2214,6 +2215,202 @@ label bantu_gamelan:
     #nanti cerita lanjut disini, yang balik_hotel itu ending dari chapter 1
 
     #mini game: set the stage
+
+    if pilihan == 1:
+        while ulang_pertanyaan <= 3:
+            if ulang_pertanyaan == 0:
+                pb "Bilahan gamelan ini terbuat dari kayu atau bambu dan memiliki banyak bilah yang terletak di atas sebuah rak yang berbentuk perahu."
+
+                pb "Bilah-bilahnya dirsusun berurutan dari bentuk terpendek, sampai yang paling panjang,"
+
+                menu:
+                    pb "gamelan apa ini?"
+                    "Gambang":
+                        $ ulang_pertanyaan += 1
+                    "Slenthem":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Bonang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+            
+            elif ulang_pertanyaan == 1:
+                pb "Gamelan ini digantung dan sangat besar, dan cara memainkannya dipukul,"
+
+                menu:
+                    pb "apa nama dari gamelan ini?"
+                    "Saron":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kendhang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Slenthem":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        $ ulang_pertanyaan += 1
+                    "Bonang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+
+            elif ulang_pertanyaan == 2:
+                pb "Yang aku ingat hanya lah gamelan ini bernama Bonang,"
+
+                menu:
+                    pb "manakah gamelan yang merupakan Bonang?"
+                    #opsi dalam bentuk gambar
+                    "Bonang":
+                        $ ulang_pertanyaan += 1
+                    "Saron":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gambang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Slenthem":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+
+            elif ulang_pertanyaan == 3:
+                pb "Gamelan ini mengatur irama musik gamelan."
+
+                pb "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggirnya,"
+
+                menu:
+                    pb "gamelan apa ini?"
+                    "Slenthem":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Bonang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kendhang":
+                        $ ulang_pertanyaan += 1
+
+    elif pilihan == 2:
+        while ulang_pertanyaan <= 2:
+            if ulang_pertanyaan == 0:
+                pb "Gamelan ini lebih gemuk dari gamelan lainnya. Gamelan ini diletakan pada kayu tetapi terbuat dari logam."
+
+                pb "Gamelan ini menghasilkan suara yang rendah,"
+
+                menu:
+                    pb "gamelan apa ini?"
+                    "Bonang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kenong":
+                        $ ulang_pertanyaan += 1
+                    "Kendhang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Slenthem":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+            
+            elif ulang_pertanyaan == 1:
+                pb "Aku hanya tau bahwa gamelan ini bernama Rebab,"
+
+                menu:
+                    pb "yang mana gamelan rebab?"
+                    "Slenthem":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Rebab":
+                        $ ulang_pertanyaan += 1
+                    "Kenong":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kendhang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+
+            elif ulang_pertanyaan == 2:
+                pb "Gamelan ini punya banyak bilahan logam yang ditumpangkan di atas bingkai kayu,"
+
+                menu:
+                    pb "apa nama dari gamelan ini?"
+                    "Bonang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        $ ulang_pertanyaan += 1
+                    "Gambang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Rebab":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+
+    elif pilihan == 3:
+        while ulang_pertanyaan <= 1:
+            if ulang_pertanyaan == 0:
+                pb "Yang bisa kuingat hanya gamelan ini bernama Slenthem,"
+
+                menu:
+                    pb "apakah kau tau gamelan yang mana Slenthem?"
+                    "Kendhang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Slenthem":
+                        $ ulang_pertanyaan += 1
+                    "Saron":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gender":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Bonang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+            
+            elif ulang_pertanyaan == 1:
+                pb "Gamelan ini dari bahan logam yang dipukul setiap bilahnya yang terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
+
+                pb "Aku pernah melihat gamelan ini ditabuh menggunakan tabuh kayu (Bali) atau berlapis kain (Jawa),"
+
+                menu:
+                    pb "apa nama dari gamelan ini?"
+                    "Gender":
+                        $ ulang_pertanyaan += 1
+                    "Kenong":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kempul":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Rebab":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+
     show pb senyum lebar
     with dissolve
     pb "Dengan begini, pertunjukan dapat berjalan dengan lancar!"
