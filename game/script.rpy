@@ -45,7 +45,6 @@ define audio.bell = "sfx_bell.mp3"
 label start:
     $ click = 0
     $ jawab_benar = 0
-    $ ulang_pertanyaan = 0
     scene bg stasiun
     with fade
 
@@ -2217,6 +2216,7 @@ label bantu_gamelan:
     #mini game: set the stage
 
     if pilihan == 1:
+        $ ulang_pertanyaan = 0
         while ulang_pertanyaan <= 3:
             if ulang_pertanyaan == 0:
                 pb "Bilahan gamelan ini terbuat dari kayu atau bambu dan memiliki banyak bilah yang terletak di atas sebuah rak yang berbentuk perahu."
