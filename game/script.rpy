@@ -2194,10 +2194,21 @@ label bantu_persiapan_gamelan:
                                 "Membantu Persiapan Gamelan":
                                         jump bantu_gamelan
                                 "Akhhh Malassss":
+                                        $ click += 1
                                         show mc
                                         mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
                                 "{color=#ff0000}Aku mengantuk, aku ingin istirahat":
-                                        jump balik_hotel   
+                                        jump balik_hotel
+                elif click == 4:
+                    menu:
+                                "Kamu Memilih untuk:"
+                                "Membantu Persiapan Gamelan":
+                                        jump bantu_gamelan
+                                "Akhhh Malassss":
+                                        show mc
+                                        mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
+                                "{color=#ff0000}Aku mengantuk, aku ingin istirahat":
+                                        jump balik_hotel  
 
 label bantu_gamelan:
     show aang senyum
@@ -2307,6 +2318,7 @@ label bantu_gamelan:
                         $ ulang_pertanyaan += 1
 
     elif pilihan == 2:
+        $ ulang_pertanyaan = 0
         while ulang_pertanyaan <= 2:
             if ulang_pertanyaan == 0:
                 pb "Gamelan ini lebih gemuk dari gamelan lainnya. Gamelan ini diletakan pada kayu tetapi terbuat dari logam."
@@ -2371,6 +2383,7 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
     elif pilihan == 3:
+        $ ulang_pertanyaan = 0
         while ulang_pertanyaan <= 1:
             if ulang_pertanyaan == 0:
                 pb "Yang bisa kuingat hanya gamelan ini bernama Slenthem,"
