@@ -628,24 +628,24 @@ label joglo_keraton:
                 $ jumlah_soal = 10
                 show kg senyum
                 kg "Baik, akan ku mulai penjelasannya, perhatikan ya."
-                jump gamelan1
+                call gamelan1
                 jump after_gamelan
         "Penjelasan sedang, ilmu ini pasti akan berguna bagiku":
                 $ pilihan = 2
                 $ jumlah_soal = 15
                 show kg senyum
                 kg "Baik, akan ku mulai penjelasannya, perhatikan ya."
-                jump gamelan1
-                jump gamelan2
+                call gamelan1
+                call gamelan2
                 jump after_gamelan
         "Penjelasan Lengkap, beri tahu aku semua gamelan": 
                 $ pilihan = 3
                 $ jumlah_soal = 20
                 show kg senyum
                 kg "Baik, akan ku mulai penjelasannya, perhatikan ya." 
-                jump gamelan1
-                jump gamelan2
-                jump gamelan3
+                call gamelan1
+                call gamelan2
+                call gamelan3
                 jump after_gamelan
 
 return
@@ -782,16 +782,16 @@ label after_gamelan:
         kg "Ahaha, bagaimana kalau kita menguji pengetahuanmu? Ayo bermain tebak tebakan bersamaku untuk mengasah ingatan kalian. Jangan sampai kalian kalah dengan otak pak tua ini."
 
         if pilihan == 1:
-                jump pertanyaan_gamelan_1
+                call pertanyaan_gamelan_1
                 jump hitung_skor_gamelan
         elif pilihan == 2:
-                jump pertanyaan_gamelan_1
-                jump pertanyaan_gamelan_2
+                call pertanyaan_gamelan_1
+                call pertanyaan_gamelan_2
                 jump hitung_skor_gamelan
         elif pilihan == 3:
-                jump pertanyaan_gamelan_1
-                jump pertanyaan_gamelan_2
-                jump pertanyaan_gamelan_3
+                call pertanyaan_gamelan_1
+                call pertanyaan_gamelan_2
+                call pertanyaan_gamelan_3
                 jump hitung_skor_gamelan
 
 label pertanyaan_gamelan_1:
@@ -1120,6 +1120,7 @@ label pertanyaan_gamelan_1:
                 python:
                     jawaban_salah()
                 kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam"
+return
 
 label pertanyaan_gamelan_2:
     #pertanyaan 11
@@ -1366,6 +1367,7 @@ label pertanyaan_gamelan_2:
             $ jawab_benar += 1
             python:
                 jawaban_benar()
+return
 
 label pertanyaan_gamelan_3:
     #pertanyaan 16
@@ -1614,6 +1616,7 @@ label pertanyaan_gamelan_3:
             kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
 
             kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+return
 
 label hitung_skor_gamelan:
     if jawab_benar == jumlah_soal:
