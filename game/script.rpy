@@ -3,24 +3,49 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-# Sebagai contoh
-define z = Character("Zee", color="#c8ffc8")
-define m = Character("Me", color="#FFBB70")
+# Define methods
+init python:
+    import random
+    def jawaban_benar():
+        randombenar = random.randint(1, 2)
+        if randombenar == 1:
+            renpy.say("Kakek Gamelan", "Bagus sekali")
+        elif randombenar == 2:
+            renpy.say("Kakek Gamelan", "Yap, betul sekali")
 
-# Define Char buat project
-define mc       = Character("Totok", color="#c8ffc8")
-define aangs    = Character("???", color="#ffffff")
-define aang     = Character("Aang", color="#FFBB70")
-define penjual  = Character("Bapak Penjual", color="#7ABA78")
-define kg       = Character("Kakek Gamelan", color="#7ABA78")
-define pu       = Character("Pak Ustad", color="#7ABA78")
-define ma       = Character("Totok & Aang", color="#7ABA78")
-define pb       = Character("Panitia beginner", color="#7ABA78")
-define su       = Character("Sutrisno", color="#7ABA78")
+    def jawaban_salah():
+        randomsalah = random.randint(1, 3)
+        if randomsalah == 1:
+            renpy.say("Kakek Gamelan", "Tebakan yang bagus nak, tetapi")
+        elif randomsalah == 2:
+            renpy.say("Kakek Gamelan", "Haha, bukan gamelan yang itu nak,")
+        elif randomsalah == 3:
+            renpy.say("Kakek Gamelan", "Tidak apa apa, kesalahan adalah bagian dari perjalanan,")
 
-# Define Variables
-$ pilihan = 0
-$ click = 0
+#Define picture button
+screen bonang1:
+    imagebutton:
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.5
+        idle "bonang.png"
+
+image mc senyum 2:
+    "mc senyum 2.png"
+    zoom 0.75
+image mc flat:
+    "mc flat.png"
+    zoom 0.75
+image mc kaget:
+    "mc kaget.png"
+    zoom 0.75
+image mc netral:
+    "mc netral.png"
+    zoom 0.75
+image aang kaget:
+    "aang kaget.png"
+    zoom 0.75
 
 #sound & music effect
 define audio.bell = "sfx_bell.mp3"
@@ -28,15 +53,15 @@ define audio.bell = "sfx_bell.mp3"
 # The game starts here.
 
 label start:
+    $ click = 0
+    $ jawab_benar = 0
     scene bg stasiun
     with fade
-
-    "disuatu hari pada saat jam istirahat sekolah..."
 
     play audio bell volume 0.5
     stop audio fadeout 1.0
 
-    show mc happy #gambar mc sedang senyum
+    show mc senyum 2 #gambar mc sedang senyum
     with dissolve
 
     mc "Wow, Jogja! Akhirnya aku sampai juga"
@@ -47,7 +72,7 @@ label start:
 
     #nanti kasih pop up image bg stasiun tugu ada silhouette
 
-    show mc huh #gambar mc ekspresi flat
+    show mc flat #gambar mc ekspresi flat
     with dissolve
     mc "Waduh, ramai sekali stasiun ini, ditambah kata kakek jumlah kendaraan di Jogja yang lumayan padat. 
         Mungkin ada informasi turis di sekitar sini."
@@ -57,27 +82,32 @@ label start:
     mc "Suara apa itu? Kedengarannya seperti orang yang jatuh, dalam keadaan seramai ini aku harus berhati-hati, 
         bisa saja ada barang bawaanku yang jatuh, atau lebih buruk…"
 
-    show mc mbakjegagik #gambar mc kaget
+    show mc kaget #gambar mc kaget
+    with dissolve
     mc "DICULIK!!"
     
-    show mc lega #gambar mc lega
+    show mc netral #gambar mc netral
+    with dissolve
     mc "Astaghfirullah Totok, nauzubillah min zalik semoga aku selalu dijaga Allah"
 
     #nanti kasih gambar pop-up disini
 
-    show mc mbakjegagik #gambar mc kaget
+    show mc kaget
+    with dissolve
     mc "Ya ampun, baru saja aku pikirkan, langsung kejadian, kira kira ini ponsel siapa ya? 
         APA? PONSEL INI SAMSUNG GALAXY Z FLIP? 
         Harganya pasti sangat mahal, sayang sekali apabila ada kehilangan."
     
     aangs "Aduh… HP ku dimanaaa, sial sekali aku hari ini"
 
-    show mc
+    show mc netral
+    with dissolve
     mc "Ah, sepertinya ponsel ini milik orang itu, sebaiknya ku hampiri"
 
-    #totok jalan off-screen
+    hide mc#totok jalan off-screen
 
-    show aangs mbakjegagik #gambar aang kaget
+    show aang kaget #gambar aang kaget
+    with dissolve
     aangs "Permisi mas, apakah anda melihat hp jatuh? Permisi mbak…."
 
     aangs "permisi mas, apakah mas melihat HP jatuh?"
@@ -89,14 +119,13 @@ label start:
             mc "Apa yang aku lakukan? Aku tidak boleh berbohong! Semua perbuatan pasti akan dibalas baik maupun buruk"
             mc "Aku sebaiknya mengembalikan ponselnya ke orang malang ini"
             jump bagian2
-    return
 
 label bagian2:
-    show mc bingung
+    show mc bingung at left
     with dissolve
     mc "Apakah ini ponselmu?"
 
-    show aangs senyum
+    show aang senyum at right
     with dissolve
     aangs "Iya! Ini ponselku, terima kasih banyak mas, sebaiknya kita menghindari keramaian dulu"
 
@@ -104,7 +133,7 @@ label stasiun_tugu:
     scene bg stasiun #ilangin silhouette
     with fade
 
-    show aangs senyum
+    show aang senyum
     with dissolve
     aangs "Terima kasih, atas bantuannya mas, Perkenalkan nama aku Aang."
 
@@ -112,7 +141,7 @@ label stasiun_tugu:
     with dissolve
     aang "Aku baru saja kembali ke Jogja dari liburanku, entah apa yang akan ku lakukan tanpa HP ku, kau lah penyelamatku. Nama mas siapa ya?"
 
-    show mc senyum
+    show mc senyum 2
     with dissolve
     mc "Perkenalkan namaku Totok, salam kenal Aang. Jadi apakah kamu penduduk Jogja Aang?"
 
@@ -122,7 +151,7 @@ label stasiun_tugu:
 
     aang "Iya aku asli Jogja nih! Bagaimana denganmu Tok? Kau tidak terlihat seperti orang sini"
 
-    show mc muka b aja
+    show mc netral
     with dissolve
     mc "Oh, iya mas, saya baru saja sampai di Jogja, saya dari desa kecil bernama X. Saya datang ke Jogja untuk melihat pemandangan dan mempelajari kulinernya."
 
@@ -130,25 +159,25 @@ label stasiun_tugu:
     with dissolve
     aang "Haha, santai aja kali, panggil saja aku Aang"
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang    "Jadi kamu turis ya? Baiklah baiklah, sebagai ucapan terima kasihku, aku akan menjadi tour guide mu selama perjalananmu di Jogja! 
             Aku akan membawamu ke beberapa tempat monumental yang tak boleh dilewatkan"
     
-    show mc senyum
+    show mc senyum 1
     with dissolve
     mc "Be-benarkah mas? Apakah kau rela menjadi pemandu wisata untukku?"
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang    "Sudah ku bilang panggil saja aku Aang, tentu saja! Aku sendiri juga udah lama gak keliling Jogja, 
             ini akan menjadi perjalanan seru untuk kita berdua, bepergian lebih asik apabila bersama teman bukan?"
 
-    show mc senyum
+    show mc senyum 1
     with dissolve
     mc "Terima kasih banyak mas, maksudku Aang. Semoga beberapa hari kedepan perjalanan di Jogja ini akan menjadi pengalaman tak terlupakan"
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "Akhhh kece Tok, jadi mau kemana kamu sekarang?"
 
@@ -164,7 +193,7 @@ label stasiun_tugu:
 
     aang "aku juga tau tempat Gudeg yang enak banget, harganya juga terjangkau, kalau mau berguru, aku saranin dari dia"
 
-    show mc muka b aja
+    show netral
     with dissolve
     mc "Banyak juga tempat kunjungan di Jogja, tetapi sepertinya aku akan mengunjungi beberapa saja, tempat yang benar benar berbau Jogja serta kulinernya"
 
@@ -172,11 +201,11 @@ label stasiun_tugu:
     with dissolve
     aang "Haha siap boss, mau langsung gas ke Tugu?"
 
-    show mc senyum
+    show mc senyum 1
     with dissolve
     mc " Haha, aku suka semangatmu Aang, tapi sebaiknya aku mencari tempat penginapan dulu untuk menaruh barang bawaanku."
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "Baiklah, mari ikut denganku, akan ku boncengi kamu."
 
@@ -184,20 +213,20 @@ label luar_stasiun_tugu:
     scene bg stasiun tugu luar
     #kasih sound effect kendaraan bermotor
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "Ini motorku, naiklah Tok."
 
-    show mc mbakjegagik
+    show mc kaget
     with dissolve
     mc "Wah, aku tidak pernah melihat motor dan mobil sebanyak ini dalam satu tempat. Beragam sekali kendaraan bermotor yang digunakan orang orang"
 
-    show mc muka b aja
+    show mc netral
     with dissolve
     mc "Plat mobil itu berawalan B, mobil yang itu berawalan D,dan Motor yang itu berawalan BD, aku hanya pernah melihat motor berplat AB."
 
     #gambar pop up Berbagai plat di kendaraan berbeda beserta eksposisi Aang yang menjelaskan
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "Plat nomor kendaraan itu kombinasi angka dan huruf yang terpasang di kendaraan bermotor seperti mobil, motor, ataupun truk."
 
@@ -214,7 +243,7 @@ label luar_stasiun_tugu:
             termasuk lalu lintas dan penegakan hukum."
 
     #Gambar pop up: Gambar end
-    show mc muka b aja
+    show mc netral
     with dissolve
     mc "Ohhhh begitu Aang, kamu tau banyak juga ya, tidak sia-sia aku bertemu kamu"
 
@@ -243,7 +272,7 @@ label depan_hotel:
 
     aang    "Lalu beberapa hari setelah itu kita akan ke Pusat Jogja yaitu Malioboro untuk membeli souvenir."
 
-    show mc senyum
+    show mc senyum 1
     with dissolve
     mc "Waaaah! Kau sudah familiar sekali dengan Jogja. Aku tidak sabar keliling Jogja bersamamu Aang"
 
@@ -257,19 +286,19 @@ label tugu_jogja:
     scene bg tugu yogja
     with fade
 
-    show mc senyum
+    show mc senyum 2
     with dissolve
     mc "Wow, Tugu Jogja benar-benar mengesankan ya!"
 
     #disini munculin image pop up tugu jogja
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "Woiyadong, sejarah Tugu Jogja ini…"
 
     aang "Sejarahnya ini…."
 
-    show mc muka b aja
+    show mc netral
     with dissolve
     mc "apa Aang sejarahnya?"
 
@@ -277,11 +306,11 @@ label tugu_jogja:
     with dissolve
     aang "Jujur aku sendiri sedikit lupa hehe, biar aku google sebentar"
 
-    show mc senyum
+    show mc senyum 1
     with dissolve
     mc "Hahaha, bisa saja kamu Aang."
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "oh ini dia sudah ketemu"
 
@@ -295,21 +324,21 @@ label tugu_jogja:
     aang    "Renovasi oleh pemerintah Belanda bertujuan mengikis persatuan, namun perjuangan rakyat dan raja membuktikan sebaliknya. 
             Tugu memiliki empat bentuk fisik, dengan bagian atas berbentuk kerucut ulir."
 
-    show mc mbakjegagik
+    show mc kaget
     with dissolve
     mc "Wah, mengagumkan sekali, bangunan ini masih tegak setelah bertahun-tahun. Dan bentuknya yang unik, 
         seperti menara yang menjulang tinggi, benar-benar mencuri perhatian."
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang    "Di malam hari, Tugu Jogja juga menjadi salah satu tempat favorit warga Jogja untuk 
             berkumpul dan menikmati keindahan lampu-lampu yang menghiasi sekitarnya."
     
-    show mc muka b aja
+    show mc netral
     with dissolve
     mc "Terima kasih telah membawaku ke sini, Aang. Sangat mengesankan!"
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "Next stop, Keraton Jogja skuy"
 
@@ -317,29 +346,29 @@ label keraton_yogya:
     scene bg keraton yogya
     with fade
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     mc "Sudah sampai Tok, inilah Keraton Yogyakarta"
 
-    show mc kagum
+    show mc kaget
     with dissolve
     mc "Waaaaah!! Jadi ini yang mereka sebut kerajaan Keraton."
 
     #munculin pop up gambar keraton yogya
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "Betul Tok, sekarang Keraton ini dibuka untuk umum, terdapat museum untuk melihat berbagai macam koleksi barang dan peninggalan"
 
-    show penjual
+    show penjual netral
     with dissolve
     penjual "Betul itu mas! Ada banyak sekali hal menarik dalam Keraton"
 
-    show aang mbakjegagik
+    show aang kaget
     with dissolve
     aang "Astaghfirullah kaget!"
 
-    show mc muka b aja
+    show mc netral
     with dissolve
     mc "Wah benar begitu kah pak?"
 
@@ -347,17 +376,17 @@ label keraton_yogya:
     with dissolve
     penjual "Woooooh ya bener lah, kalo mau tau toh mas, saya ceritakan sedikit nih"
 
-    show mc muka b aja
+    show mc netral
     with dissolve
     mc "Oh, boleh pak, saya sendiri juga penasaran"
 
-    show bapak penjual senyum
+    show penjual senyum
     with dissolve
     penjual "Siap mas, bapak saya dulu jadi tour guide disini jadi saya juga tau banyak."
 
     #disini munculin image pop up (kek presentasi): Sejarah Keraton Yogyakarta
 
-    show penjual
+    show penjual netral
     with dissolve
     penjual "Kesultanan Yogyakarta, bersama dengan Kesultanan Surakarta, adalah dua wilayah yang merupakan pecahan dari Kesultanan Mataram pada abad ke-18. 
             Pemecahan ini terjadi setelah terjadinya Perang Suksesi Jawa antara para pewaris tahta Kesultanan Mataram."
@@ -388,11 +417,11 @@ label keraton_yogya:
             yang menyatakan bahwa wilayahnya yang bersifat kerajaan adalah bagian dari Negara Republik Indonesia. Undang-Undang nomor 13 tahun 2012 
             memperkuat status keistimewaan DIY, memastikan warisan budaya Kesultanan Yogyakarta dan Kadipaten Pakualaman tetap terjaga dan lestari."
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "Wah bapak ini emang agak lain… Seluruh sejarahnya dijelaskan, bagaimana menurutmu Aang?"
 
-    show mc senyum
+    show mc senyum 2
     with dissolve
     mc "Wah, bapak wawasannya banyak sekali, aku semakin tertarik memasuki Keraton"
 
@@ -400,11 +429,11 @@ label keraton_yogya:
     with dissolve
     penjual "Hahaha, senang sekali aku melihat orang sepertimu mas, boleh tuh ke Keraton, beli tiketnya disana mas."
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "Bapak ini tau banyak sekali, sebagian besar informasi sudah kami dapatkan"
 
-    show penjual
+    show penjual netral
     with dissolve
     penjual "Tetap saja mas, kalau mau pengalaman spesial dan informasi lebih lengkap boleh banget masuk ke Keratonnya"
 
@@ -419,11 +448,11 @@ label keraton_yogya:
 
     penjual "Wajib banget dicek itu, udah jauh-jauh ke Keraton masak iya gak mau masuk"
 
-    show mc senyum
+    show mc senyum 2
     with dissolve
     mc "Ayo Aang kita masuk, aku tidak sabar melihat semua koleksi Keraton"
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "Baik Tok ayo, terima kasih ya pak"
 
@@ -435,7 +464,7 @@ label keraton_yogya:
 
     #disini Char Totok dan Aang berhenti jalan terus nengok ke arah penjual
 
-    show aang muka b aja
+    show aang flat
     with dissolve
     aang "Ada apa pak?"
 
@@ -443,19 +472,19 @@ label keraton_yogya:
     with dissolve
     penjual "Sebelum masuk Keraton, beli minum dulu biar gak haus, ayo larisin dagangan saya"
 
-    show aang muka b aja
+    show aang flat
     with dissolve
     aang "Yaelah pak…."
 
-    show mc senyum
+    show mc senyum 1
     with dissolve
     mc "Haha baiklah pak, aku juga kehausan dari tadi"
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "Baiklah Totok, akan ku traktir kamu, mau minum apa kamu?"
     
-    show mc kebingungan
+    show mc bingung
     menu:
         mc "Aku mau minum apa?"
         
@@ -468,7 +497,7 @@ label keraton_yogya:
             penjual "Terima kasih banyak mas, selamat bersenang-senang di Keraton nggih."
             jump joglo_keraton        
         "Jamu{b}(?){/b}":
-            show mc kebingungan
+            show mc bingung
             mc "Jamu? Ini apa ya pak? Kok warnanya ada yang kuning dan coklat begini?"
 
             show penjual senyum
@@ -490,7 +519,7 @@ label keraton_yogya:
 
             penjual "Jadi gimana mas? Tertarik beli toh?"
             
-            show mc senyum
+            show mc senyum 2
             mc "Wahhhh, boleh deh pak saya coba satu, Aang, kalo boleh Jamu 1 ya"
 
             show aang flat
@@ -511,29 +540,29 @@ label joglo_keraton:
     scene bg joglo keraton yogya
     with fade
 
-    show mc senyum
+    show mc senyum 2
     with dissolve
     mc "Luar biasa sekali. Bangunan-bangunan dan koleksi barang di sini memiliki sejarah yang begitu kaya"
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "iya tuh, Kraton Yogyakarta merupakan pusat kebudayaan dan kekuasaan di masa lalu. Banyak cerita menarik yang tersembunyi di balik temboknya."
 
-    show mc muka b aja
+    show mc netral
     with dissolve
     mc "Benar-benar menarik. Senang bisa melihat dan mempelajari sejarah dan budaya."
 
-    show aang muka b aja
+    show aang netral
     with dissolve
     aang "Aku tinggal ke toilet dulu ya Tok, jangan pergi jauh-jauh."
 
-    show mc muka b aja
+    show mc netral
     with dissolve
     mc "Baiklah, aku akan menunggu mu."
 
     #disini Char Aang lari off screen
 
-    show mc muka b aja
+    show mc netral
     with dissolve
     mc "Perjalananku di Jogja sejauh ini menyenangkan sekali, aku jadi penasaran apakah kakek dulu sering pergi mengunjungi tempat wisata seperti ini 
         di masa mudanya."
@@ -557,7 +586,7 @@ label joglo_keraton:
     mc "Wah! Menarik sekali, apakah ini alat musik khas Yogyakarta? Banyak sekali jenisnya, yang ini terlihat seperti mangkuk. 
         Yang ini seperti piano, hmmmm banyak sekali jumlahnya."
 
-    show kg
+    show kg netral
     with dissolve
     kg "Hai anak muda, apakah kamu tertarik dengan gamelan?"
 
@@ -565,15 +594,15 @@ label joglo_keraton:
     with dissolve
     mc "Gamelan? Apa itu pak? Apakah semacam tarian?"
 
-    show kg
+    show kg senyum
     with dissolve
     kg "Hahaha, instrumen yang di depanmu ini disebut Gamelan, jenisnya memang bervariasi sekali"
 
-    show mc senyum
+    show mc senyum 2
     with dissolve
     mc "Wah, jadi ini alat musik dari Yogyakarta…"
 
-    show kg
+    show kg netral
     with dissolve
     kg "Benar sekali, sebenarnya gamelan ini berasal dari Jawa dan Bali, Gamelan ini sering digunakan untuk musik karawitan. 
         Oh kau mungkin tidak tau arti karawitan."
@@ -583,13 +612,13 @@ label joglo_keraton:
 
     #disini Char Aang jalan on screen
 
-    show aang
+    show aang netral
     with dissolve
     aang "Hai Totok, aku kembali, sedang apa kamu?"
 
     aang "Oh, apakah gamelan gamelan ini menarik perhatianmu?"
 
-    show mc
+    show mc netral
     with dissolve
     mc "Iya Aang, bapak ini baru saja menjelaskan kepadaku apa itu Gamelan."
 
@@ -608,24 +637,27 @@ label joglo_keraton:
 
         "Penjelasan Singkat, aku hanya ingin tahu sedikit":
                 $ pilihan = 1
+                $ jumlah_soal = 10
                 show kg senyum
                 kg "Baik, akan ku mulai penjelasannya, perhatikan ya."
-                jump gamelan1
+                call gamelan1
                 jump after_gamelan
         "Penjelasan sedang, ilmu ini pasti akan berguna bagiku":
                 $ pilihan = 2
+                $ jumlah_soal = 15
                 show kg senyum
                 kg "Baik, akan ku mulai penjelasannya, perhatikan ya."
-                jump gamelan1
-                jump gamelan2
+                call gamelan1
+                call gamelan2
                 jump after_gamelan
         "Penjelasan Lengkap, beri tahu aku semua gamelan": 
                 $ pilihan = 3
+                $ jumlah_soal = 20
                 show kg senyum
                 kg "Baik, akan ku mulai penjelasannya, perhatikan ya." 
-                jump gamelan1
-                jump gamelan2
-                jump gamelan3
+                call gamelan1
+                call gamelan2
+                call gamelan3
                 jump after_gamelan
 
 return
@@ -682,6 +714,7 @@ label gamelan1:
         kg "Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu. Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang."
 
         kg "Cara memainkan alat musik gambang adalah memukul tiap bilangnya menggunakan pemukul khusus yang disebut tabuh. Hampir serupa dengan saron dan demung, bilang perlu ditahan setelah dipukul agar tidak meninggalkan suara."
+return
 
 label gamelan2:
         #image pop up: Siter
@@ -719,7 +752,7 @@ label gamelan2:
         aang "Haha kayak Gong mini kembar"
 
         kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus. Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
-
+return
 
 label gamelan3:
         #image pop up: Demung
@@ -747,63 +780,1000 @@ label gamelan3:
         aang "Seruling saktiiii"
 
         kg "Suara yang lembut memberikan ciri khas pada pada kepaduan musik gamelan. Alat musik ini dianggap bersala dari Jawa barat atau Sunda."
+return
 
 label after_gamelan:
         show kg senyum
         kg "Bagaimana? Gamelan beragam dan menarik bukan?"
 
-        show mc senyum
+        show mc senyum 2
         mc "Menarik sekali pak, ternyata gamelan ada berbagai jenis juga"
 
         show aang bingung
         aang "Aduh, kepalaku agak sakit dengan overload informasi"
 
-        show kg tertawa
+        show kg senyum
         kg "Ahaha, bagaimana kalau kita menguji pengetahuanmu? Ayo bermain tebak tebakan bersamaku untuk mengasah ingatan kalian. Jangan sampai kalian kalah dengan otak pak tua ini."
 
         if pilihan == 1:
-                "ini nanti 10 soal"
+                call pertanyaan_gamelan_1
+                jump hitung_skor_gamelan
         elif pilihan == 2:
-                "ini nanti 15 soal"
+                call pertanyaan_gamelan_1
+                call pertanyaan_gamelan_2
+                jump hitung_skor_gamelan
         elif pilihan == 3:
-                "ini nanti 20 soal" 
+                call pertanyaan_gamelan_1
+                call pertanyaan_gamelan_2
+                call pertanyaan_gamelan_3
+                jump hitung_skor_gamelan
+
+label pertanyaan_gamelan_1:
+        #pertanyaan 1
+        #tampilin gambar bonang
+        kg "Gamelan ini berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak)." 
+
+        kg "Gamelan ini termasuk pencon yaitu dari logam,"
+
+        menu:
+                kg "apa nama dari gamelan ini?"
+                "Bonang":
+                    $ jawab_benar += 1
+                    python:
+                        jawaban_benar()
+                "Gong":
+                    python:
+                        jawaban_salah()
+                    kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+                "Gambang":
+                    python:
+                        jawaban_salah()
+                    kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+                "Gender":
+                    python:
+                        jawaban_salah()
+                    kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+                "Saron":
+                    python:
+                        jawaban_salah()
+                    kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+        
+        #pertanyaan 2
+        kg "Gamelan ini biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator,"
+
+        menu:
+            kg "manakah gamelan yang saya deskripsikan?"
+            #opsi dalam bentuk gambar
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+            "Saron":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Gambang":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+
+        #pertanyaan 3
+        #tampilin gambar gambang
+        kg "Bilahan gamelan ini terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada yang terletak di atas sebuah rak konektor berbentuk perahu."
+
+        kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang,"
+
+        menu:
+            kg "apa nama dari gamelan ini?"
+            "Gambang":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+                kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+                kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+                kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+                kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+
+        #pertanyaan 4
+        kg "Gamelan Jawa ini dapat mengatur irama musik gamelan."
+
+        kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan,"
+
+        menu:
+            kg "manakah gamelan yang saya deskripsikan?"
+            #opsi dalam bentuk gambar
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Kendhang dapat mengatur irama musik gamelan."
+                kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Kendhang dapat mengatur irama musik gamelan."
+                kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Kendhang dapat mengatur irama musik gamelan."
+                kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Kendhang dapat mengatur irama musik gamelan."
+                kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
+            "Kendhang":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+        
+        #pertanyaan 5
+        #tampilin gambar Gong
+        kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+        
+        kg "Gamelan ini terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas."
+
+        kg "Gamelan ini dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus,"
+
+        menu:
+            kg "apa nama dari gamelan ini?"
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+            "Kendhang":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+            "Gong":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas."
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+
+        #pertanyaan 6
+        kg "Gamelan ini masuk dalam keluarga balungan.  Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain,"
+
+        menu:
+            kg "manakah gamelan yang saya deskripsikan?"
+            #opsi dalam bentuk gambar
+            "Kendhang":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+            "Slenthem":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+
+        #pertanyaan 7
+        #tampilin gambar Saron
+        kg "Gamelan ini biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator,"
+
+        menu:
+            kg "apa nama dari gamelan ini?"
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+            "Saron":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Gambang":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+
+        #pertanyaan 8
+        kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+
+        kg "Gamelan ini terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas."
+
+        kg "Gamelan ini dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus,"
+
+        menu:
+            kg "manakah gamelan yang saya deskripsikan?"
+            #opsi dalam bentuk gambar
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+            "Kendhang":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+            "Gong":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+        
+        #pertanyaan 9
+        #tampilin gambar Slenthem
+        kg "Gamelan ini masuk dalam keluarga balungan.  Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain,"
+
+        menu:
+            kg "apa nama dari gamelan ini?"
+            "Kendhang":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+            "Slenthem":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+            "Bonang":
+                python:
+                    jawaban_salah()
+                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+
+                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+
+        #pertanyaan 10
+        kg "Gamelan ini berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak)."
+
+        kg "Gamelan ini termasuk pencon yaitu dari logam,"
+
+        menu:
+            kg "manakah gamelan yang saya deskripsikan?"
+            #opsi dalam bentuk gambar
+            "Bonang":
+                $ jawab_benar += 1
+                python:
+                    jawaban_benar()
+            "Saron":
+                python:
+                    jawaban_salah()
+                kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+            "Gambang":
+                python:
+                    jawaban_salah()
+                kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam"
+            "Slenthem":
+                python:
+                    jawaban_salah()
+                kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam"
+            "Gong":
+                python:
+                    jawaban_salah()
+                kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam"
+return
+
+label pertanyaan_gamelan_2:
+    #pertanyaan 11
+    #tampilin gambar Gender
+    kg "Gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya yang terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
+
+    kg "Cara memainkan gamelan adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa),"
+
+    menu:
+        kg "apa nama dari gamelan ini?"
+        "Gender":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+        "Kenong":
+            python:
+                jawaban_salah()
+            kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya."
+
+            kg "Gender terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
+
+            kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa)."
+
+            kg "Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
+        "Kempul":
+            python:
+                jawaban_salah()
+            kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya."
+
+            kg "Gender terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
+
+            kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa)."
+
+            kg "Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
+        "Rebab":
+            python:
+                jawaban_salah()
+            kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya."
+
+            kg "Gender terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
+
+            kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa)."
+
+            kg "Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
+        "Gong":
+            python:
+                jawaban_salah()
+            kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya."
+
+            kg "Gender terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
+
+            kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa)."
+
+            kg "Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
+
+    #pertanyaan 12
+    kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang sedang dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+
+    kg "Gamelan ini masuk dalam keluarga pencon, bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan,"
+
+    menu:
+        kg "manakah gamelan yang saya deskripsikan?"
+        #opsi dalam bentuk gambar
+        "Rebab":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Gong":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Kendhang":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Siter":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Kempul":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+    
+    #pertanyaan 13
+    #tampilin gambar Kenong
+    kg "Gamelan ini masuk dalam keluarga pencon dan memiliki bentuk fisik lebih gemuk dari gamelan pencon lainnya."
+
+    kg "Gamelan ini diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran saat ditabuh."
+
+    kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas,"
+
+    menu:
+        kg "apa nama dari gamelan ini?"
+        "Rebab":
+            python:
+                jawaban_salah()
+            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+
+            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+
+            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+
+            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+        "Kenong":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+        "Kendhang":
+            python:
+                jawaban_salah()
+            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+
+            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+
+            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+
+            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+        "Slenthem":
+            python:
+                jawaban_salah()
+            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+
+            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+
+            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+
+            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+        "Saron":
+            python:
+                jawaban_salah()
+            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+
+            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+
+            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+
+            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+    
+    #pertanyaan 14
+    kg "Gamelan ini penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+    kg "Cara memainkannya bisa dikreasikan secara bebas."
+
+    kg "Gamelan ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka,"
+
+    menu:
+        kg "manakah gamelan yang saya deskripsikan?"
+        #opsi dalam bentuk gambar
+        "Slenthem":
+            python:
+                jawaban_salah()
+            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+
+            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+        "Saron":
+            python:
+                jawaban_salah()
+            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+
+            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+        "Rebab":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+        "Kenong":
+            python:
+                jawaban_salah()
+            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+
+            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+        "Kendhang":
+            python:
+                jawaban_salah()
+            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+
+            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+
+    #pertanyaan 15
+    #tampilin gambar Kempul
+    kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang sedang dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+
+    kg "Gamelan ini masuk dalam keluarga pencon, bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan,"
+
+    menu:
+        kg "apa nama dari gamelan ini?"
+        "Rebab":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg " Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Gong":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg " Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Kendhang":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg " Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Siter":
+            python:
+                jawaban_salah()
+            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+
+            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+
+            kg " Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        "Kempul":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+return
+
+label pertanyaan_gamelan_3:
+    #pertanyaan 16
+    kg "Gamelan ini biasa juga disebut gitar Jawa yang memiliki suara yang khas yang terbuat dari kayu jati."
+
+    kg "Gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India,"
+
+    menu:
+        kg "manakah gamelan yang saya deskripsikan?"
+        #opsi dalam bentuk gambar
+        "Kendhang":
+            python:
+                jawaban_salah()
+            kg "Siter adalah salah satu instrumen gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India."
+
+            kg "Alat musik ini sudah jarang ditemukan atau digunakan dalam set-set gamelan saat ini."
+
+            kg "Alat musik ini biasa juga disebut gitar Jawa yang memiliki suara yang khas."
+        "Slenthem":
+            python:
+                jawaban_salah()
+            kg "Siter adalah salah satu instrumen gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India."
+
+            kg "Alat musik ini sudah jarang ditemukan atau digunakan dalam set-set gamelan saat ini."
+
+            kg "Alat musik ini biasa juga disebut gitar Jawa yang memiliki suara yang khas."
+        "Saron":
+            python:
+                jawaban_salah()
+            kg "Siter adalah salah satu instrumen gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India."
+
+            kg "Alat musik ini sudah jarang ditemukan atau digunakan dalam set-set gamelan saat ini."
+
+            kg "Alat musik ini biasa juga disebut gitar Jawa yang memiliki suara yang khas."
+        "Siter":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+        "Kenong":
+            python:
+                jawaban_salah()
+            kg "Siter adalah salah satu instrumen gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India."
+
+            kg "Alat musik ini sudah jarang ditemukan atau digunakan dalam set-set gamelan saat ini."
+
+            kg "Alat musik ini biasa juga disebut gitar Jawa yang memiliki suara yang khas."
+
+    #pertanyaan 17
+    #tampilin gambar Demung
+    kg "Gamelan ini masuk dalam golongan balungan dalam instrumen gamelan."
+
+    kg "Gamelan ini dimainkan dengan cara ditabuh dan menghasilkan nada oktaf paling rendah dari golongan alat musik balungan lainnya meskipun ukuran fisiknya yang paling besar,"
+
+    menu:
+        kg "apa nama dari gamelan ini?"
+        "Gender":
+            python:
+                jawaban_salah()
+            kg "Demung masuk dalam golongan balungan dalam instrumen gamelan."
+
+            kg "Biasanya ada dua demung jenis pelog dan slendro dalam gamelan."
+
+            kg "Alat musik ini menghasilkan nada oktaf paling rendah dari golongan alat musik balungan lainnya meskipun ukuran fisiknya yang paling besar."
+
+            kg "Cara bermain demung serupa dengan saron hanya saja tabuh demung memiliki ukuran yang lebih besar dan berat daripada tabuh saron."
+        "Demung":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+        "Bonang":
+            python:
+                jawaban_salah()
+            kg "Demung masuk dalam golongan balungan dalam instrumen gamelan."
+
+            kg "Biasanya ada dua demung jenis pelog dan slendro dalam gamelan."
+
+            kg "Alat musik ini menghasilkan nada oktaf paling rendah dari golongan alat musik balungan lainnya meskipun ukuran fisiknya yang paling besar."
+
+            kg "Cara bermain demung serupa dengan saron hanya saja tabuh demung memiliki ukuran yang lebih besar dan berat daripada tabuh saron."
+        "Kenong":
+            python:
+                jawaban_salah()
+            kg "Demung masuk dalam golongan balungan dalam instrumen gamelan."
+
+            kg "Biasanya ada dua demung jenis pelog dan slendro dalam gamelan."
+
+            kg "Alat musik ini menghasilkan nada oktaf paling rendah dari golongan alat musik balungan lainnya meskipun ukuran fisiknya yang paling besar."
+
+            kg "Cara bermain demung serupa dengan saron hanya saja tabuh demung memiliki ukuran yang lebih besar dan berat daripada tabuh saron."
+        "Gong":
+            python:
+                jawaban_salah()
+            kg "Demung masuk dalam golongan balungan dalam instrumen gamelan."
+
+            kg "Biasanya ada dua demung jenis pelog dan slendro dalam gamelan."
+
+            kg "Alat musik ini menghasilkan nada oktaf paling rendah dari golongan alat musik balungan lainnya meskipun ukuran fisiknya yang paling besar."
+
+            kg "Cara bermain demung serupa dengan saron hanya saja tabuh demung memiliki ukuran yang lebih besar dan berat daripada tabuh saron."
+
+    #pertanyaan 18
+    kg "Bilahan gamelan ini terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
+
+    kg "Ada 18 bilah nada yang terletak di atas sebuah rak konektor berbentuk perahu."
+
+    kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang,"
+
+    menu:
+        kg "manakah gamelan yang saya deskripsikan?"
+        #opsi dalam bentuk gambar
+        "Bonang":
+            python:
+                jawaban_salah()
+            kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
+
+            kg "Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+
+            kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+        "Slenthem":
+            python:
+                jawaban_salah()
+            kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
+
+            kg "Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+
+            kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+        "Gong":
+            python:
+                jawaban_salah()
+            kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
+
+            kg "Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+
+            kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+        "Saron":
+            python:
+                jawaban_salah()
+            kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
+
+            kg "Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+
+            kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+        "Gambang":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+
+    #pertanyaan 19
+    #tampilin gambar Rebab
+    kg "Gamelan ini penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+    kg "Cara memainkannya bisa dikreasikan secara bebas."
+
+    kg "Gamelan ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka,"
+
+    menu:
+        kg "apa nama dari gamelan ini?"
+        "Slenthem":
+            python:
+                jawaban_salah()
+            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+
+            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+        "Saron":
+            python:
+                jawaban_salah()
+            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+
+            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+        "Rebab":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+        "Kenong":
+            python:
+                jawaban_salah()
+            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+
+            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+        "Kendhang":
+            python:
+                jawaban_salah()
+            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+
+            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+
+            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+            
+    #pertanyaan 20
+    kg "Gamelan ini masuk dalam keluarga pencon dan memiliki bentuk fisik lebih gemuk dari gamelan pencon lainnya."
+
+    kg "Gamelan ini diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran saat ditabuh."
+
+    kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas,"
+
+    menu:
+        kg "manakah gamelan yang saya deskripsikan?"
+        #opsi dalam bentuk gambar
+        "Rebab":
+            python:
+                jawaban_salah()
+            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+
+            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+
+            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+
+            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+        "Kenong":
+            $ jawab_benar += 1
+            python:
+                jawaban_benar()
+        "Kendhang":
+            python:
+                jawaban_salah()
+            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+
+            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+
+            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+
+            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+        "Slenthem":
+            python:
+                jawaban_salah()
+            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+
+            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+
+            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+
+            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+        "Saron":
+            python:
+                jawaban_salah()
+            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+
+            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+
+            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+
+            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+return
+
+label hitung_skor_gamelan:
+    if jawab_benar == jumlah_soal:
+        show kg senyum
+        kg "Hahaha, kamu ini memang cocok sekali menjadi penerus bangsa, saya senang sekali melihat generasi muda seperti kalian sangat bersemangat mempelajari Gamelan."
+
+        show mc senyum 2
+        mc "Terima kasih pak, senang sekali dapat mempelajari keragaman dan keunikan alat musik tradisional."
+
+        show aang netral
+        aang " Betul itu pak, saya orang Jogja aja baru tau ada Gamelan sebanyak itu"
+
+        show kg netral
+        kg "Sama-sama nak, senang bisa memberikan ilmu bermanfaat bagi kalian"
+
+        kg "Melihat antusiasme kalian membuatku semakin semangat untuk acara malam ini"
+
+        show aang netral
+        aang "Memangnya malam ini ada apa pak?"
+
+        show kg netral
+        kg "Kalian belum tahu kah? Malam ini akan ada pertunjukan Gamelan"
+
+        kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
+
+        #image pop up 2 tiket
+
+    elif jawab_benar > jumlah_soal / 2:
+        show kg senyum
+        kg "Hebat sekali nak, saya senang sekali melihat generasi muda seperti kalian sangat bersemangat mempelajari Gamelan."
+
+        show mc netral
+        mc "Terima kasih pak, senang sekali dapat mempelajari keragaman dan keunikan alat musik tradisional."
+
+        show aang netral
+        aang "Betul itu pak, saya orang Jogja aja baru tau ada Gamelan sebanyak itu"
+
+        show kg netral
+        kg "Sama-sama nak, senang bisa memberikan ilmu bermanfaat bagi kalian"
+
+        kg "Melihat antusiasme kalian membuatku semakin semangat untuk acara malam ini"
+
+        show aang netral
+        aang "Memangnya malam ini ada apa pak?"
+
+        show kg netral
+        kg "Kalian belum tahu kah? Malam ini akan ada pertunjukan Gamelan"
+
+        kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
+
+        #image pop up 2 tiket
+
+    else:
+        show mc flat
+        mc "Aduh, banyak sekali jawabanku yang salah  tadi, sepertinya {color=#ff0000}aku harus lebih memperhatikan catatanku"
+
+        show aang senyum
+        aang "Haha tidak apa apa Tok, kamu juga orang luar, bahkan aku yang orang Jogja pun tidak tau bahwa gamelan ada sebanyak itu"
+
+        show mc netral
+        mc "Mulai sekarang aku akan semakin rajin mencari tahu tentang budaya dan alat tradisional, semua hal ini begitu menarik bagiku"
+
+        show kg senyum
+        kg "Wah, antusias sekali dirimu nak, melihat kalian membuatku semakin semangat untuk acara malam ini"
+
+        show aang flat
+        aang "Memangnya malam ini ada apa pak?"
+
+        show kg netral
+        kg "Kalian belum tahu kah? Malam ini akan ada pertunjukan Gamelan"
+
+        kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
+
+        #image pop up 2 tiket
+    
+    show mc senyum 2
+    mc "Waaaah, tiket gratis, terima kasih banyak bapak, kita pasti akan datang malam ini."
+
+    show aang senyum
+    aang "Waw, sudah berapa tahun aku tidak melihat pertunjukan Gamelan"
+
+    show kg senyum
+    kg "Hahaha, jangan lupa menyemangati kakek tua ini di kursi paling depan, akan ku nantikan kehadiran kalian."
+
+    show mc netral
+    mc "Tentu saja pak, sekali lagi terima kasih, kita pamit dulu ya"
+
+    show kg senyum
+    kg "Sama-sama, hati-hati di jalan anak muda."
+
+    kg "(melihat penerus bangsa yang begitu bersemangat meyakinkanku dengan masa depan)"
+
+    show bg depan_keraton_yogyakarta with fade
+    
+    show aang netral
+    aang "Sepertinya tidak sia sia kita pergi ke Keraton, apalagi setelah bertemu bapak baik itu."
+
+    show mc senyum 2
+    mc "Wah, semua tempat ini sungguh luar biasa!"
+
+    mc "Aku tidak bisa membayangkan betapa kaya akan sejarah dan budaya Jogja."
+
+    mc "Aku sangat beruntung bisa melihatnya dengan mata kepala sendiri."
+
+    show aang senyum
+    aang "Aku senang kamu merasa seperti itu."
+
+    aang "Hari sudah sore, Next stop, Alun-Alun skuy!"
 
 label alun_alun:
     scene bg jalanan
     with fade
 
-    show aang
+    show aang netral
     with dissolve
     aang "Alun-Alun yang akan kita kunjungi namanya alun-alun kidul Tok."
 
-    show aang
+    show aang netral
     with dissolve
     aang "Perjalanannya sedikit jauh, tapi kita akan melewati banyak tempat bersejarah kok jadi perjalanannya tidak akan membosankan"
 
-    show mc
+    show mc netral
     with dissolve
     mc "Baiklah Aang, waktu kita juga masih banyak, pertunjukan gamelannya mulai cukup malam."
 
-    show mc mbakjegagik
+    show mc kaget
     with dissolve
     mc "Wah, bangunan apa itu? Aang, lihat betapa megahnya bangunannya."
     
     #disini image pop up Benteng Vredeburg
 
-    show aang
+    show aang netral
     with dissolve
     aang "Oh itu, itu adalah Benteng Vredeburg!"
 
-    show aang
-    with dissolve
     aang    "Benteng ini memiliki peran penting dalam sejarah Yogyakarta. Selama masa penjajahan Belanda, Benteng Vredeburg menjadi pusat administrasi militer 
             dan politik di wilayah ini."
 
-    show mc senyum
+    show mc senyum 2
     with dissolve
     mc "Wah, benarkah? Jadi ini adalah salah satu peninggalan dari zaman kolonial Belanda?"
 
-    show aang
+    show aang netral
     with dissolve
     aang "Benar Tok, Benteng ini memiliki sejarah yang sangat kaya."
 
@@ -822,13 +1792,13 @@ label alun_alun:
     with dissolve
     mc "Wow, betapa menariknya. Terima kasih atas penjelasannya, Aang. Ternyata ada begitu banyak cerita di balik bangunan ini."
 
-    show aang
+    show aang netral
     with dissolve
     aang "Ya, memang begitulah. Untung aku sudah pernah mengunjunginya, jadi aku tahu sejarahnya"
 
     aang "Lain kali akan ku bawa kamu kesana, aku khawatir waktu kita tidak akan cukup apabila kita kesana sekarang."
 
-    show mc
+    show mc netral
     with dissolve
     mc "Janji ya Aang?"
     
@@ -836,37 +1806,70 @@ label alun_alun:
     with dissolve
     aang "Hahaha, iya janji Tok."
 
-    show aang
+    show aang netral
     with dissolve
-    aang "Oh iya, sudah jam berapa ini? Aku belum sholat dhuhur…"
+    aang "Kita masih punya waktu banyak, apabila ada bangunan yang menarik bagimu bilang saja Tok. Kita bisa mampir sebentar kok."
 
-    show mc kaget
+    show mc netral
     with dissolve
-    mc "Waduh, aku juga belum sholat! Sebentar aku cek ponselku."
+    mc "Baiklah Aang, ayo kita lanjutkan perjalanan kita"
 
-    show mc kaget
-    with dissolve
-    mc "Masya Allah! Sudah hampir masuk jam Asar."
+label jalanan_cuy:
+    show bg jalanan cuy    
+    with fade
 
-    show aang kaget
-    with dissolve
-    aang "Astaghfirullah, jangan khawatir Tok"
+    show mc netral
+    mc "Bangunan dan jalan di Jogja sangat berbeda dengan desaku, jadi begini rasanya tinggal di kota besar."
 
-    show aang senyum
+    show aang netral
     with dissolve
-    aang "aku tahu masjid di dekat sini. Masjid ini juga memiliki nilai sejarah"
+    aang "Jogja belum ada-apanya kalau dibandingkan dengan kota besar lainnya seperti Surabaya, Bali, dan Jakarta Tok. Kapan-kapan kamu harus kesana."
+
+    show mc senyum
+    with dissolve
+    aang "Haha, tentu saja Aang, aku juga berencana mengunjungi berbagai kota setelah Jogja"
     
     show mc kaget
     with dissolve
     mc "Wah? Benarkah? Ayo kita segera kesana"
 
-    show aang
+    show aang senyum
     with dissolve
-    aang "shapp!"
+    aang "Senang mendengarnya, jangan lupa kirim foto pemandangan ketika kamu bepergian ya"
 
-    aang "Ini dia Tok, Masjid Gedhe Kauman."
+    show mc netral
+    with dissolve
+    mc "Tentu saja Aang, akan aku belikan oleh-oleh juga."
 
-    #disini Image pop up: Masjid Gedhe Kauman
+    show aang senyum
+    with dissolve
+    aang "Hahaha"
+
+    show mc kaget
+    with dissolve
+    mc "Wah apa itu Aang? Apakah itu masjid? Aku tidak dapat melihatnya secara jelas dari jarak sejauh ini."
+
+    show aang senyum
+    with dissolve
+    aang "Oh itu. Apakah kau tertarik untuk mengunjunginya Tok?"
+
+    show mc netral
+    with dissolve
+    mc "Sungguh menarik perhatian, apakah kita bisa kesana sebentar Aang?"
+
+    show aang senyum
+    with dissolve
+    aang "shapp!!"
+    
+label masjid_gede_kauman:
+    scene bg masjid gede kauman
+    with fade
+
+    show aang netral
+    with dissolve
+    mc "Ini dia Tok, Masjid Gedhe Kauman."
+
+    #image pop up Masjid Gedhe Kauman
 
     show mc kaget
     with dissolve
@@ -876,19 +1879,17 @@ label alun_alun:
     with dissolve
     aang "Haha, arsitekturnya terlihat unik bukan?"
 
-    aang "Ayo sholat dulu, waktu dhuhur sudah mau habis, kita sekalian sholat Ashar juga"
+    aang "Ayo kita masuk, aku tadi melihat beberapa bule juga masuk ke dalam"
 
-    #Char Totok dan Aang otw jalan off screen
-    
-label masjid_gede:
-    scene bg masjid gede
+label dalam_masjid_gede_kauman:
+    scene bg dalam masjid gede kauman
     with fade
 
-    show mc
+    show mc netral
     with dissolve
     mc "Terima kasih sudah membawaku kesini Aang, di desaku masjid-masjid jauh lebih kecil dari sini"
 
-    show aang
+    show aang netral
     with dissolve
     aang "Tidak masalah Tok, aku juga bersyukur bisa melihat masjid semegah ini setelah sekian lama"
 
@@ -902,7 +1903,7 @@ label masjid_gede:
     with dissolve
     aang "Oh, iya benar pak"
 
-    show mc
+    show mc netral
     with dissolve
     mc "Apakah bapak familiar dengan masjid ini?"
 
@@ -918,11 +1919,11 @@ label masjid_gede:
 
     pu "Meskipun mengalami perubahan seiring berjalannya waktu, keunikan dan keanggunan Masjid Gedhe Kauman tetap terjaga, seperti pemasangan batu kali putih tanpa semen dan penggunaan kayu jati utuh yang berusia lebih dari 200 tahun."
 
-    show mc
+    show mc netral
     with dissolve
     mc "Aku tidak pernah menyangka sebuah masjid memiliki sejarah yang begitu berarti"
 
-    show aang
+    show aang netral
     with dissolve
     aang "Oh ya pak, tempat ini terlihat besar sekali, sepertinya tidak hanya untuk sholat ya?"
 
@@ -936,13 +1937,13 @@ label masjid_gede:
     pu "Regol atau gapura yang berbentuk Semar Tinandu adalah pintu gerbang utama kompleks masjid, memperkaya keberadaan serta keunikan tempat ibadah yang sarat akan nilai sejarah 
         dan budaya."
 
-    show aang
+    show aang senyum
     with dissolve
     aang "Tidak hanya untuk ibadah, tetapi juga mengandung nilai sejarah dan budaya"
 
     aang "senang bisa mempelajari nilai sejarah tempat seperti ini, senang juga bisa mengetahui bahwa masjid ini masih bermanfaat untuk banyak orang."
 
-    show mc
+    show mc netral
     with dissolve
     mc "Bapak tadi bilang bahwa bapak adalah panitia ramadhan bukan? Bagaimana kondisi masjid ini ketika ramadhan pak?"
 
@@ -952,7 +1953,7 @@ label masjid_gede:
 
     pu "bahkan terdapat hari khusus dengan menu spesial. Setiap hari Kamis kami panitia khusus menyembelih kambing dan menyediakan Gulai Kambing sebagai menu buka puasa."
 
-    show mc
+    show mc netral
     with dissolve
     mc "Masjid Gedhe Kauman ini memang merupakan wisata religi dari nilai sejarah serta kemegahan yang unik dari arsitektur masjid tertua di Jogja ya."
 
@@ -966,7 +1967,7 @@ label alun_alun_kidul_sore:
     scene bg alun alun kidul sore
     with fade
 
-    show aang
+    show aang netral
     with dissolve
     aang "Inilah Alun-alun kidul Tok, tempat ini ramai sekali pada malam hari"
 
@@ -984,7 +1985,7 @@ label alun_alun_kidul_sore:
 
     #disini image pop up mobil sepeda kelap kelip
 
-    show aang
+    show aang netral
     with dissolve
     aang "Banyak orang yang menyewa mobil sepeda itu untuk menikmati suasana di sekitar alun-alun"
 
@@ -992,7 +1993,7 @@ label alun_alun_kidul_sore:
     with dissolve
     aang "kalo kita sewa, kita harus menggowes pedal untuk menjalankan mobil sepeda jadi terasa seperti olahraga malam"
 
-    show mc
+    show mc netral
     with dissolve
     mc "aku tertarik mencobanya tetapi tidak dulu deh"
     
@@ -1000,15 +2001,15 @@ label alun_alun_kidul_sore:
     with dissolve
     mc "mengayuh pedal terlihat sangat melelahkan pada jam segini, haha"
 
-    show mc
+    show mc netral
     with dissolve
     mc "Oh ya, banyak sekali orang yang mengelilingi kedua pohon beringin itu."
 
-    show mc kebingungan
+    show mc bingung
     with dissolve
     mc "Beberapa orang juga sedang berjalan sambil menutup matanya, mereka sedang apa ya?"
 
-    show aang
+    show aang netral
     with dissolve
     aang "Oh ituu, salah satu aktivitas yang sangat terkenal di alun-alun ini adalah permainan masangin."
 
@@ -1020,7 +2021,7 @@ label alun_alun_kidul_sore:
     with dissolve
     aang "Permainan ini terdengar mudah, tapi seperti yang bisa kau lihat, banyak orang yang melenceng dan berputar tidak jelas haha"
 
-    show aang
+    show aang netral
     with dissolve
     aang "Banyak mitos yang beredar bahwa hanya orang yang berhati bersih dan lurus yang bisa melewati kedua pohon tersebut."
 
@@ -1028,7 +2029,7 @@ label alun_alun_kidul_sore:
 
     aang "kau terlihat bersih seperti orang yang berhati bersih dan lurus Tok, maukah kamu mencobanya?"
 
-    show mc kebingungan
+    show mc bingung
     with dissolve
     mc "Eh… Apa? Apakah tidak bahaya apabila aku berjalan sambil menutup mata?" 
 
@@ -1036,11 +2037,11 @@ label alun_alun_kidul_sore:
     with dissolve
     aang "Haha tidak apa apa, kau akan ku jaga agar tidak menabrak siapa siapa, tidak perlu khawatir."
 
-    show mc
+    show mc flat
     with dissolve
     mc "Tidak ah, aku tidak percaya dengan mitos seperti itu"
 
-    show aang
+    show aang netral
     with dissolve
     aang "kita tidak perlu mempercayai mitos, cukup mencobanya agar tau saja"
 
@@ -1048,19 +2049,19 @@ label alun_alun_kidul_sore:
 
     "suara perut"
 
-    show mc
+    show mc netral
     with dissolve
     mc "{i}uggrgrggrgrgrgrhhrghrghr{/i}"
 
     mc "Ahaha, tidak dulu Aang, aku sedikit lapar."
 
-    show aang
+    show aang senyum
     with dissolve
     aang "Haha, baiklah, sepertinya kita harus pergi cari makan dulu."
 
     "time passes"
 
-    show mc
+    show mc netral
     with dissolve
     mc "Sudah jam segini, ayo kita berangkat ke pertunjukan Gamelan."
 
@@ -1068,11 +2069,11 @@ label alun_alun_kidul_sore:
     with dissolve
     aang "Masih jam segini Tok, santai aja dulu"
 
-    show mc
+    show mc netral
     with dissolve
     mc "Aku ingin mengambil kursi depan agar aku bisa melihat bapak tadi."
 
-    show aang
+    show aang netral
     with dissolve
     aang "Oh, benar juga, kita belum tahu nama bapak itu sampai sekarang" 
 
@@ -1080,7 +2081,7 @@ label alun_alun_kidul_sore:
     with dissolve
     mc "Benar juga, nanti harus kita tanyakan kepadanya"
 
-    show aang
+    show aang netral
     with dissolve
     aang "Baiklah, ayo berangkat. Final stop for today, Pertunjukan Gamelan skuy!"
 
@@ -1088,11 +2089,11 @@ label tempat_duduk_pertunjukan_terang:
     scene bg tempat duduk pertunjukan terang
     with fade
 
-    show mc
+    show mc netral
     with dissolve
     mc "Jadi ini tempat pertunjukannya, menarik juga"
 
-    show aang
+    show aang senyum
     with dissolve
     aang "Hehe kursi depan masih kosong,ayo ambil tempat"
 
@@ -1122,11 +2123,9 @@ label tempat_duduk_pertunjukan_terang:
     with dissolve
     mc "Aku tidak bisa mempercayai ini, padahal aku sudah menantikan penampilan bapak gamelan."
 
-    show aang
+    show aang marah
     with dissolve
     aang "Aku tidak ingin acara ini dibatalkan, mari kita cari tahu alasannya"
-
-    #disini Char Totok dan Aang otw jalan off screen
 
 label panggung:
     scene bg panggung
@@ -1140,7 +2139,7 @@ label panggung:
     with dissolve
     pb "A-A-Apaa??? Gawat, beritanya sudah sampai pada publik, aku akan dipecat aku akan dipecat!!!"
 
-    show mc
+    show mc flat
     with dissolve
     mc "T-tenang saja mas, baru kami saja yang mendengar, ada masalah apa dengan pertunjukannya? Mengapa akan dibatalkan?"
 
@@ -1174,7 +2173,7 @@ label panggung:
     with dissolve
     pb "A-aku sedikit ingat, jenis suara apa berasal darimana, bentuk, dan nama dari beberapa gamelan, tapi aku tidak ingat semuanya."
 
-    show aang
+    show aang flat
     with dissolve
     aang "Tok, kita baru saja mempelajari beberapa jenis gamelan tadi siang."
 
@@ -1191,7 +2190,7 @@ label panggung:
     jump bantu_persiapan_gamelan
 
 label bantu_persiapan_gamelan:
-        while click <= 3:
+        while click <= 4:
                 if click == 0:
                         menu:
                                 "Kamu Memilih untuk:"
@@ -1202,7 +2201,7 @@ label bantu_persiapan_gamelan:
                                         show aang flat
                                         aang "Apakah kamu yakin Tok? Kita sudah jauh jauh kesini untuk menyaksikan pertunjukan Gamelan"
                                         
-                                        show mc
+                                        show mc flat
                                         mc "(Aang benar, aku kesini untuk menyaksikan pertunjukan gamelan)"
                 elif click == 1:
                         menu:
@@ -1214,7 +2213,7 @@ label bantu_persiapan_gamelan:
                                         show aang flat
                                         aang "Kakek sudah memberi ilmu gamelan kepada kita, mas mas ini juga sedang sangat kebingungan, sebaiknya kita membantunya"
 
-                                        show mc
+                                        show mc flat
                                         mc "(Semua kebaikkan pasti akan dibalas, aku juga tidak ingin melihat penampilan bapak gamelan)"
                 elif click == 2:
                         menu:
@@ -1226,7 +2225,7 @@ label bantu_persiapan_gamelan:
                                         show aang flat
                                         aang "Apakah kamu yakin Tok? Aku yakin {color=#ff0000}pengalaman yang kita dapatkan akan berubah apabila kita tidak membantu"
 
-                                        show mc
+                                        show mc flat
                                         mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
                 elif click == 3:
                         show aang flat
@@ -1236,10 +2235,21 @@ label bantu_persiapan_gamelan:
                                 "Membantu Persiapan Gamelan":
                                         jump bantu_gamelan
                                 "Akhhh Malassss":
-                                        jump bantu_persiapan_gamelan
+                                        $ click += 1
+                                        show mc flat
+                                        mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
                                 "{color=#ff0000}Aku mengantuk, aku ingin istirahat":
                                         jump balik_hotel
-        return
+                elif click == 4:
+                    menu:
+                                "Kamu Memilih untuk:"
+                                "Membantu Persiapan Gamelan":
+                                        jump bantu_gamelan
+                                "Akhhh Malassss":
+                                        show mc flat
+                                        mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
+                                "{color=#ff0000}Aku mengantuk, aku ingin istirahat":
+                                        jump balik_hotel  
 
 label bantu_gamelan:
     show aang senyum
@@ -1250,7 +2260,7 @@ label bantu_gamelan:
     show pb senyum_lebar
     pb "Be-benarkah? Kalian akan membantuku?"
 
-    show mc
+    show mc senyum 2
     mc "Tentu saja kami akan membantumu mas, kami juga sangat bersemangat ingin menyaksikan pertunjukan gamelan."
 
     show pb senyum_lebar
@@ -1259,7 +2269,206 @@ label bantu_gamelan:
     #nanti cerita lanjut disini, yang balik_hotel itu ending dari chapter 1
 
     #mini game: set the stage
-    show pb senyum lebar
+
+    if pilihan == 1:
+        $ ulang_pertanyaan = 0
+        while ulang_pertanyaan <= 3:
+            if ulang_pertanyaan == 0:
+                pb "Bilahan gamelan ini terbuat dari kayu atau bambu dan memiliki banyak bilah yang terletak di atas sebuah rak yang berbentuk perahu."
+
+                pb "Bilah-bilahnya dirsusun berurutan dari bentuk terpendek, sampai yang paling panjang,"
+
+                menu:
+                    pb "gamelan apa ini?"
+                    "Gambang":
+                        $ ulang_pertanyaan += 1
+                    "Slenthem":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Bonang":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+            
+            elif ulang_pertanyaan == 1:
+                pb "Gamelan ini digantung dan sangat besar, dan cara memainkannya dipukul,"
+
+                menu:
+                    pb "apa nama dari gamelan ini?"
+                    "Saron":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kendhang":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Slenthem":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        $ ulang_pertanyaan += 1
+                    "Bonang":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+
+            elif ulang_pertanyaan == 2:
+                pb "Yang aku ingat hanya lah gamelan ini bernama Bonang,"
+
+                menu:
+                    pb "manakah gamelan yang merupakan Bonang?"
+                    #opsi dalam bentuk gambar
+                    "Bonang":
+                        $ ulang_pertanyaan += 1
+                    "Saron":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gambang":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Slenthem":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+
+            elif ulang_pertanyaan == 3:
+                pb "Gamelan ini mengatur irama musik gamelan."
+
+                pb "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggirnya,"
+
+                menu:
+                    pb "gamelan apa ini?"
+                    "Slenthem":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Bonang":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kendhang":
+                        $ ulang_pertanyaan += 1
+
+    elif pilihan == 2:
+        $ ulang_pertanyaan = 0
+        while ulang_pertanyaan <= 2:
+            if ulang_pertanyaan == 0:
+                pb "Gamelan ini lebih gemuk dari gamelan lainnya. Gamelan ini diletakan pada kayu tetapi terbuat dari logam."
+
+                pb "Gamelan ini menghasilkan suara yang rendah,"
+
+                menu:
+                    pb "gamelan apa ini?"
+                    "Bonang":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kenong":
+                        $ ulang_pertanyaan += 1
+                    "Kendhang":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Slenthem":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+            
+            elif ulang_pertanyaan == 1:
+                pb "Aku hanya tau bahwa gamelan ini bernama Rebab,"
+
+                menu:
+                    pb "yang mana gamelan rebab?"
+                    "Slenthem":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Rebab":
+                        $ ulang_pertanyaan += 1
+                    "Kenong":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kendhang":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+
+            elif ulang_pertanyaan == 2:
+                pb "Gamelan ini punya banyak bilahan logam yang ditumpangkan di atas bingkai kayu,"
+
+                menu:
+                    pb "apa nama dari gamelan ini?"
+                    "Bonang":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        $ ulang_pertanyaan += 1
+                    "Gambang":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Rebab":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+
+    elif pilihan == 3:
+        $ ulang_pertanyaan = 0
+        while ulang_pertanyaan <= 1:
+            if ulang_pertanyaan == 0:
+                pb "Yang bisa kuingat hanya gamelan ini bernama Slenthem,"
+
+                menu:
+                    pb "apakah kau tau gamelan yang mana Slenthem?"
+                    "Kendhang":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Slenthem":
+                        $ ulang_pertanyaan += 1
+                    "Saron":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gender":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Bonang":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+            
+            elif ulang_pertanyaan == 1:
+                pb "Gamelan ini dari bahan logam yang dipukul setiap bilahnya yang terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
+
+                pb "Aku pernah melihat gamelan ini ditabuh menggunakan tabuh kayu (Bali) atau berlapis kain (Jawa),"
+
+                menu:
+                    pb "apa nama dari gamelan ini?"
+                    "Gender":
+                        $ ulang_pertanyaan += 1
+                    "Kenong":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kempul":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Rebab":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang bingung
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+
+    show pb senyum
     with dissolve
     pb "Dengan begini, pertunjukan dapat berjalan dengan lancar!"
 
@@ -1275,7 +2484,7 @@ label bantu_gamelan:
     with dissolve
     mc "Tidak masalah, kami senang bisa membantu."
 
-    show pb senyum lebar
+    show pb senyum
     with dissolve
     pb "Aku belajar banyak hal baru hari ini, berkat bantuan kalian semuanya berjalan lancar"
 
@@ -1283,7 +2492,7 @@ label bantu_gamelan:
     with dissolve
     aang "Itu bagus sekali. Tetapi ingatlah bahwa belajar adalah proses yang terus menerus. Jadi jangan ragu untuk terus mencoba hal-hal baru dan terus berkembang."
 
-    show mc senyum
+    show mc senyum 1
     with dissolve
     mc "Haha, aku tidak menyangka kamu bisa memberi pencerahan seperti itu Aang."
 
@@ -1295,7 +2504,7 @@ label bantu_gamelan:
     with dissolve
     mc "Semoga sukses untuk pertunjukan gamelan nanti. Jangan ragu untuk meminta bantuan jika kalian membutuhkannya lagi."
 
-    show pb senyum lebar
+    show pb senyum
     with dissolve
     pb "Tentu saja, aku akan terus berlatih dan belajar! Terima kasih sekali lagi atas bantuan dan dorongan kalian. Selamat menikmati pertunjukan"
 
@@ -1308,7 +2517,7 @@ label tempat_duduk_gelap:
     with dissolve
     mc "Membantu pertunjukan tadi membuatku semakin semangat menonton pertunjukan"
     
-    show aang
+    show aang netral
     with dissolve
     aang "Betul sekali, melihat hasil dari kerja keras dan jerih payah sendiri terasa jauh lebih memuaskan."
 
@@ -1316,7 +2525,7 @@ label tempat_duduk_gelap:
     with dissolve
     mc "Oh, aku melihat bapak tadi siang di panggung, dia memainkan bonang"
 
-    show aang
+    show aang netral
     with dissolve
     aang "Aku melihatnya, sepertinya pertunjukannya sudah akan dimulai"
 
@@ -1330,12 +2539,10 @@ label tempat_duduk_gelap:
     with dissolve
     mc "Iya, betul sekali! Aku juga merasa terinspirasi oleh penampilan mereka. Semoga suatu hari nanti kami juga bisa sehebat mereka."
 
-    show mc senyum
-    with dissolve
     mc "Lihat itu, bapak gamelan sedang turun panggung, mari kita sambut"
 
-label panggung:
-    show mc senyum
+label panggung2:
+    show mc senyum 2
     with dissolve
     mc "Bapak, pertunjukan tadi sungguh luar biasa. Mereka benar-benar memainkan gamelan dengan begitu indah."
 
@@ -1353,7 +2560,7 @@ label panggung:
     with dissolve
     aang "benar pak, itu semua berkat ilmu gamelan yang sudah bapak berikan kepada kami tadi siang"
 
-    show mc
+    show mc senyum 2
     with dissolve
     mc "Apakah kami boleh foto bersama bapak? Kami ingin mengenang momen ini."
 
@@ -1363,42 +2570,42 @@ label panggung:
 
     #disini Image pop up: Foto Totok, Aang, dan Bapak Gamelan dengan background panggung penuh gamelan
 
-    show kg
+    show kg senyum
     with dissolve
     kg "Jangan lupa kirimkan foto itu kepadaku juga ya nak. Senang bisa bertemu dengan pemuda antusias dan baik hati seperti kalian"
 
-    show mc
+    show mc senyum
     with dissolve
     mc "Tentu saja pak, boleh minta nomor telepon dan nama bapak siapa ya kalau boleh tau?"
 
-    show kg
+    show kg netral
     with dissolve
     kg "Oh ya kita belum saling mengenal, namaku ada Sutrisno Haji Tifa"
 
-    show aang
+    show aang netral
     with dissolve
     aang "Salam kenal pak, saya Aang Idhang Saputra."
 
     aang "Oh aku juga belum tahu nama lengkapmu Tok, apa nama lengkapmu?"
 
-    show mc
+    show mc senyum 1
     with dissolve
     mc "Haha, benar juga. Nama lengkapku Totok Hestamma."
 
-    show su
+    show kg netral
     with dissolve
     su "..."
 
     su "Hestamma… Totok Hestamma dan Aang Idhang Saputra ya."
 
-    show su senyum
+    show kg senyum
     su "Nama-nama yang bagus sekali, semoga aku bisa bertemu lagi dengan kalian di masa depan."
 
-    show mc
+    show mc senyum 2
     with dissolve
     mc "Terima kasih pak Sutrisno, kami tidak akan melupakan pengalaman ini."
 
-    show su
+    show kg senyum
     with dissolve
     su "Sampai jumpa anak muda. Semoga Allah memberkati jalan kalian."
 
@@ -1406,17 +2613,17 @@ label panggung:
 
     su "Hestamma… Rasanya aku pernah mendengar nama itu"
 
-label tempat_duduk_pertunjukan_terang:
-    show aang
+label tempat_duduk_pertunjukan_terang2:
+    show aang netral
     with dissolve
     aang "ngomong-ngomong sudah jam berapa ini? Ternyata sudah cukup larut. Mungkin sudah waktunya kamu kembali ke hotel untuk istirahat Tok"
 
-    show mc
+    show mc netral
     with dissolve
     mc "Benar juga. Kita sudah melalui hari yang panjang, dan esok akan menjadi hari yang penuh kisah. Ayo kita pulang."
 
 label Depan_hotel_malam:
-    show aang
+    show aang senyum
     with dissolve
     aang "Aku senang sekali bisa menyaksikan pertunjukan gamelan tadi."
 

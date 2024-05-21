@@ -61,7 +61,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-define config.main_menu_music = "audio/skye-cuillin-by-kevin-macleod-from-filmmusic-io.mp3"
+define config.main_menu_music = "audio/Opening_Menu.mp3"
 
 
 ## Transitions #################################################################
