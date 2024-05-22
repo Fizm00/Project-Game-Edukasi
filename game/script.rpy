@@ -31,6 +31,24 @@ screen bonang1:
         ypos 0.5
         idle "bonang.png"
 
+# Define methods
+init python:
+    import random
+    def jawaban_benar():
+        randombenar = random.randint(1, 2)
+        if randombenar == 1:
+            renpy.say("Kakek Gamelan", "Bagus sekali")
+        elif randombenar == 2:
+            renpy.say("Kakek Gamelan", "Yap, betul sekali")
+
+    def jawaban_salah():
+        randomsalah = random.randint(1, 3)
+        if randomsalah == 1:
+            renpy.say("Kakek Gamelan", "Tebakan yang bagus nak, tetapi")
+        elif randomsalah == 2:
+            renpy.say("Kakek Gamelan", "Haha, bukan gamelan yang itu nak,")
+        elif randomsalah == 3:
+            renpy.say("Kakek Gamelan", "Tidak apa apa, kesalahan adalah bagian dari perjalanan,")
 
 #sound & music effect
 define audio.bell = "sfx_bell.mp3"
@@ -1622,6 +1640,7 @@ label hitung_skor_gamelan:
         show kg senyum
         kg "Hahaha, kamu ini memang cocok sekali menjadi penerus bangsa, saya senang sekali melihat generasi muda seperti kalian sangat bersemangat mempelajari Gamelan."
 
+<<<<<<< HEAD
         show mc senyum 2
         mc "Terima kasih pak, senang sekali dapat mempelajari keragaman dan keunikan alat musik tradisional."
 
@@ -1629,14 +1648,30 @@ label hitung_skor_gamelan:
         aang " Betul itu pak, saya orang Jogja aja baru tau ada Gamelan sebanyak itu"
 
         show kg netral
+=======
+        show mc
+        mc "Terima kasih pak, senang sekali dapat mempelajari keragaman dan keunikan alat musik tradisional."
+
+        show aang
+        aang " Betul itu pak, saya orang Jogja aja baru tau ada Gamelan sebanyak itu"
+
+        show kg
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
         kg "Sama-sama nak, senang bisa memberikan ilmu bermanfaat bagi kalian"
 
         kg "Melihat antusiasme kalian membuatku semakin semangat untuk acara malam ini"
 
+<<<<<<< HEAD
         show aang netral
         aang "Memangnya malam ini ada apa pak?"
 
         show kg netral
+=======
+        show aang
+        aang "Memangnya malam ini ada apa pak?"
+
+        show kg
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
         kg "Kalian belum tahu kah? Malam ini akan ada pertunjukan Gamelan"
 
         kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
@@ -1644,6 +1679,7 @@ label hitung_skor_gamelan:
         #image pop up 2 tiket
 
     elif jawab_benar > jumlah_soal / 2:
+<<<<<<< HEAD
         show kg senyum
         kg "Hebat sekali nak, saya senang sekali melihat generasi muda seperti kalian sangat bersemangat mempelajari Gamelan."
 
@@ -1654,14 +1690,33 @@ label hitung_skor_gamelan:
         aang "Betul itu pak, saya orang Jogja aja baru tau ada Gamelan sebanyak itu"
 
         show kg netral
+=======
+        show kg
+        kg "Hebat sekali nak, saya senang sekali melihat generasi muda seperti kalian sangat bersemangat mempelajari Gamelan."
+
+        show mc
+        mc "Terima kasih pak, senang sekali dapat mempelajari keragaman dan keunikan alat musik tradisional."
+
+        show aang
+        aang "Betul itu pak, saya orang Jogja aja baru tau ada Gamelan sebanyak itu"
+
+        show kg
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
         kg "Sama-sama nak, senang bisa memberikan ilmu bermanfaat bagi kalian"
 
         kg "Melihat antusiasme kalian membuatku semakin semangat untuk acara malam ini"
 
+<<<<<<< HEAD
         show aang netral
         aang "Memangnya malam ini ada apa pak?"
 
         show kg netral
+=======
+        show aang
+        aang "Memangnya malam ini ada apa pak?"
+
+        show kg
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
         kg "Kalian belum tahu kah? Malam ini akan ada pertunjukan Gamelan"
 
         kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
@@ -1669,6 +1724,7 @@ label hitung_skor_gamelan:
         #image pop up 2 tiket
 
     else:
+<<<<<<< HEAD
         show mc flat
         mc "Aduh, banyak sekali jawabanku yang salah  tadi, sepertinya {color=#ff0000}aku harus lebih memperhatikan catatanku"
 
@@ -1685,22 +1741,51 @@ label hitung_skor_gamelan:
         aang "Memangnya malam ini ada apa pak?"
 
         show kg netral
+=======
+        show mc
+        mc "Aduh, banyak sekali jawabanku yang salah  tadi, sepertinya {color=#ff0000}aku harus lebih memperhatikan catatanku"
+
+        show aang
+        aang "Haha tidak apa apa Tok, kamu juga orang luar, bahkan aku yang orang Jogja pun tidak tau bahwa gamelan ada sebanyak itu"
+
+        show mc
+        mc "Mulai sekarang aku akan semakin rajin mencari tahu tentang budaya dan alat tradisional, semua hal ini begitu menarik bagiku"
+
+        show kg
+        kg "Wah, antusias sekali dirimu nak, melihat kalian membuatku semakin semangat untuk acara malam ini"
+
+        show aang
+        aang "Memangnya malam ini ada apa pak?"
+
+        show kg
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
         kg "Kalian belum tahu kah? Malam ini akan ada pertunjukan Gamelan"
 
         kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
 
         #image pop up 2 tiket
     
+<<<<<<< HEAD
     show mc senyum 2
     mc "Waaaah, tiket gratis, terima kasih banyak bapak, kita pasti akan datang malam ini."
 
     show aang senyum
+=======
+    show mc senyum
+    mc "Waaaah, tiket gratis, terima kasih banyak bapak, kita pasti akan datang malam ini."
+
+    show aang
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
     aang "Waw, sudah berapa tahun aku tidak melihat pertunjukan Gamelan"
 
     show kg senyum
     kg "Hahaha, jangan lupa menyemangati kakek tua ini di kursi paling depan, akan ku nantikan kehadiran kalian."
 
+<<<<<<< HEAD
     show mc netral
+=======
+    show mc
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
     mc "Tentu saja pak, sekali lagi terima kasih, kita pamit dulu ya"
 
     show kg senyum
@@ -1710,10 +1795,17 @@ label hitung_skor_gamelan:
 
     show bg depan_keraton_yogyakarta with fade
     
+<<<<<<< HEAD
     show aang netral
     aang "Sepertinya tidak sia sia kita pergi ke Keraton, apalagi setelah bertemu bapak baik itu."
 
     show mc senyum 2
+=======
+    show aang 
+    aang "Sepertinya tidak sia sia kita pergi ke Keraton, apalagi setelah bertemu bapak baik itu."
+
+    show mc senyum
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
     mc "Wah, semua tempat ini sungguh luar biasa!"
 
     mc "Aku tidak bisa membayangkan betapa kaya akan sejarah dan budaya Jogja."
@@ -2221,7 +2313,11 @@ label bantu_persiapan_gamelan:
                                         jump bantu_gamelan
                                 "Akhhh Malassss":
                                         $ click += 1
+<<<<<<< HEAD
                                         show mc flat
+=======
+                                        show mc
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                                         mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
                                 "{color=#ff0000}Aku mengantuk, aku ingin istirahat":
                                         jump balik_hotel
@@ -2231,7 +2327,11 @@ label bantu_persiapan_gamelan:
                                 "Membantu Persiapan Gamelan":
                                         jump bantu_gamelan
                                 "Akhhh Malassss":
+<<<<<<< HEAD
                                         show mc flat
+=======
+                                        show mc
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                                         mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
                                 "{color=#ff0000}Aku mengantuk, aku ingin istirahat":
                                         jump balik_hotel  
@@ -2268,6 +2368,7 @@ label bantu_gamelan:
                     "Gambang":
                         $ ulang_pertanyaan += 1
                     "Slenthem":
+<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
@@ -2278,6 +2379,18 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
                         show aang bingung
+=======
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Bonang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
             
             elif ulang_pertanyaan == 1:
@@ -2286,6 +2399,7 @@ label bantu_gamelan:
                 menu:
                     pb "apa nama dari gamelan ini?"
                     "Saron":
+<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kendhang":
@@ -2293,11 +2407,24 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Slenthem":
                         show aang bingung
+=======
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kendhang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Slenthem":
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
                         $ ulang_pertanyaan += 1
                     "Bonang":
+<<<<<<< HEAD
                         show aang bingung
+=======
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
             elif ulang_pertanyaan == 2:
@@ -2309,6 +2436,7 @@ label bantu_gamelan:
                     "Bonang":
                         $ ulang_pertanyaan += 1
                     "Saron":
+<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gambang":
@@ -2319,6 +2447,18 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
                         show aang bingung
+=======
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gambang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Slenthem":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
             elif ulang_pertanyaan == 3:
@@ -2329,6 +2469,7 @@ label bantu_gamelan:
                 menu:
                     pb "gamelan apa ini?"
                     "Slenthem":
+<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
@@ -2339,6 +2480,18 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
                         show aang bingung
+=======
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Bonang":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kendhang":
                         $ ulang_pertanyaan += 1
@@ -2354,11 +2507,16 @@ label bantu_gamelan:
                 menu:
                     pb "gamelan apa ini?"
                     "Bonang":
+<<<<<<< HEAD
                         show aang bingung
+=======
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kenong":
                         $ ulang_pertanyaan += 1
                     "Kendhang":
+<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Slenthem":
@@ -2366,6 +2524,15 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
                         show aang bingung
+=======
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Slenthem":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
             
             elif ulang_pertanyaan == 1:
@@ -2374,18 +2541,32 @@ label bantu_gamelan:
                 menu:
                     pb "yang mana gamelan rebab?"
                     "Slenthem":
+<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
                         show aang bingung
+=======
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Saron":
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Rebab":
                         $ ulang_pertanyaan += 1
                     "Kenong":
+<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kendhang":
                         show aang bingung
+=======
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kendhang":
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
             elif ulang_pertanyaan == 2:
@@ -2394,11 +2575,16 @@ label bantu_gamelan:
                 menu:
                     pb "apa nama dari gamelan ini?"
                     "Bonang":
+<<<<<<< HEAD
                         show aang bingung
+=======
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
                         $ ulang_pertanyaan += 1
                     "Gambang":
+<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Rebab":
@@ -2406,6 +2592,15 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
                         show aang bingung
+=======
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Rebab":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
     elif pilihan == 3:
@@ -2417,11 +2612,16 @@ label bantu_gamelan:
                 menu:
                     pb "apakah kau tau gamelan yang mana Slenthem?"
                     "Kendhang":
+<<<<<<< HEAD
                         show aang bingung
+=======
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Slenthem":
                         $ ulang_pertanyaan += 1
                     "Saron":
+<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gender":
@@ -2429,6 +2629,15 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Bonang":
                         show aang bingung
+=======
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gender":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Bonang":
+                        show aang kebingungan
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
             
             elif ulang_pertanyaan == 1:
@@ -2441,6 +2650,7 @@ label bantu_gamelan:
                     "Gender":
                         $ ulang_pertanyaan += 1
                     "Kenong":
+<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kempul":
@@ -2454,6 +2664,21 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
     show pb senyum
+=======
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Kempul":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Rebab":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+                    "Gong":
+                        show aang kebingungan
+                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
+
+    show pb senyum lebar
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
     with dissolve
     pb "Dengan begini, pertunjukan dapat berjalan dengan lancar!"
 
@@ -2527,7 +2752,11 @@ label tempat_duduk_gelap:
     mc "Lihat itu, bapak gamelan sedang turun panggung, mari kita sambut"
 
 label panggung2:
+<<<<<<< HEAD
     show mc senyum 2
+=======
+    show mc senyum
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
     with dissolve
     mc "Bapak, pertunjukan tadi sungguh luar biasa. Mereka benar-benar memainkan gamelan dengan begitu indah."
 
@@ -2599,7 +2828,11 @@ label panggung2:
     su "Hestamma… Rasanya aku pernah mendengar nama itu"
 
 label tempat_duduk_pertunjukan_terang2:
+<<<<<<< HEAD
     show aang netral
+=======
+    show aang
+>>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
     with dissolve
     aang "ngomong-ngomong sudah jam berapa ini? Ternyata sudah cukup larut. Mungkin sudah waktunya kamu kembali ke hotel untuk istirahat Tok"
 
