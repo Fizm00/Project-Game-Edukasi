@@ -31,21 +31,6 @@ screen bonang1:
         ypos 0.5
         idle "bonang.png"
 
-image mc senyum 2:
-    "mc senyum 2.png"
-    zoom 0.75
-image mc flat:
-    "mc flat.png"
-    zoom 0.75
-image mc kaget:
-    "mc kaget.png"
-    zoom 0.75
-image mc netral:
-    "mc netral.png"
-    zoom 0.75
-image aang kaget:
-    "aang kaget.png"
-    zoom 0.75
 
 #sound & music effect
 define audio.bell = "sfx_bell.mp3"

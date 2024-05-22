@@ -329,6 +329,8 @@ define gui.vslider_borders = Borders(6, 6, 6, 6)
 ## None shows them.
 define gui.unscrollable = "hide"
 
+## Hide Rollback Option
+define config.rollback_enabled = False
 
 ## History #####################################################################
 ##
