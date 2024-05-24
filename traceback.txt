@@ -1,30 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 75, in script
-    $ renpy.music.stop("audio/Opening_Menu.mp3")
-  File "game/script.rpy", line 75, in <module>
-    $ renpy.music.stop("audio/Opening_Menu.mp3")
-Exception: Audio channel 'audio/Opening_Menu.mp3' is unknown.
+  File "game/script.rpy", line 246, in script
+    scene bg stasiun tugu luar
+Exception: Image 'bg stasiun' does not accept attributes 'tugu luar'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 75, in script
-    $ renpy.music.stop("audio/Opening_Menu.mp3")
-  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\ast.py", line 823, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 75, in <module>
-    $ renpy.music.stop("audio/Opening_Menu.mp3")
-  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\audio\music.py", line 298, in stop
-    c = get_channel(channel)
-  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\audio\audio.py", line 928, in get_channel
-    raise Exception("Audio channel %r is unknown." % name)
-Exception: Audio channel 'audio/Opening_Menu.mp3' is unknown.
+  File "game/script.rpy", line 246, in script
+    scene bg stasiun tugu luar
+  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\ast.py", line 1247, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\ast.py", line 1076, in show_imspec
+    renpy.config.show(name,
+  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\exports.py", line 739, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\display\image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\display\displayable.py", line 246, in _duplicate
+    args.extraneous()
+  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\display\displayable.py", line 109, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'bg stasiun' does not accept attributes 'tugu luar'.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.2.1.24030407
 Fantasy Ren'py GUI template 1.0
-Wed May 22 07:51:13 2024
+Fri May 24 18:13:30 2024

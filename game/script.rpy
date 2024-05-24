@@ -114,6 +114,8 @@ label start:
     aangs "Permisi mas, apakah anda melihat hp jatuh? Permisi mbak…."
 
     aangs "permisi mas, apakah mas melihat HP jatuh?"
+
+    hide aang
     
     menu:
         "mengembalikkan ponsel":
@@ -121,7 +123,7 @@ label start:
         "menyimpan ponsel untuk dirimu":
             mc "Apa yang aku lakukan? Aku tidak boleh berbohong! Semua perbuatan pasti akan dibalas baik maupun buruk"
             mc "Aku sebaiknya mengembalikan ponselnya ke orang malang ini"
-            jump bagian2
+            jump bagian2    
 
 label bagian2:
     show mc bingung at left
@@ -133,7 +135,7 @@ label bagian2:
     aangs "Iya! Ini ponselku, terima kasih banyak mas, sebaiknya kita menghindari keramaian dulu"
 
 label stasiun_tugu:
-    scene bg stasiun #ilangin silhouette
+    scene bg stasiun silhouette hilang
     with fade
 
     show aang senyum
@@ -144,9 +146,13 @@ label stasiun_tugu:
     with dissolve
     aang "Aku baru saja kembali ke Jogja dari liburanku, entah apa yang akan ku lakukan tanpa HP ku, kau lah penyelamatku. Nama mas siapa ya?"
 
+    hide aang
+
     show mc senyum 2
     with dissolve
     mc "Perkenalkan namaku Totok, salam kenal Aang. Jadi apakah kamu penduduk Jogja Aang?"
+
+    hide mc
 
     show aang senyum
     with dissolve
@@ -154,9 +160,13 @@ label stasiun_tugu:
 
     aang "Iya aku asli Jogja nih! Bagaimana denganmu Tok? Kau tidak terlihat seperti orang sini"
 
+    hide aang
+
     show mc netral
     with dissolve
     mc "Oh, iya mas, saya baru saja sampai di Jogja, saya dari desa kecil bernama X. Saya datang ke Jogja untuk melihat pemandangan dan mempelajari kulinernya."
+
+    hide mc
 
     show aang senyum
     with dissolve
@@ -167,26 +177,38 @@ label stasiun_tugu:
     aang    "Jadi kamu turis ya? Baiklah baiklah, sebagai ucapan terima kasihku, aku akan menjadi tour guide mu selama perjalananmu di Jogja! 
             Aku akan membawamu ke beberapa tempat monumental yang tak boleh dilewatkan"
     
+    hide aang
+    
     show mc senyum 1
     with dissolve
     mc "Be-benarkah mas? Apakah kau rela menjadi pemandu wisata untukku?"
+
+    hide mc
 
     show aang netral
     with dissolve
     aang    "Sudah ku bilang panggil saja aku Aang, tentu saja! Aku sendiri juga udah lama gak keliling Jogja, 
             ini akan menjadi perjalanan seru untuk kita berdua, bepergian lebih asik apabila bersama teman bukan?"
 
+    hide aang
+
     show mc senyum 1
     with dissolve
     mc "Terima kasih banyak mas, maksudku Aang. Semoga beberapa hari kedepan perjalanan di Jogja ini akan menjadi pengalaman tak terlupakan"
+
+    hide mc
 
     show aang netral
     with dissolve
     aang "Akhhh kece Tok, jadi mau kemana kamu sekarang?"
 
+    hide aang
+
     show mc bingung
     with dissolve
     mc "aku sendiri belum tau tempat yang ingin ku kunjungi, apakah kamu ada saran tempat Aang?"
+
+    hide mc
 
     show aang senyum
     with dissolve
@@ -196,17 +218,25 @@ label stasiun_tugu:
 
     aang "aku juga tau tempat Gudeg yang enak banget, harganya juga terjangkau, kalau mau berguru, aku saranin dari dia"
 
-    show netral
+    hide aang
+
+    show mc netral
     with dissolve
     mc "Banyak juga tempat kunjungan di Jogja, tetapi sepertinya aku akan mengunjungi beberapa saja, tempat yang benar benar berbau Jogja serta kulinernya"
+
+    hide mc
 
     show aang senyum
     with dissolve
     aang "Haha siap boss, mau langsung gas ke Tugu?"
 
+    hide aang
+
     show mc senyum 1
     with dissolve
     mc " Haha, aku suka semangatmu Aang, tapi sebaiknya aku mencari tempat penginapan dulu untuk menaruh barang bawaanku."
+
+    hide mc
 
     show aang netral
     with dissolve
@@ -220,6 +250,8 @@ label luar_stasiun_tugu:
     with dissolve
     aang "Ini motorku, naiklah Tok."
 
+    hide aang
+
     show mc kaget
     with dissolve
     mc "Wah, aku tidak pernah melihat motor dan mobil sebanyak ini dalam satu tempat. Beragam sekali kendaraan bermotor yang digunakan orang orang"
@@ -227,6 +259,8 @@ label luar_stasiun_tugu:
     show mc netral
     with dissolve
     mc "Plat mobil itu berawalan B, mobil yang itu berawalan D,dan Motor yang itu berawalan BD, aku hanya pernah melihat motor berplat AB."
+
+    hide mc
 
     #gambar pop up Berbagai plat di kendaraan berbeda beserta eksposisi Aang yang menjelaskan
     show aang netral
@@ -245,10 +279,14 @@ label luar_stasiun_tugu:
             memudahkan manajemen data registrasi kendaraan dan memungkinkan pelacakan asal kendaraan yang dicari untuk macam-macam keperluan, 
             termasuk lalu lintas dan penegakan hukum."
 
+    hide aang
+
     #Gambar pop up: Gambar end
     show mc netral
     with dissolve
     mc "Ohhhh begitu Aang, kamu tau banyak juga ya, tidak sia-sia aku bertemu kamu"
+
+    hide mc
 
     show aang senyum
     with dissolve
@@ -264,6 +302,8 @@ label depan_hotel:
     with dissolve
     mc "Berdasarkan hasil google search, rekomendasi orang orang adalah Malioboro, Kraton, dan Tugu."
 
+    hide mc
+
     show aang senyum
     with dissolve
     aang    "Hehe, biarkan aku memasak sebagai tour guide mu, saranku adalah kita hari ini ke tugu untuk melihat monumen khas Jogja, 
@@ -275,9 +315,13 @@ label depan_hotel:
 
     aang    "Lalu beberapa hari setelah itu kita akan ke Pusat Jogja yaitu Malioboro untuk membeli souvenir."
 
+    hide aang
+
     show mc senyum 1
     with dissolve
     mc "Waaaah! Kau sudah familiar sekali dengan Jogja. Aku tidak sabar keliling Jogja bersamamu Aang"
+
+    hide mc
 
     show aang senyum
     with dissolve
@@ -285,13 +329,17 @@ label depan_hotel:
 
     aang "Ayo kita mulai perjalanan kita!"
 
+    hide aang
+
 label tugu_jogja:
-    scene bg tugu yogja
+    scene bg tugu yogya
     with fade
 
     show mc senyum 2
     with dissolve
     mc "Wow, Tugu Jogja benar-benar mengesankan ya!"
+
+    hide mc
 
     #disini munculin image pop up tugu jogja
 
@@ -301,17 +349,25 @@ label tugu_jogja:
 
     aang "Sejarahnya ini…."
 
+    hide aang
+
     show mc netral
     with dissolve
     mc "apa Aang sejarahnya?"
+
+    hide mc
 
     show aang senyum
     with dissolve
     aang "Jujur aku sendiri sedikit lupa hehe, biar aku google sebentar"
 
+    hide aang
+
     show mc senyum 1
     with dissolve
     mc "Hahaha, bisa saja kamu Aang."
+
+    hide mc
 
     show aang netral
     with dissolve
@@ -327,23 +383,33 @@ label tugu_jogja:
     aang    "Renovasi oleh pemerintah Belanda bertujuan mengikis persatuan, namun perjuangan rakyat dan raja membuktikan sebaliknya. 
             Tugu memiliki empat bentuk fisik, dengan bagian atas berbentuk kerucut ulir."
 
+    hide aang
+
     show mc kaget
     with dissolve
     mc "Wah, mengagumkan sekali, bangunan ini masih tegak setelah bertahun-tahun. Dan bentuknya yang unik, 
         seperti menara yang menjulang tinggi, benar-benar mencuri perhatian."
 
+    hide mc
+
     show aang netral
     with dissolve
     aang    "Di malam hari, Tugu Jogja juga menjadi salah satu tempat favorit warga Jogja untuk 
             berkumpul dan menikmati keindahan lampu-lampu yang menghiasi sekitarnya."
+
+    hide aang
     
     show mc netral
     with dissolve
     mc "Terima kasih telah membawaku ke sini, Aang. Sangat mengesankan!"
 
+    hide mc
+
     show aang netral
     with dissolve
     aang "Next stop, Keraton Jogja skuy"
+
+    hide aang
 
 label keraton_yogya:
     scene bg keraton yogya
@@ -353,9 +419,13 @@ label keraton_yogya:
     with dissolve
     mc "Sudah sampai Tok, inilah Keraton Yogyakarta"
 
+    hide aang
+
     show mc kaget
     with dissolve
     mc "Waaaaah!! Jadi ini yang mereka sebut kerajaan Keraton."
+
+    hide mc
 
     #munculin pop up gambar keraton yogya
 
@@ -363,25 +433,37 @@ label keraton_yogya:
     with dissolve
     aang "Betul Tok, sekarang Keraton ini dibuka untuk umum, terdapat museum untuk melihat berbagai macam koleksi barang dan peninggalan"
 
+    hide aang
+
     show penjual netral
     with dissolve
     penjual "Betul itu mas! Ada banyak sekali hal menarik dalam Keraton"
+
+    hide penjual
 
     show aang kaget
     with dissolve
     aang "Astaghfirullah kaget!"
 
+    hide aang
+
     show mc netral
     with dissolve
     mc "Wah benar begitu kah pak?"
+
+    hide mc
 
     show penjual senyum
     with dissolve
     penjual "Woooooh ya bener lah, kalo mau tau toh mas, saya ceritakan sedikit nih"
 
+    hide penjual
+
     show mc netral
     with dissolve
     mc "Oh, boleh pak, saya sendiri juga penasaran"
+
+    hide mc
 
     show penjual senyum
     with dissolve
@@ -420,21 +502,31 @@ label keraton_yogya:
             yang menyatakan bahwa wilayahnya yang bersifat kerajaan adalah bagian dari Negara Republik Indonesia. Undang-Undang nomor 13 tahun 2012 
             memperkuat status keistimewaan DIY, memastikan warisan budaya Kesultanan Yogyakarta dan Kadipaten Pakualaman tetap terjaga dan lestari."
 
+    hide penjual
+
     show aang netral
     with dissolve
     aang "Wah bapak ini emang agak lain… Seluruh sejarahnya dijelaskan, bagaimana menurutmu Aang?"
+
+    hide aang
 
     show mc senyum 2
     with dissolve
     mc "Wah, bapak wawasannya banyak sekali, aku semakin tertarik memasuki Keraton"
 
+    hide mc
+
     show penjual senyum
     with dissolve
     penjual "Hahaha, senang sekali aku melihat orang sepertimu mas, boleh tuh ke Keraton, beli tiketnya disana mas."
 
+    hide penjual
+
     show aang netral
     with dissolve
     aang "Bapak ini tau banyak sekali, sebagian besar informasi sudah kami dapatkan"
+
+    hide aang
 
     show penjual netral
     with dissolve
@@ -451,13 +543,19 @@ label keraton_yogya:
 
     penjual "Wajib banget dicek itu, udah jauh-jauh ke Keraton masak iya gak mau masuk"
 
-    show mc senyum 2
+    hide penjual
+
+    show mc senyum 2 at left
     with dissolve
     mc "Ayo Aang kita masuk, aku tidak sabar melihat semua koleksi Keraton"
 
-    show aang netral
+    show aang netral at right
     with dissolve
     aang "Baik Tok ayo, terima kasih ya pak"
+
+    hide mc
+    
+    hide aang
 
     #disini Char Totok dan Aang otw jalan off screen
 
@@ -465,27 +563,39 @@ label keraton_yogya:
     with dissolve
     penjual "Sebentar mas!!! hampir lupa…"
 
+    hide penjual
+
     #disini Char Totok dan Aang berhenti jalan terus nengok ke arah penjual
 
     show aang flat
     with dissolve
     aang "Ada apa pak?"
 
+    hide aang
+
     show penjual senyum
     with dissolve
     penjual "Sebelum masuk Keraton, beli minum dulu biar gak haus, ayo larisin dagangan saya"
+
+    hide penjual
 
     show aang flat
     with dissolve
     aang "Yaelah pak…."
 
+    hide aang
+
     show mc senyum 1
     with dissolve
     mc "Haha baiklah pak, aku juga kehausan dari tadi"
 
+    hide mc
+
     show aang netral
     with dissolve
     aang "Baiklah Totok, akan ku traktir kamu, mau minum apa kamu?"
+
+    hide aang
     
     show mc bingung
     menu:
@@ -494,14 +604,18 @@ label keraton_yogya:
         "Air Dingin":
             show penjual senyum
             penjual "Terima kasih banyak mas, selamat bersenang-senang di Keraton nggih."
+            hide penjual
             jump joglo_keraton
         "Soft Drink":
             show penjual senyum
             penjual "Terima kasih banyak mas, selamat bersenang-senang di Keraton nggih."
+            hide penjual
             jump joglo_keraton        
         "Jamu{b}(?){/b}":
             show mc bingung
             mc "Jamu? Ini apa ya pak? Kok warnanya ada yang kuning dan coklat begini?"
+
+            hide mc
 
             show penjual senyum
             penjual "Woooo, mas ini punya bakat menemukan benda baguss mas. Biar saya jelaskan apa ini."
@@ -521,47 +635,67 @@ label keraton_yogya:
             Di Indonesia, kedua rempah ini tidak hanya bisa digunakan sebagai bumbu masakan, tetapi juga diolah menjadi minuman yang dikenal berkhasiat bagi kesehatan."
 
             penjual "Jadi gimana mas? Tertarik beli toh?"
+
+            hide penjual
             
             show mc senyum 2
             mc "Wahhhh, boleh deh pak saya coba satu, Aang, kalo boleh Jamu 1 ya"
 
+            hide mc
+
             show aang flat
             aang "Korban marketing dan iklan kamu ini Tok... Bapak ini emang jiwa pedagangnya mahir."
 
+            hide aang
+
             show aang senyum
             aang "Baiklah kalau begitu, Jamu nya 2 ya pak, saya sendiri juga mau nyoba."
+
+            hide aang
 
             show penjual senyum
             penjual "Siap mas e. Saya bungkus plastik nih khusus buat mas e."
 
             penjual "Terima kasih banyak mas, selamat bersenang-senang di Keraton nggih."
+
+            hide penjual
             
             jump joglo_keraton
 return
         
 label joglo_keraton:
-    scene bg joglo keraton yogya
+    scene bg joglo keraton
     with fade
 
     show mc senyum 2
     with dissolve
     mc "Luar biasa sekali. Bangunan-bangunan dan koleksi barang di sini memiliki sejarah yang begitu kaya"
 
+    hide mc
+
     show aang netral
     with dissolve
     aang "iya tuh, Kraton Yogyakarta merupakan pusat kebudayaan dan kekuasaan di masa lalu. Banyak cerita menarik yang tersembunyi di balik temboknya."
+
+    hide aang
 
     show mc netral
     with dissolve
     mc "Benar-benar menarik. Senang bisa melihat dan mempelajari sejarah dan budaya."
 
+    hide mc
+
     show aang netral
     with dissolve
     aang "Aku tinggal ke toilet dulu ya Tok, jangan pergi jauh-jauh."
 
+    hide aang
+
     show mc netral
     with dissolve
     mc "Baiklah, aku akan menunggu mu."
+
+    hide mc
 
     #disini Char Aang lari off screen
 
@@ -589,21 +723,31 @@ label joglo_keraton:
     mc "Wah! Menarik sekali, apakah ini alat musik khas Yogyakarta? Banyak sekali jenisnya, yang ini terlihat seperti mangkuk. 
         Yang ini seperti piano, hmmmm banyak sekali jumlahnya."
 
+    hide mc
+
     show kg netral
     with dissolve
     kg "Hai anak muda, apakah kamu tertarik dengan gamelan?"
+
+    hide kg
 
     show mc bingung
     with dissolve
     mc "Gamelan? Apa itu pak? Apakah semacam tarian?"
 
+    hide mc
+
     show kg senyum
     with dissolve
     kg "Hahaha, instrumen yang di depanmu ini disebut Gamelan, jenisnya memang bervariasi sekali"
 
+    hide kg
+
     show mc senyum 2
     with dissolve
     mc "Wah, jadi ini alat musik dari Yogyakarta…"
+
+    hide mc
 
     show kg netral
     with dissolve
@@ -613,6 +757,8 @@ label joglo_keraton:
     kg "Karawitan adalah seni gamelan dan seni suara yang bertangga nada slendro dan pelog. Karawitan berasal dari bahasa Jawa yaitu kata \"rawit\" yang berarti
         halus dan lembut Jadi karawitan ini berarti kelembutan perasaan yang terkandung dalam seni gamelan."
 
+    hide kg
+
     #disini Char Aang jalan on screen
 
     show aang netral
@@ -621,13 +767,19 @@ label joglo_keraton:
 
     aang "Oh, apakah gamelan gamelan ini menarik perhatianmu?"
 
+    hide aang
+
     show mc netral
     with dissolve
     mc "Iya Aang, bapak ini baru saja menjelaskan kepadaku apa itu Gamelan."
 
+    hide mc
+
     show aang senyum
     with dissolve
     aang "Hahaha, sugeng enjing pak, temanku dari luar Jogja nih. Tolong jelasin semua tentang gamelan"
+
+    hide aang
 
     show kg senyum
     with dissolve
@@ -643,6 +795,7 @@ label joglo_keraton:
                 $ jumlah_soal = 10
                 show kg senyum
                 kg "Baik, akan ku mulai penjelasannya, perhatikan ya."
+                hide kg
                 call gamelan1
                 jump after_gamelan
         "Penjelasan sedang, ilmu ini pasti akan berguna bagiku":
@@ -650,6 +803,7 @@ label joglo_keraton:
                 $ jumlah_soal = 15
                 show kg senyum
                 kg "Baik, akan ku mulai penjelasannya, perhatikan ya."
+                hide kg
                 call gamelan1
                 call gamelan2
                 jump after_gamelan
@@ -657,7 +811,8 @@ label joglo_keraton:
                 $ pilihan = 3
                 $ jumlah_soal = 20
                 show kg senyum
-                kg "Baik, akan ku mulai penjelasannya, perhatikan ya." 
+                kg "Baik, akan ku mulai penjelasannya, perhatikan ya."
+                hide kg
                 call gamelan1
                 call gamelan2
                 call gamelan3
@@ -789,14 +944,21 @@ label after_gamelan:
         show kg senyum
         kg "Bagaimana? Gamelan beragam dan menarik bukan?"
 
+        hide kg
+
         show mc senyum 2
         mc "Menarik sekali pak, ternyata gamelan ada berbagai jenis juga"
+
+        hide mc
 
         show aang bingung
         aang "Aduh, kepalaku agak sakit dengan overload informasi"
 
+        hide aang
+
         show kg senyum
         kg "Ahaha, bagaimana kalau kita menguji pengetahuanmu? Ayo bermain tebak tebakan bersamaku untuk mengasah ingatan kalian. Jangan sampai kalian kalah dengan otak pak tua ini."
+        hide kg
 
         if pilihan == 1:
                 call pertanyaan_gamelan_1
@@ -1640,177 +1802,154 @@ label hitung_skor_gamelan:
         show kg senyum
         kg "Hahaha, kamu ini memang cocok sekali menjadi penerus bangsa, saya senang sekali melihat generasi muda seperti kalian sangat bersemangat mempelajari Gamelan."
 
-<<<<<<< HEAD
+        hide kg
+
         show mc senyum 2
         mc "Terima kasih pak, senang sekali dapat mempelajari keragaman dan keunikan alat musik tradisional."
+
+        hide mc
 
         show aang netral
         aang " Betul itu pak, saya orang Jogja aja baru tau ada Gamelan sebanyak itu"
 
+        hide aang
+
         show kg netral
-=======
-        show mc
-        mc "Terima kasih pak, senang sekali dapat mempelajari keragaman dan keunikan alat musik tradisional."
-
-        show aang
-        aang " Betul itu pak, saya orang Jogja aja baru tau ada Gamelan sebanyak itu"
-
-        show kg
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
         kg "Sama-sama nak, senang bisa memberikan ilmu bermanfaat bagi kalian"
 
         kg "Melihat antusiasme kalian membuatku semakin semangat untuk acara malam ini"
 
-<<<<<<< HEAD
+        hide kg
+
         show aang netral
         aang "Memangnya malam ini ada apa pak?"
 
-        show kg netral
-=======
-        show aang
-        aang "Memangnya malam ini ada apa pak?"
+        hide aang
 
-        show kg
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
+        show kg netral
         kg "Kalian belum tahu kah? Malam ini akan ada pertunjukan Gamelan"
 
         kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
 
-        #image pop up 2 tiket
+        hide kg
+
+        #image pop up 2 tiket & sound effect maybe?
 
     elif jawab_benar > jumlah_soal / 2:
-<<<<<<< HEAD
         show kg senyum
         kg "Hebat sekali nak, saya senang sekali melihat generasi muda seperti kalian sangat bersemangat mempelajari Gamelan."
+
+        hide kg
 
         show mc netral
         mc "Terima kasih pak, senang sekali dapat mempelajari keragaman dan keunikan alat musik tradisional."
 
+        hide mc
+
         show aang netral
         aang "Betul itu pak, saya orang Jogja aja baru tau ada Gamelan sebanyak itu"
 
+        hide aang
+
         show kg netral
-=======
-        show kg
-        kg "Hebat sekali nak, saya senang sekali melihat generasi muda seperti kalian sangat bersemangat mempelajari Gamelan."
-
-        show mc
-        mc "Terima kasih pak, senang sekali dapat mempelajari keragaman dan keunikan alat musik tradisional."
-
-        show aang
-        aang "Betul itu pak, saya orang Jogja aja baru tau ada Gamelan sebanyak itu"
-
-        show kg
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
         kg "Sama-sama nak, senang bisa memberikan ilmu bermanfaat bagi kalian"
 
         kg "Melihat antusiasme kalian membuatku semakin semangat untuk acara malam ini"
 
-<<<<<<< HEAD
+        hide kg
+
         show aang netral
         aang "Memangnya malam ini ada apa pak?"
 
+        hide aang
+        
         show kg netral
-=======
-        show aang
-        aang "Memangnya malam ini ada apa pak?"
-
-        show kg
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
         kg "Kalian belum tahu kah? Malam ini akan ada pertunjukan Gamelan"
 
         kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
+
+        hide kg
 
         #image pop up 2 tiket
 
     else:
-<<<<<<< HEAD
         show mc flat
         mc "Aduh, banyak sekali jawabanku yang salah  tadi, sepertinya {color=#ff0000}aku harus lebih memperhatikan catatanku"
+
+        hide mc
 
         show aang senyum
         aang "Haha tidak apa apa Tok, kamu juga orang luar, bahkan aku yang orang Jogja pun tidak tau bahwa gamelan ada sebanyak itu"
 
+        hide aang
+
         show mc netral
         mc "Mulai sekarang aku akan semakin rajin mencari tahu tentang budaya dan alat tradisional, semua hal ini begitu menarik bagiku"
+
+        hide mc
 
         show kg senyum
         kg "Wah, antusias sekali dirimu nak, melihat kalian membuatku semakin semangat untuk acara malam ini"
 
+        hide kg
+
         show aang flat
         aang "Memangnya malam ini ada apa pak?"
 
+        hide aang
+
         show kg netral
-=======
-        show mc
-        mc "Aduh, banyak sekali jawabanku yang salah  tadi, sepertinya {color=#ff0000}aku harus lebih memperhatikan catatanku"
-
-        show aang
-        aang "Haha tidak apa apa Tok, kamu juga orang luar, bahkan aku yang orang Jogja pun tidak tau bahwa gamelan ada sebanyak itu"
-
-        show mc
-        mc "Mulai sekarang aku akan semakin rajin mencari tahu tentang budaya dan alat tradisional, semua hal ini begitu menarik bagiku"
-
-        show kg
-        kg "Wah, antusias sekali dirimu nak, melihat kalian membuatku semakin semangat untuk acara malam ini"
-
-        show aang
-        aang "Memangnya malam ini ada apa pak?"
-
-        show kg
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
         kg "Kalian belum tahu kah? Malam ini akan ada pertunjukan Gamelan"
 
         kg "Sebagai penghargaan, kalian akan ku berikan tiket untuk acara pertunjukannya"
 
+        hide kg
+
         #image pop up 2 tiket
     
-<<<<<<< HEAD
     show mc senyum 2
     mc "Waaaah, tiket gratis, terima kasih banyak bapak, kita pasti akan datang malam ini."
 
-    show aang senyum
-=======
-    show mc senyum
-    mc "Waaaah, tiket gratis, terima kasih banyak bapak, kita pasti akan datang malam ini."
+    hide mc
 
-    show aang
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
+    show aang senyum
     aang "Waw, sudah berapa tahun aku tidak melihat pertunjukan Gamelan"
+
+    hide aang
 
     show kg senyum
     kg "Hahaha, jangan lupa menyemangati kakek tua ini di kursi paling depan, akan ku nantikan kehadiran kalian."
 
-<<<<<<< HEAD
+    hide kg
+
     show mc netral
-=======
-    show mc
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
     mc "Tentu saja pak, sekali lagi terima kasih, kita pamit dulu ya"
+
+    hide mc
 
     show kg senyum
     kg "Sama-sama, hati-hati di jalan anak muda."
 
     kg "(melihat penerus bangsa yang begitu bersemangat meyakinkanku dengan masa depan)"
 
-    show bg depan_keraton_yogyakarta with fade
+    hide kg
+
+    show bg keraton yogya
+    with fade
     
-<<<<<<< HEAD
     show aang netral
     aang "Sepertinya tidak sia sia kita pergi ke Keraton, apalagi setelah bertemu bapak baik itu."
 
-    show mc senyum 2
-=======
-    show aang 
-    aang "Sepertinya tidak sia sia kita pergi ke Keraton, apalagi setelah bertemu bapak baik itu."
+    hide aang
 
-    show mc senyum
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
+    show mc senyum 2
     mc "Wah, semua tempat ini sungguh luar biasa!"
 
     mc "Aku tidak bisa membayangkan betapa kaya akan sejarah dan budaya Jogja."
 
     mc "Aku sangat beruntung bisa melihatnya dengan mata kepala sendiri."
+
+    hide mc
 
     show aang senyum
     aang "Aku senang kamu merasa seperti itu."
@@ -1829,6 +1968,8 @@ label alun_alun:
     with dissolve
     aang "Perjalanannya sedikit jauh, tapi kita akan melewati banyak tempat bersejarah kok jadi perjalanannya tidak akan membosankan"
 
+    hide aang
+
     show mc netral
     with dissolve
     mc "Baiklah Aang, waktu kita juga masih banyak, pertunjukan gamelannya mulai cukup malam."
@@ -1836,6 +1977,8 @@ label alun_alun:
     show mc kaget
     with dissolve
     mc "Wah, bangunan apa itu? Aang, lihat betapa megahnya bangunannya."
+
+    hide mc
     
     #disini image pop up Benteng Vredeburg
 
@@ -1846,9 +1989,13 @@ label alun_alun:
     aang    "Benteng ini memiliki peran penting dalam sejarah Yogyakarta. Selama masa penjajahan Belanda, Benteng Vredeburg menjadi pusat administrasi militer 
             dan politik di wilayah ini."
 
+    hide aang
+
     show mc senyum 2
     with dissolve
     mc "Wah, benarkah? Jadi ini adalah salah satu peninggalan dari zaman kolonial Belanda?"
+
+    hide mc
 
     show aang netral
     with dissolve
@@ -1865,9 +2012,13 @@ label alun_alun:
             benteng ini selesai dibangun dan diberi nama Rustenburgh, kemudian diresmikan sebagai Benteng Vredeburg oleh Gubernur Johannes Sioeberg. 
             Setelah mengalami gempa pada tahun 1867, benteng ini direnovasi dan berganti nama menjadi Benteng Vredeburg, yang artinya \"perdamaian\""
 
+    hide aang
+
     show mc kaget
     with dissolve
     mc "Wow, betapa menariknya. Terima kasih atas penjelasannya, Aang. Ternyata ada begitu banyak cerita di balik bangunan ini."
+
+    hide mc
 
     show aang netral
     with dissolve
@@ -1875,9 +2026,13 @@ label alun_alun:
 
     aang "Lain kali akan ku bawa kamu kesana, aku khawatir waktu kita tidak akan cukup apabila kita kesana sekarang."
 
+    hide aang
+
     show mc netral
     with dissolve
     mc "Janji ya Aang?"
+
+    hide mc
     
     show aang senyum
     with dissolve
@@ -1898,41 +2053,61 @@ label jalanan_cuy:
     show mc netral
     mc "Bangunan dan jalan di Jogja sangat berbeda dengan desaku, jadi begini rasanya tinggal di kota besar."
 
+    hide mc
+
     show aang netral
     with dissolve
     aang "Jogja belum ada-apanya kalau dibandingkan dengan kota besar lainnya seperti Surabaya, Bali, dan Jakarta Tok. Kapan-kapan kamu harus kesana."
 
+    hide aang
+
     show mc senyum
     with dissolve
     aang "Haha, tentu saja Aang, aku juga berencana mengunjungi berbagai kota setelah Jogja"
+
+    hide mc
     
     show mc kaget
     with dissolve
     mc "Wah? Benarkah? Ayo kita segera kesana"
 
+    hide mc
+
     show aang senyum
     with dissolve
     aang "Senang mendengarnya, jangan lupa kirim foto pemandangan ketika kamu bepergian ya"
+
+    hide aang
 
     show mc netral
     with dissolve
     mc "Tentu saja Aang, akan aku belikan oleh-oleh juga."
 
+    hide mc
+
     show aang senyum
     with dissolve
     aang "Hahaha"
+
+    hide aang
 
     show mc kaget
     with dissolve
     mc "Wah apa itu Aang? Apakah itu masjid? Aku tidak dapat melihatnya secara jelas dari jarak sejauh ini."
 
+    hide mc
+
     show aang senyum
     with dissolve
     aang "Oh itu. Apakah kau tertarik untuk mengunjunginya Tok?"
 
+    hide aang
+
     show mc netral
     with dissolve
     mc "Sungguh menarik perhatian, apakah kita bisa kesana sebentar Aang?"
+
+    hide mc
 
     show aang senyum
     with dissolve
@@ -1946,11 +2121,15 @@ label masjid_gede_kauman:
     with dissolve
     mc "Ini dia Tok, Masjid Gedhe Kauman."
 
+    hide aang
+
     #image pop up Masjid Gedhe Kauman
 
     show mc kaget
     with dissolve
     mc "Wah? Mengagumkan sekali, ini benar masjid kah?"
+
+    hide mc
 
     show aang senyum
     with dissolve
@@ -1966,23 +2145,33 @@ label dalam_masjid_gede_kauman:
     with dissolve
     mc "Terima kasih sudah membawaku kesini Aang, di desaku masjid-masjid jauh lebih kecil dari sini"
 
+    hide mc
+
     show aang netral
     with dissolve
     aang "Tidak masalah Tok, aku juga bersyukur bisa melihat masjid semegah ini setelah sekian lama"
 
     aang "Melihat masjid sebesar ini membuatku penasaran terhadap sejarahnya"
 
+    hide aang
+
     show pu
     with dissolve
     pu "Maafkan aku tapi tadi aku mendengar masnya penasaran terhadap sejarah masjid ini. Apakah kau ingin mengetahui sejarah tempat ini nak?"
+
+    hide pu
 
     show aang
     with dissolve
     aang "Oh, iya benar pak"
 
+    hide aang
+
     show mc netral
     with dissolve
     mc "Apakah bapak familiar dengan masjid ini?"
+
+    hide mc
 
     show pu
     with dissolve
@@ -1996,13 +2185,19 @@ label dalam_masjid_gede_kauman:
 
     pu "Meskipun mengalami perubahan seiring berjalannya waktu, keunikan dan keanggunan Masjid Gedhe Kauman tetap terjaga, seperti pemasangan batu kali putih tanpa semen dan penggunaan kayu jati utuh yang berusia lebih dari 200 tahun."
 
+    hide pu
+
     show mc netral
     with dissolve
     mc "Aku tidak pernah menyangka sebuah masjid memiliki sejarah yang begitu berarti"
 
+    hide mc
+
     show aang netral
     with dissolve
     aang "Oh ya pak, tempat ini terlihat besar sekali, sepertinya tidak hanya untuk sholat ya?"
+
+    hide aang
 
     show pu
     with dissolve
@@ -2014,15 +2209,21 @@ label dalam_masjid_gede_kauman:
     pu "Regol atau gapura yang berbentuk Semar Tinandu adalah pintu gerbang utama kompleks masjid, memperkaya keberadaan serta keunikan tempat ibadah yang sarat akan nilai sejarah 
         dan budaya."
 
+    hide pu
+
     show aang senyum
     with dissolve
     aang "Tidak hanya untuk ibadah, tetapi juga mengandung nilai sejarah dan budaya"
 
     aang "senang bisa mempelajari nilai sejarah tempat seperti ini, senang juga bisa mengetahui bahwa masjid ini masih bermanfaat untuk banyak orang."
 
+    hide aang
+
     show mc netral
     with dissolve
     mc "Bapak tadi bilang bahwa bapak adalah panitia ramadhan bukan? Bagaimana kondisi masjid ini ketika ramadhan pak?"
+
+    hide mc
 
     show pu
     with dissolve
@@ -2030,9 +2231,13 @@ label dalam_masjid_gede_kauman:
 
     pu "bahkan terdapat hari khusus dengan menu spesial. Setiap hari Kamis kami panitia khusus menyembelih kambing dan menyediakan Gulai Kambing sebagai menu buka puasa."
 
+    hide pu
+
     show mc netral
     with dissolve
     mc "Masjid Gedhe Kauman ini memang merupakan wisata religi dari nilai sejarah serta kemegahan yang unik dari arsitektur masjid tertua di Jogja ya."
+
+    hide mc
 
     show pu
     with dissolve
@@ -2050,6 +2255,8 @@ label alun_alun_kidul_sore:
 
     aang "Alun-Alun Kidul selalu menjadi tujuan favorit para wisatawan. Mari kita jelajahi dan nikmati suasana di sini."
 
+    hide aang
+
     show mc senyum
     with dissolve
     mc "Waaah, mengagumkan sekali. Beringin kembar di tengah lapangan berdiri dengan megah"
@@ -2062,6 +2269,8 @@ label alun_alun_kidul_sore:
 
     #disini image pop up mobil sepeda kelap kelip
 
+    hide mc
+
     show aang netral
     with dissolve
     aang "Banyak orang yang menyewa mobil sepeda itu untuk menikmati suasana di sekitar alun-alun"
@@ -2069,6 +2278,8 @@ label alun_alun_kidul_sore:
     show aang senyum
     with dissolve
     aang "kalo kita sewa, kita harus menggowes pedal untuk menjalankan mobil sepeda jadi terasa seperti olahraga malam"
+
+    hide aang
 
     show mc netral
     with dissolve
@@ -2085,6 +2296,8 @@ label alun_alun_kidul_sore:
     show mc bingung
     with dissolve
     mc "Beberapa orang juga sedang berjalan sambil menutup matanya, mereka sedang apa ya?"
+
+    hide mc
 
     show aang netral
     with dissolve
@@ -2106,21 +2319,31 @@ label alun_alun_kidul_sore:
 
     aang "kau terlihat bersih seperti orang yang berhati bersih dan lurus Tok, maukah kamu mencobanya?"
 
+    hide aang
+
     show mc bingung
     with dissolve
-    mc "Eh… Apa? Apakah tidak bahaya apabila aku berjalan sambil menutup mata?" 
+    mc "Eh… Apa? Apakah tidak bahaya apabila aku berjalan sambil menutup mata?"
+
+    hide mc
 
     show aang senyum
     with dissolve
     aang "Haha tidak apa apa, kau akan ku jaga agar tidak menabrak siapa siapa, tidak perlu khawatir."
 
+    hide aang
+
     show mc flat
     with dissolve
     mc "Tidak ah, aku tidak percaya dengan mitos seperti itu"
 
+    hide mc
+
     show aang netral
     with dissolve
     aang "kita tidak perlu mempercayai mitos, cukup mencobanya agar tau saja"
+
+    hide aang
 
     #ngga tau mau diisi apa, kur masi ngga jelas (hal 23 script). tapi aku mau lanjut dialog selanjutnya
 
@@ -2132,31 +2355,45 @@ label alun_alun_kidul_sore:
 
     mc "Ahaha, tidak dulu Aang, aku sedikit lapar."
 
+    hide mc
+
     show aang senyum
     with dissolve
     aang "Haha, baiklah, sepertinya kita harus pergi cari makan dulu."
 
     "time passes"
 
+    hide aang
+
     show mc netral
     with dissolve
     mc "Sudah jam segini, ayo kita berangkat ke pertunjukan Gamelan."
+
+    hide mc
 
     show aang senyum
     with dissolve
     aang "Masih jam segini Tok, santai aja dulu"
 
+    hide aang
+
     show mc netral
     with dissolve
     mc "Aku ingin mengambil kursi depan agar aku bisa melihat bapak tadi."
 
+    hide mc
+
     show aang netral
     with dissolve
-    aang "Oh, benar juga, kita belum tahu nama bapak itu sampai sekarang" 
+    aang "Oh, benar juga, kita belum tahu nama bapak itu sampai sekarang"
+
+    hide aang
 
     show mc bingung
     with dissolve
     mc "Benar juga, nanti harus kita tanyakan kepadanya"
+
+    hide mc
 
     show aang netral
     with dissolve
@@ -2170,6 +2407,8 @@ label tempat_duduk_pertunjukan_terang:
     with dissolve
     mc "Jadi ini tempat pertunjukannya, menarik juga"
 
+    hide mc
+
     show aang senyum
     with dissolve
     aang "Hehe kursi depan masih kosong,ayo ambil tempat"
@@ -2182,9 +2421,13 @@ label tempat_duduk_pertunjukan_terang:
     with dissolve
     aang "ASSSS… taghfirullah aladzim, suara apa itu?"
 
+    hide aang
+
     show mc kaget
     with dissolve
     mc "Suara itu terdengar dari panggung, sepertinya ada yang jatuh."
+
+    hide mc
 
     show pb kaget
     with dissolve
@@ -2192,13 +2435,19 @@ label tempat_duduk_pertunjukan_terang:
 
     pb "Kalau aku tidak bisa memperbaikinya, acara ini akan kacau, atau lebih buruk… DIBATALKAN!"
 
+    hide pb
+
     show aang kaget
     with dissolve
     aang "Apa??? Dibatalkan??? Tok, apakah kau mendengar ini? Ada kemungkinan bahwa pertunjukannya dibatalkan"
 
+    hide aang
+
     show mc kaget
     with dissolve
     mc "Aku tidak bisa mempercayai ini, padahal aku sudah menantikan penampilan bapak gamelan."
+
+    hide mc
 
     show aang marah
     with dissolve
@@ -2212,13 +2461,19 @@ label panggung:
     with dissolve
     aang "Permisi mas, saya tadi tidak sengaja mendengar bahwa ada acara ini akan dibatalkan, apakah benar?"
 
+    hide aang
+
     show pb panik
     with dissolve
     pb "A-A-Apaa??? Gawat, beritanya sudah sampai pada publik, aku akan dipecat aku akan dipecat!!!"
 
+    hide pb
+
     show mc flat
     with dissolve
     mc "T-tenang saja mas, baru kami saja yang mendengar, ada masalah apa dengan pertunjukannya? Mengapa akan dibatalkan?"
+
+    hide mc
 
     show pb panik
     with dissolve
@@ -2234,21 +2489,31 @@ label panggung:
 
     pb "Aku akan dipecat, aku seharusnya tidak mendaftar menjadi panitia, aku bodoh sekali"
 
+    hide pb
+
     show aang sedih
     with dissolve
     aang "Hey, hey, tenang saja mas… Permasalahannya di mana? Apa yang kacau?"
+
+    hide aang
 
     show pb sedih
     with dissolve
     pb "Aku tidak tahu tempat masing-masing gamelan di panggung, aku harus dapat mengatur masing-masing gamelan di posisinya yang tepat"
 
+    hide pb
+
     show aang sedih
     with dissolve
     aang "Apakah… kamu bisa berusaha mengingatnya kembali?"
 
+    hide aang
+
     show pb sedih
     with dissolve
     pb "A-aku sedikit ingat, jenis suara apa berasal darimana, bentuk, dan nama dari beberapa gamelan, tapi aku tidak ingat semuanya."
+
+    hide pb
 
     show aang flat
     with dissolve
@@ -2277,9 +2542,12 @@ label bantu_persiapan_gamelan:
                                         $ click += 1
                                         show aang flat
                                         aang "Apakah kamu yakin Tok? Kita sudah jauh jauh kesini untuk menyaksikan pertunjukan Gamelan"
+
+                                        hide aang
                                         
                                         show mc flat
                                         mc "(Aang benar, aku kesini untuk menyaksikan pertunjukan gamelan)"
+                                        hide mc
                 elif click == 1:
                         menu:
                                 "Kamu Memilih untuk:"
@@ -2290,8 +2558,11 @@ label bantu_persiapan_gamelan:
                                         show aang flat
                                         aang "Kakek sudah memberi ilmu gamelan kepada kita, mas mas ini juga sedang sangat kebingungan, sebaiknya kita membantunya"
 
+                                        hide aang
+
                                         show mc flat
                                         mc "(Semua kebaikkan pasti akan dibalas, aku juga tidak ingin melihat penampilan bapak gamelan)"
+                                        hide mc
                 elif click == 2:
                         menu:
                                 "Kamu Memilih untuk:"
@@ -2302,8 +2573,11 @@ label bantu_persiapan_gamelan:
                                         show aang flat
                                         aang "Apakah kamu yakin Tok? Aku yakin {color=#ff0000}pengalaman yang kita dapatkan akan berubah apabila kita tidak membantu"
 
+                                        hide aang
+
                                         show mc flat
                                         mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
+                                        hide mc
                 elif click == 3:
                         show aang flat
                         aang "Baiklah Tok, lalu sekarang kita mau kemana?"
@@ -2313,13 +2587,10 @@ label bantu_persiapan_gamelan:
                                         jump bantu_gamelan
                                 "Akhhh Malassss":
                                         $ click += 1
-<<<<<<< HEAD
                                         show mc flat
-=======
-                                        show mc
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                                         mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
                                 "{color=#ff0000}Aku mengantuk, aku ingin istirahat":
+                                    hide mc
                                         jump balik_hotel
                 elif click == 4:
                     menu:
@@ -2327,11 +2598,7 @@ label bantu_persiapan_gamelan:
                                 "Membantu Persiapan Gamelan":
                                         jump bantu_gamelan
                                 "Akhhh Malassss":
-<<<<<<< HEAD
                                         show mc flat
-=======
-                                        show mc
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                                         mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
                                 "{color=#ff0000}Aku mengantuk, aku ingin istirahat":
                                         jump balik_hotel  
@@ -2342,11 +2609,17 @@ label bantu_gamelan:
 
     aang "Jangan khawatir mas, kami akan membantumu, kami lumayan tahu juga tentang gamelan."
 
+    hide aang
+
     show pb senyum_lebar
     pb "Be-benarkah? Kalian akan membantuku?"
 
+    hide pb
+
     show mc senyum 2
     mc "Tentu saja kami akan membantumu mas, kami juga sangat bersemangat ingin menyaksikan pertunjukan gamelan."
+
+    hide mc
 
     show pb senyum_lebar
     pb "Terima kasih banyak, baiklah, ayo kita mulai."    
@@ -2368,7 +2641,6 @@ label bantu_gamelan:
                     "Gambang":
                         $ ulang_pertanyaan += 1
                     "Slenthem":
-<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
@@ -2379,18 +2651,6 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
                         show aang bingung
-=======
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Gong":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Bonang":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Saron":
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
             
             elif ulang_pertanyaan == 1:
@@ -2399,7 +2659,6 @@ label bantu_gamelan:
                 menu:
                     pb "apa nama dari gamelan ini?"
                     "Saron":
-<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kendhang":
@@ -2407,24 +2666,11 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Slenthem":
                         show aang bingung
-=======
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Kendhang":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Slenthem":
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
                         $ ulang_pertanyaan += 1
                     "Bonang":
-<<<<<<< HEAD
                         show aang bingung
-=======
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
             elif ulang_pertanyaan == 2:
@@ -2436,7 +2682,6 @@ label bantu_gamelan:
                     "Bonang":
                         $ ulang_pertanyaan += 1
                     "Saron":
-<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gambang":
@@ -2447,18 +2692,6 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
                         show aang bingung
-=======
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Gambang":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Slenthem":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Gong":
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
             elif ulang_pertanyaan == 3:
@@ -2469,7 +2702,6 @@ label bantu_gamelan:
                 menu:
                     pb "gamelan apa ini?"
                     "Slenthem":
-<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
@@ -2480,18 +2712,6 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
                         show aang bingung
-=======
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Gong":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Bonang":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Saron":
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kendhang":
                         $ ulang_pertanyaan += 1
@@ -2507,16 +2727,11 @@ label bantu_gamelan:
                 menu:
                     pb "gamelan apa ini?"
                     "Bonang":
-<<<<<<< HEAD
                         show aang bingung
-=======
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kenong":
                         $ ulang_pertanyaan += 1
                     "Kendhang":
-<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Slenthem":
@@ -2524,15 +2739,6 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
                         show aang bingung
-=======
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Slenthem":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Saron":
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
             
             elif ulang_pertanyaan == 1:
@@ -2541,32 +2747,18 @@ label bantu_gamelan:
                 menu:
                     pb "yang mana gamelan rebab?"
                     "Slenthem":
-<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
                         show aang bingung
-=======
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Saron":
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Rebab":
                         $ ulang_pertanyaan += 1
                     "Kenong":
-<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kendhang":
                         show aang bingung
-=======
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Kendhang":
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
             elif ulang_pertanyaan == 2:
@@ -2575,16 +2767,11 @@ label bantu_gamelan:
                 menu:
                     pb "apa nama dari gamelan ini?"
                     "Bonang":
-<<<<<<< HEAD
                         show aang bingung
-=======
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
                         $ ulang_pertanyaan += 1
                     "Gambang":
-<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Rebab":
@@ -2592,15 +2779,6 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
                         show aang bingung
-=======
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Rebab":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Gong":
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
     elif pilihan == 3:
@@ -2612,16 +2790,11 @@ label bantu_gamelan:
                 menu:
                     pb "apakah kau tau gamelan yang mana Slenthem?"
                     "Kendhang":
-<<<<<<< HEAD
                         show aang bingung
-=======
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Slenthem":
                         $ ulang_pertanyaan += 1
                     "Saron":
-<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gender":
@@ -2629,15 +2802,6 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Bonang":
                         show aang bingung
-=======
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Gender":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Bonang":
-                        show aang kebingungan
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
             
             elif ulang_pertanyaan == 1:
@@ -2650,7 +2814,6 @@ label bantu_gamelan:
                     "Gender":
                         $ ulang_pertanyaan += 1
                     "Kenong":
-<<<<<<< HEAD
                         show aang bingung
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kempul":
@@ -2664,21 +2827,6 @@ label bantu_gamelan:
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
     show pb senyum
-=======
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Kempul":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Rebab":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-                    "Gong":
-                        show aang kebingungan
-                        aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
-
-    show pb senyum lebar
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
     with dissolve
     pb "Dengan begini, pertunjukan dapat berjalan dengan lancar!"
 
@@ -2686,37 +2834,56 @@ label bantu_gamelan:
 
     pb "Senang sekali dapat melihat panggung yang sempurna"
 
+    hide pb
+
     show aang flat
     with dissolve
     aang "Hadeuh, melelahkan juga kerjaannya, tetapi aku senang kita bisa membantu"
+
+    hide aang
 
     show mc flat
     with dissolve
     mc "Tidak masalah, kami senang bisa membantu."
 
+    hide mc
+
     show pb senyum
     with dissolve
     pb "Aku belajar banyak hal baru hari ini, berkat bantuan kalian semuanya berjalan lancar"
+
+    hide pb
+
 
     show aang flat
     with dissolve
     aang "Itu bagus sekali. Tetapi ingatlah bahwa belajar adalah proses yang terus menerus. Jadi jangan ragu untuk terus mencoba hal-hal baru dan terus berkembang."
 
+    hide aang
+
     show mc senyum 1
     with dissolve
     mc "Haha, aku tidak menyangka kamu bisa memberi pencerahan seperti itu Aang."
+
+    hide mc
 
     show aang senyum
     with dissolve
     aang "Hehe, sekali-kali gapapa lah Tok."
 
+    hide aang
+
     show mc flat
     with dissolve
     mc "Semoga sukses untuk pertunjukan gamelan nanti. Jangan ragu untuk meminta bantuan jika kalian membutuhkannya lagi."
 
+    hide mc
+
     show pb senyum
     with dissolve
     pb "Tentu saja, aku akan terus berlatih dan belajar! Terima kasih sekali lagi atas bantuan dan dorongan kalian. Selamat menikmati pertunjukan"
+
+    hide pb
 
     show aang flat
     with dissolve
@@ -2726,18 +2893,26 @@ label tempat_duduk_gelap:
     show mc flat
     with dissolve
     mc "Membantu pertunjukan tadi membuatku semakin semangat menonton pertunjukan"
+
+    hide mc
     
     show aang netral
     with dissolve
     aang "Betul sekali, melihat hasil dari kerja keras dan jerih payah sendiri terasa jauh lebih memuaskan."
 
+    hide aang
+
     show mc kaget
     with dissolve
     mc "Oh, aku melihat bapak tadi siang di panggung, dia memainkan bonang"
 
+    hide mc
+
     show aang netral
     with dissolve
     aang "Aku melihatnya, sepertinya pertunjukannya sudah akan dimulai"
+
+    hide aang
 
     #disini (pertunjukan mulai, terserah mau suara tok ata full cutscene orang main gamelan)
 
@@ -2752,17 +2927,17 @@ label tempat_duduk_gelap:
     mc "Lihat itu, bapak gamelan sedang turun panggung, mari kita sambut"
 
 label panggung2:
-<<<<<<< HEAD
     show mc senyum 2
-=======
-    show mc senyum
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
     with dissolve
     mc "Bapak, pertunjukan tadi sungguh luar biasa. Mereka benar-benar memainkan gamelan dengan begitu indah."
+
+    hide mc
 
     show aang senyum
     with dissolve
     aang "Iya, benar sekali. Kami sangat menikmati pertunjukan tadi. Cara bapak memainkan gamelan tadi sangat indah!"
+
+    hide aang
 
     show kg senyum
     with dissolve
@@ -2770,17 +2945,25 @@ label panggung2:
 
     kg "Aku dengar kalian juga membantu persiapan pertunjukan ini tadi."
 
+    hide kg
+
     show aang senyum
     with dissolve
     aang "benar pak, itu semua berkat ilmu gamelan yang sudah bapak berikan kepada kami tadi siang"
+
+    hide aang
 
     show mc senyum 2
     with dissolve
     mc "Apakah kami boleh foto bersama bapak? Kami ingin mengenang momen ini."
 
+    hide mc
+
     show kg senyum
     with dissolve
     kg "Haha, dengan senang hati!"
+
+    hide kg
 
     #disini Image pop up: Foto Totok, Aang, dan Bapak Gamelan dengan background panggung penuh gamelan
 
@@ -2788,13 +2971,19 @@ label panggung2:
     with dissolve
     kg "Jangan lupa kirimkan foto itu kepadaku juga ya nak. Senang bisa bertemu dengan pemuda antusias dan baik hati seperti kalian"
 
+    hide kg
+
     show mc senyum
     with dissolve
     mc "Tentu saja pak, boleh minta nomor telepon dan nama bapak siapa ya kalau boleh tau?"
 
+    hide mc
+
     show kg netral
     with dissolve
     kg "Oh ya kita belum saling mengenal, namaku ada Sutrisno Haji Tifa"
+
+    hide kg
 
     show aang netral
     with dissolve
@@ -2802,9 +2991,13 @@ label panggung2:
 
     aang "Oh aku juga belum tahu nama lengkapmu Tok, apa nama lengkapmu?"
 
+    hide aang
+
     show mc senyum 1
     with dissolve
     mc "Haha, benar juga. Nama lengkapku Totok Hestamma."
+
+    hide mc
 
     show kg netral
     with dissolve
@@ -2819,6 +3012,8 @@ label panggung2:
     with dissolve
     mc "Terima kasih pak Sutrisno, kami tidak akan melupakan pengalaman ini."
 
+    hide mc
+
     show kg senyum
     with dissolve
     su "Sampai jumpa anak muda. Semoga Allah memberkati jalan kalian."
@@ -2828,13 +3023,11 @@ label panggung2:
     su "Hestamma… Rasanya aku pernah mendengar nama itu"
 
 label tempat_duduk_pertunjukan_terang2:
-<<<<<<< HEAD
     show aang netral
-=======
-    show aang
->>>>>>> 3f18c89fe8939e5da02756c5c1db7dabf2f5d752
     with dissolve
     aang "ngomong-ngomong sudah jam berapa ini? Ternyata sudah cukup larut. Mungkin sudah waktunya kamu kembali ke hotel untuk istirahat Tok"
+
+    hide aang
 
     show mc netral
     with dissolve
@@ -2877,8 +3070,12 @@ label balik_hotel:
 
         aang "Tetap sabar dan tabah, semoga mas dimudahkan Allah dalam menghadapi musibah ini."
 
+        hide aang
+
         show pb panik
         pb "Ba-baiklah, mohon maaf sebesar besarnya… aduuuh bagaimana ini….. tamatlah aku!!!!"
+
+        hide pb
 
         #nanti disini show bg depan hotel tapi malam hari
 

@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 34: end of line expected.
-    add "mc senyum 2.png":
-                         ^
+File "game/script.rpy", line 1681: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Tue May 21 22:55:27 2024
+Wed May 22 09:14:18 2024
