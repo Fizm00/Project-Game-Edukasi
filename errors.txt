@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1681: Indentation mismatch.
+File "game/script.rpy", line 34: the action keyword argument was not given a value.
+    action jump("after_gamelan")
+           ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Wed May 22 09:14:18 2024
+Sun May 26 23:21:17 2024

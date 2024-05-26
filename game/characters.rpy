@@ -67,4 +67,15 @@ image penjual netral:
 image penjual senyum:
     "penjual senyum.png"
     zoom 0.75
-
+image pb netral:
+    "pb netral.png"
+    zoom 0.75
+image pb panik:
+    "pb panik.png"
+    zoom 0.75
+image pb senyum:
+    "pb senyum.png"
+    zoom 0.75
+image pu:
+    "pu.png"
+    zoom 0.75

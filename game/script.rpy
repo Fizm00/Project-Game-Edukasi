@@ -22,14 +22,59 @@ init python:
         elif randomsalah == 3:
             renpy.say("Kakek Gamelan", "Tidak apa apa, kesalahan adalah bagian dari perjalanan,")
 
+init:
+    transform customzoom:
+        zoom 0.3
+
 #Define picture button
-screen bonang1:
+screen opsi_pertama():
     imagebutton:
+        idle "gelap_bonang.png"
+        hover "bonang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.7
+        at customzoom
+        action Jump("after_gamelan")
+
+    imagebutton:
+        idle "gelap_bonang.png"
+        hover "bonang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.3
+        at customzoom
+
+    imagebutton:
+        idle "gelap_bonang.png"
+        hover "bonang.png"
         xanchor 0.5
         yanchor 0.5
         xpos 0.5
         ypos 0.5
-        idle "bonang.png"
+        at customzoom
+
+    imagebutton:
+        idle "gelap_bonang.png"
+        hover "bonang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.7
+        at customzoom
+
+    imagebutton:
+        idle "gelap_bonang.png"
+        hover "bonang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.3
+        at customzoom
+
+#Define picture
 
 # Define methods
 init python:
@@ -241,6 +286,7 @@ label stasiun_tugu:
     show aang netral
     with dissolve
     aang "Baiklah, mari ikut denganku, akan ku boncengi kamu."
+    hide aang netral
 
 label luar_stasiun_tugu:
     scene bg stasiun tugu luar
@@ -293,6 +339,7 @@ label luar_stasiun_tugu:
     aang "Haha, bersyukurlah kamu menemukan hpku"
 
     aang "Ayo berangkat menuju hotel"
+    hide aang
 
 label depan_hotel:
     scene bg depan hotel
@@ -476,7 +523,7 @@ label keraton_yogya:
     penjual "Kesultanan Yogyakarta, bersama dengan Kesultanan Surakarta, adalah dua wilayah yang merupakan pecahan dari Kesultanan Mataram pada abad ke-18. 
             Pemecahan ini terjadi setelah terjadinya Perang Suksesi Jawa antara para pewaris tahta Kesultanan Mataram."
 
-    penjual "Perjanjian Giyanti yang ditandatangani pada tanggal 13 Februari 1755  ini menyatakan bahwa Kerajaan Mataram dibagi menjadi dua yaitu 
+    penjual "Perjanjian Giyanti yang ditandatangani pada tanggal 13 Februari 1755 ini menyatakan bahwa Kerajaan Mataram dibagi menjadi dua yaitu 
             Kasunanan Surakarta Hadiningrat dan Kasultanan Ngayogyakarta Hadiningrat."
 
     penjual "Surakarta dipimpin oleh Susuhunan Paku Buwono III, sementara Ngayogyakarta atau sekarang Yogyakarta dipimpin oleh Pangeran Mangkubumi 
@@ -942,21 +989,25 @@ return
 
 label after_gamelan:
         show kg senyum
+        with dissolve
         kg "Bagaimana? Gamelan beragam dan menarik bukan?"
 
         hide kg
 
         show mc senyum 2
+        with dissolve
         mc "Menarik sekali pak, ternyata gamelan ada berbagai jenis juga"
 
         hide mc
 
-        show aang bingung
+        show aang netral
+        with dissolve
         aang "Aduh, kepalaku agak sakit dengan overload informasi"
 
         hide aang
 
         show kg senyum
+        with dissolve
         kg "Ahaha, bagaimana kalau kita menguji pengetahuanmu? Ayo bermain tebak tebakan bersamaku untuk mengasah ingatan kalian. Jangan sampai kalian kalah dengan otak pak tua ini."
         hide kg
 
@@ -1006,29 +1057,11 @@ label pertanyaan_gamelan_1:
         #pertanyaan 2
         kg "Gamelan ini biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator,"
 
-        menu:
-            kg "manakah gamelan yang saya deskripsikan?"
+        kg "manakah gamelan yang saya deskripsikan?"
             #opsi dalam bentuk gambar
-            "Bonang":
-                python:
-                    jawaban_salah()
-                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
-            "Saron":
-                $ jawab_benar += 1
-                python:
-                    jawaban_benar()
-            "Gambang":
-                python:
-                    jawaban_salah()
-                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
-            "Slenthem":
-                python:
-                    jawaban_salah()
-                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
-            "Gong":
-                python:
-                    jawaban_salah()
-                kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+        call screen opsi_pertama
+
+        
 
         #pertanyaan 3
         #tampilin gambar gambang
@@ -2591,7 +2624,7 @@ label bantu_persiapan_gamelan:
                                         mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
                                 "{color=#ff0000}Aku mengantuk, aku ingin istirahat":
                                     hide mc
-                                        jump balik_hotel
+                                    jump balik_hotel
                 elif click == 4:
                     menu:
                                 "Kamu Memilih untuk:"
@@ -2854,7 +2887,6 @@ label bantu_gamelan:
 
     hide pb
 
-
     show aang flat
     with dissolve
     aang "Itu bagus sekali. Tetapi ingatlah bahwa belajar adalah proses yang terus menerus. Jadi jangan ragu untuk terus mencoba hal-hal baru dan terus berkembang."
@@ -2889,7 +2921,9 @@ label bantu_gamelan:
     with dissolve
     aang "Ayo kita kembali ke kursi kita Tok, kita saksikan pertunjukan gamelan spesial ini"
 
-label tempat_duduk_gelap:
+label tempat_duduk_terang:
+    scene bg tempat duduk pertunjukan terang
+    with fade
     show mc flat
     with dissolve
     mc "Membantu pertunjukan tadi membuatku semakin semangat menonton pertunjukan"
@@ -2902,31 +2936,171 @@ label tempat_duduk_gelap:
 
     hide aang
 
-    show mc kaget
+    show mc senyum 2
     with dissolve
-    mc "Oh, aku melihat bapak tadi siang di panggung, dia memainkan bonang"
+    mc "Aang, lihat deh, penonton mulai berdatangan. Senang bisa melihat orang-orang antusias dengan pertunjukan gamelan ini seperti kita."
 
     hide mc
 
     show aang netral
     with dissolve
-    aang "Aku melihatnya, sepertinya pertunjukannya sudah akan dimulai"
+    aang "Iya, Tok. Gamelan memang punya daya tarik tersendiri. Suaranya bisa membuat orang merasa tenang dan damai."
+
+    aang "Lihat Tok, panggung sudah mulai terpenuhi oleh wiyaga"
+
+    show mc bingung
+    with dissolve
+    aang "Wiyaga? Apa itu Aang?"
+
+    hide mc
+
+    show aang netral
+    with dissolve
+    aang "Wiyaga itu orang-orang yang memainkan gamelan Tok."
 
     hide aang
 
-    #disini (pertunjukan mulai, terserah mau suara tok ata full cutscene orang main gamelan)
+    scene bg tempat duduk gelap
+    with fade
+
+    show aang netral
+    with dissolve
+    aang "Sepertinya pertunjukannya sudah akan dimulai."
+
+    hide aang
+
+    show mc netral
+    with dissolve
+    mc "Ayo, kita nikmati pertunjukan ini. Semoga malam ini menjadi pengalaman yang tidak terlupakan."
+
+    hide mc
+
+    show aang senyum
+    with dissolve
+    aang "Setuju, Totok. Gamelan memang jembatan budaya yang indah. Kita beruntung bisa menontonnya."
+    hide aang
+
+    #disini bgm pertunjukan dimulai
+
+    show mc senyum 2
+    with dissolve
+    mc "Lihat, Aang. Ada anak-anak kecil yang juga menonton dengan antusias. Senang rasanya melihat generasi muda tertarik pada gamelan."
+    hide mc
+
+    show aang senyum
+    with dissolve
+    aang "Wah, ternyata banyak juga anak-anak yang tertarik pada gamelan. Penting untuk mengenalkan budaya tradisional pada mereka."
+    hide aang
+
+    show mc senyum 1
+    with dissolve
+    mc "Semoga mereka tumbuh dengan mencintai dan melestarikan gamelan. Mungkin suatu hari nanti, mereka yang akan duduk di sana, memainkan alat-alat ini dengan penuh semangat."
+
+    mc "Mendengar suara iringan gamelan ini sangat membuatku semangat."
+
+    show aang netral
+    with dissolve
+    aang "Tok, kamu tahu nggak, setiap nada dalam gamelan punya makna tersendiri? Misalnya, nada pelog dan slendro."
+    hide aang
+
+    show mc netral
+    with dissolve
+    mc "Aku sempat mendengar kata-kata itu ketika bapak menjelaskan gamelan tadi siang. Apa maknanya Aang?"
+
+    show aang netral
+    with dissolve
+    aang "Slendro memiliki 5 nada per oktaf, biasanya digunakan dalam pertunjukan wayang."
+
+    aang "Perbedaan intervalnya kecil jadi lebih terkesan ceria dan fleksibel, atau  lincah, gembira, dan bersemangat."
+
+    aang "Sedangkan pelog memiliki 7 nada oktaf dan biasanya digunakan sebagai musik iringan tarian"
+
+    aang "Perbedaan interval ketukannya besar, sehingga cenderung memberi kesan yang diberikan adalah lebih serius dan sedih, atau rasa ketenangan dan penuh hormat"
+
+    aang "Kombinasi keduanya laras slendro dan pelog menciptakan suasana yang sangat kaya dan beragam dalam setiap pertunjukan."
+    hide aang
+
+    show mc senyum 2
+    with dissolve
+    mc "Penampilan para wiyaga benar-benar memukau. Setiap alat gamelan dimainkan dengan sempurna."
+
+    mc "Lihat itu, pemain bonang sangat terampil. Aku bisa merasakan energi dan emosi dari setiap pukulan"
+    hide mc
+
+    show aang netral
+    with dissolve
+    aang "Iya Tok, aku tidak sabar mendengarkan mendengarkan keseluruhan pertunjukan."
+
+    show aang senyum
+    with dissolve
+    aang "Coba lihat pemain bonang itu Totok. Itu bapak yang menjelaskan gamelan kepada kita tadi siang"
+    hide aang
+
+    show mc senyum 2
+    with dissolve
+    mc "Kau benar, Aang. Pantas saja performanya bagus."
+    
+    mc "Bapak itu memang orang yang luar biasa. Dia banyak mengajarkan kita tentang beragam gamelan, dan sekarang beliau tampil dengan handal."
+    hide mc
+
+    show aang netral
+    with dissolve
+    aang "Benar, bapak itu sudah memiliki bertahun-tahun pengalaman bermain gamelan. Oh, dan pemain gong juga tidak kalah hebat."
+
+    aang "Aku suka sekali bagian ini, ketika suara gong besar mulai dimainkan. Rasanya sangat menggetarkan. Bagian gong itu penting untuk menjaga ritme."
+    hide aang
+
+    show mc netral
+    with dissolve
+    mc "Aku suka dengan pemain kendang. Pemain kendang itu seperti jantung dari gamelan, menjaga ritme dan energi."
+    hide mc
+
+    show aang netral
+    aang "Mereka memang luar biasa. Setiap pemain membawa sentuhan pribadi mereka, tapi tetap dalam harmoni yang sempurna."
+
+    aang "Orkestrasi gamelan ini begitu harmonis. Setiap instrumen saling melengkapi dan menciptakan alunan yang sangat indah."
+
+    aang "Ini yang membuat gamelan begitu istimewa. Tidak hanya soal suara, tetapi juga kebersamaan dan kerja sama tim yang luar biasa."
+    hide aang
+
+    show mc netral
+    with dissolve
+    mc "Aku jadi kagum dengan bagaimana mereka bisa menjaga tempo. Pasti butuh latihan yang luar biasa untuk mencapai keselarasan seperti ini."
+
+    show aang netral
+    with dissolve
+    aang "Gamelan memang tentang kerja sama dan saling mendengarkan. Kalau mereka kompak, hasilnya pasti bagus."
+
+    show aang senyum
+    with dissolve
+    aang "Ayo kita nikmati pertunjukan ini sampai akhir. Setiap detiknya sangat berharga."
+    hide aang
+
+    show mc senyum 2
+    with dissolve
+    mc "Pasti, Aang. Ini adalah momen yang tak terlupakan. Mari kita resapi setiap alunan musik yang mereka mainkan."
+
+    mc "Malam ini kita menyaksikan pertunjukan yang tidak terlupakan. Untung bapak gamelan memberikan kita tiket pertunjukan"
+    hide mc
+
+    #disini bgm pertunjukan selesai
+
+    scene bg tempat duduk pertunjukan terang
+    with fade
 
     show aang senyum
     with dissolve
     aang "Wah, pertunjukan tadi sungguh luar biasa. Mereka benar-benar menghidupkan tradisi gamelan dengan indah."
 
-    show mc senyum
+    show mc senyum 2
     with dissolve
     mc "Iya, betul sekali! Aku juga merasa terinspirasi oleh penampilan mereka. Semoga suatu hari nanti kami juga bisa sehebat mereka."
 
     mc "Lihat itu, bapak gamelan sedang turun panggung, mari kita sambut"
 
 label panggung2:
+    scene bg panggung
+    with fade
     show mc senyum 2
     with dissolve
     mc "Bapak, pertunjukan tadi sungguh luar biasa. Mereka benar-benar memainkan gamelan dengan begitu indah."
@@ -3023,6 +3197,8 @@ label panggung2:
     su "Hestamma… Rasanya aku pernah mendengar nama itu"
 
 label tempat_duduk_pertunjukan_terang2:
+    scene bg tempat duduk pertunjukan terang
+    with fade
     show aang netral
     with dissolve
     aang "ngomong-ngomong sudah jam berapa ini? Ternyata sudah cukup larut. Mungkin sudah waktunya kamu kembali ke hotel untuk istirahat Tok"
@@ -3034,6 +3210,8 @@ label tempat_duduk_pertunjukan_terang2:
     mc "Benar juga. Kita sudah melalui hari yang panjang, dan esok akan menjadi hari yang penuh kisah. Ayo kita pulang."
 
 label Depan_hotel_malam:
+    scene bg depan hotel malam
+    with fade
     show aang senyum
     with dissolve
     aang "Aku senang sekali bisa menyaksikan pertunjukan gamelan tadi."
@@ -3079,7 +3257,7 @@ label balik_hotel:
 
         #nanti disini show bg depan hotel tapi malam hari
 
-        scene bg depan hotel
+        scene bg depan hotel malam hari
         with fade
         show aang flat
         aang "Padahal kau terlihat begitu bersemangat ketika mendapat tiket dari bapak tadi siang"
