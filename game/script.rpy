@@ -27,7 +27,9 @@ init:
         zoom 0.3
 
 #Define picture button
-screen opsi_pertama():
+ 
+
+screen opsi_gambar_saron():
     imagebutton:
         idle "gelap_bonang.png"
         hover "bonang.png"
@@ -36,16 +38,68 @@ screen opsi_pertama():
         xpos 0.3
         ypos 0.7
         at customzoom
-        action Jump("after_gamelan")
+        action Call("jawab_salah_saron")
 
     imagebutton:
-        idle "gelap_bonang.png"
-        hover "bonang.png"
+        idle "gelap_saron.png"
+        hover "saron.png"
         xanchor 0.5
         yanchor 0.5
         xpos 0.3
         ypos 0.3
         at customzoom
+        action Call("jawab_benar")
+
+    imagebutton:
+        idle "gelap_gambang.png"
+        hover "gambang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.5
+        at customzoom
+        action Call("jawab_salah_saron")
+
+    imagebutton:
+        idle "gelap_slenthem.png"
+        hover "slenthem.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_saron")
+
+    imagebutton:
+        idle "gelap_gong.png"
+        hover "gong.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_saron")
+
+screen opsi_gambar_kendhang():
+    imagebutton:
+        idle "gelap_slenthem.png"
+        hover "slenthem.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_kendang")
+
+    imagebutton:
+        idle "gelap_gong.png"
+        hover "gong.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_kendang")
 
     imagebutton:
         idle "gelap_bonang.png"
@@ -55,15 +109,68 @@ screen opsi_pertama():
         xpos 0.5
         ypos 0.5
         at customzoom
+        action Call("jawab_salah_kendang")
 
     imagebutton:
-        idle "gelap_bonang.png"
-        hover "bonang.png"
+        idle "gelap_saron.png"
+        hover "saron.png"
         xanchor 0.5
         yanchor 0.5
         xpos 0.7
         ypos 0.7
         at customzoom
+        action Call("jawab_salah_kendang")
+
+    imagebutton:
+        idle "gelap_kendang.png"
+        hover "kendang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.3
+        at customzoom
+        action Call("jawab_benar")
+
+screen opsi_gambar_slenthem():
+    imagebutton:
+        idle "gelap_kendang.png"
+        hover "kendang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_slenthem")
+
+    imagebutton:
+        idle "gelap_slenthem.png"
+        hover "slenthem.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.3
+        at customzoom
+        action Call("jawab_benar")
+
+    imagebutton:
+        idle "gelap_saron.png"
+        hover "saron.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.5
+        at customzoom
+        action Call("jawab_salah_slenthem")
+
+    imagebutton:
+        idle "gelap_gong.png"
+        hover "gong.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_slenthem")
 
     imagebutton:
         idle "gelap_bonang.png"
@@ -73,30 +180,503 @@ screen opsi_pertama():
         xpos 0.7
         ypos 0.3
         at customzoom
+        action Call("jawab_slenthem")
 
-#Define picture
+screen opsi_gambar_gong():
+    imagebutton:
+        idle "gelap_saron.png"
+        hover "saron.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_gong")
 
-# Define methods
-init python:
-    import random
-    def jawaban_benar():
-        randombenar = random.randint(1, 2)
-        if randombenar == 1:
-            renpy.say("Kakek Gamelan", "Bagus sekali")
-        elif randombenar == 2:
-            renpy.say("Kakek Gamelan", "Yap, betul sekali")
+    imagebutton:
+        idle "gelap_kendang.png"
+        hover "kendang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_gong")
 
-    def jawaban_salah():
-        randomsalah = random.randint(1, 3)
-        if randomsalah == 1:
-            renpy.say("Kakek Gamelan", "Tebakan yang bagus nak, tetapi")
-        elif randomsalah == 2:
-            renpy.say("Kakek Gamelan", "Haha, bukan gamelan yang itu nak,")
-        elif randomsalah == 3:
-            renpy.say("Kakek Gamelan", "Tidak apa apa, kesalahan adalah bagian dari perjalanan,")
+    imagebutton:
+        idle "gelap_slenthem.png"
+        hover "slenthem.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.5
+        at customzoom
+        action Call("jawab_salah_gong")
+
+    imagebutton:
+        idle "gelap_gong.png"
+        hover "gong.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.7
+        at customzoom
+        action Call("jawab_benar")
+
+    imagebutton:
+        idle "gelap_bonang.png"
+        hover "bonang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_gong")
+
+screen opsi_gambar_bonang():
+    imagebutton:
+        idle "gelap_bonang.png"
+        hover "bonang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.7
+        at customzoom
+        action Call("jawab_benar")
+
+    imagebutton:
+        idle "gelap_saron.png"
+        hover "saron.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_bonang")
+
+    imagebutton:
+        idle "gelap_gambang.png"
+        hover "gambang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.5
+        at customzoom
+        action Call("jawab_salah_bonang")
+
+    imagebutton:
+        idle "gelap_slenthem.png"
+        hover "slenthem.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_bonang")
+
+    imagebutton:
+        idle "gelap_gong.png"
+        hover "gong.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_bonang")
+
+screen opsi_gambar_kempul():
+    imagebutton:
+        idle "gelap_rebab.png"
+        hover "rebab.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_kempul")
+
+    imagebutton:
+        idle "gelap_gong.png"
+        hover "gong.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_kempul")
+
+    imagebutton:
+        idle "gelap_kendang.png"
+        hover "kendang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.5
+        at customzoom
+        action Call("jawab_salah_kempul")
+
+    imagebutton:
+        idle "gelap_siter.png"
+        hover "siter.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_kempul")
+
+    imagebutton:
+        idle "gelap_kempul.png"
+        hover "kempul.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.3
+        at customzoom
+        action Call("jawab_benar")
+
+screen opsi_gambar_rebab():
+    imagebutton:
+        idle "gelap_slenthem.png"
+        hover "slenthem.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_rebab")
+
+    imagebutton:
+        idle "gelap_saron.png"
+        hover "saron.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_rebab")
+
+    imagebutton:
+        idle "gelap_rebab.png"
+        hover "rebab.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.5
+        at customzoom
+        action Call("jawab_benar")
+
+    imagebutton:
+        idle "gelap_kenong.png"
+        hover "kenong.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_rebab")
+
+    imagebutton:
+        idle "gelap_kendang.png"
+        hover "kendang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_rebab")
+
+screen opsi_gambar_kempul():
+    imagebutton:
+        idle "gelap_rebab.png"
+        hover "rebab.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_kempul")
+
+    imagebutton:
+        idle "gelap_gong.png"
+        hover "gong.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_kempul")
+
+    imagebutton:
+        idle "gelap_kendang.png"
+        hover "kendang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.5
+        at customzoom
+        action Call("jawab_salah_kempul")
+
+    imagebutton:
+        idle "gelap_siter.png"
+        hover "siter.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_kempul")
+
+    imagebutton:
+        idle "gelap_kempul.png"
+        hover "kempul.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.3
+        at customzoom
+        action Call("jawab_benar")
+
+screen opsi_gambar_siter():
+    imagebutton:
+        idle "gelap_kendang.png"
+        hover "kendang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_siter")
+
+    imagebutton:
+        idle "gelap_slenthem.png"
+        hover "slenthem.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_siter")
+
+    imagebutton:
+        idle "gelap_saron.png"
+        hover "saron.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.5
+        at customzoom
+        action Call("jawab_salah_siter")
+
+    imagebutton:
+        idle "gelap_siter.png"
+        hover "siter.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.7
+        at customzoom
+        action Call("jawab_benar")
+
+    imagebutton:
+        idle "gelap_kenong.png"
+        hover "kenong.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_siter")
+
+screen opsi_gambar_gambang():
+    imagebutton:
+        idle "gelap_bonang.png"
+        hover "bonang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_gambang")
+
+    imagebutton:
+        idle "gelap_slenthem.png"
+        hover "slenthem.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_gambang")
+
+    imagebutton:
+        idle "gelap_gong.png"
+        hover "gong.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.5
+        at customzoom
+        action Call("jawab_salah_gambang")
+
+    imagebutton:
+        idle "gelap_saron.png"
+        hover "saron.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_gambang")
+
+    imagebutton:
+        idle "gelap_gambang.png"
+        hover "gambang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.3
+        at customzoom
+        action Call("jawab_benar")
+
+screen opsi_gambar_kenong():
+    imagebutton:
+        idle "gelap_rebab.png"
+        hover "rebab.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_kenong")
+
+    imagebutton:
+        idle "gelap_kenong.png"
+        hover "kenong.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.3
+        ypos 0.3
+        at customzoom
+        action Call("jawab_benar")
+
+    imagebutton:
+        idle "gelap_kendang.png"
+        hover "kendang.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.5
+        ypos 0.5
+        at customzoom
+        action Call("jawab_salah_kenong")
+
+    imagebutton:
+        idle "gelap_slenthem.png"
+        hover "slenthem.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.7
+        at customzoom
+        action Call("jawab_salah_kenong")
+
+    imagebutton:
+        idle "gelap_saron.png"
+        hover "saron.png"
+        xanchor 0.5
+        yanchor 0.5
+        xpos 0.7
+        ypos 0.3
+        at customzoom
+        action Call("jawab_salah_kenong")
 
 #sound & music effect
 define audio.bell = "sfx_bell.mp3"
+
+#respon jawaban pertanyaan
+label jawab_benar:
+    $ jawab_benar += 1
+    python:
+        jawaban_benar()
+return
+
+label jawab_salah_saron:
+    python:
+        jawaban_salah()
+    kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+return
+
+label jawab_salah_kendang:
+    python:
+        jawaban_salah()
+    kg "Kendhang dapat mengatur irama musik gamelan."
+    kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
+return
+
+label jawab_salah_slenthem:
+    python:
+        jawaban_salah()
+    kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
+    kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+return
+
+label jawab_salah_gong:
+    python:
+        jawaban_salah()
+    kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
+    kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
+    kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+return
+
+label jawab_salah_bonang:
+    python:
+        jawaban_salah()
+    kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak)."
+    kg "Bonang termasuk pencon yaitu dari logam."
+return
+
+label jawab_salah_kempul:
+    python:
+        jawaban_salah()
+    kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+    kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
+    kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+return
+
+label jawab_salah_rebab:
+    python:
+        jawaban_salah()
+    kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+    kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
+    kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+return
+
+label jawab_salah_siter:
+    python:
+        jawaban_salah()
+    kg "Siter adalah salah satu instrumen gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India."
+
+    kg "Alat musik ini sudah jarang ditemukan atau digunakan dalam set-set gamelan saat ini."
+
+    kg "Alat musik ini biasa juga disebut gitar Jawa yang memiliki suara yang khas."
+return
+
+label jawab_salah_gambang:
+    python:
+        jawaban_salah()
+    kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
+    kg "Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
+    kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+return
+
+label jawab_salah_kenong:
+    python:
+        jawaban_salah()
+    kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+    kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
+    kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
+    kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+return
 
 # The game starts here.
 
@@ -1027,6 +1607,7 @@ label after_gamelan:
 label pertanyaan_gamelan_1:
         #pertanyaan 1
         #tampilin gambar bonang
+
         kg "Gamelan ini berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak)." 
 
         kg "Gamelan ini termasuk pencon yaitu dari logam,"
@@ -1059,9 +1640,7 @@ label pertanyaan_gamelan_1:
 
         kg "manakah gamelan yang saya deskripsikan?"
             #opsi dalam bentuk gambar
-        call screen opsi_pertama
-
-        
+        call screen opsi_gambar_saron()
 
         #pertanyaan 3
         #tampilin gambar gambang
@@ -1101,34 +1680,10 @@ label pertanyaan_gamelan_1:
 
         kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan,"
 
-        menu:
-            kg "manakah gamelan yang saya deskripsikan?"
-            #opsi dalam bentuk gambar
-            "Slenthem":
-                python:
-                    jawaban_salah()
-                kg "Kendhang dapat mengatur irama musik gamelan."
-                kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
-            "Gong":
-                python:
-                    jawaban_salah()
-                kg "Kendhang dapat mengatur irama musik gamelan."
-                kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
-            "Bonang":
-                python:
-                    jawaban_salah()
-                kg "Kendhang dapat mengatur irama musik gamelan."
-                kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
-            "Saron":
-                python:
-                    jawaban_salah()
-                kg "Kendhang dapat mengatur irama musik gamelan."
-                kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
-            "Kendhang":
-                $ jawab_benar += 1
-                python:
-                    jawaban_benar()
-        
+        kg "manakah gamelan yang saya deskripsikan?"
+
+        call screen opsi_gambar_kendhang()
+
         #pertanyaan 5
         #tampilin gambar Gong
         kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
@@ -1171,37 +1726,9 @@ label pertanyaan_gamelan_1:
         #pertanyaan 6
         kg "Gamelan ini masuk dalam keluarga balungan.  Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain,"
 
-        menu:
-            kg "manakah gamelan yang saya deskripsikan?"
-            #opsi dalam bentuk gambar
-            "Kendhang":
-                python:
-                    jawaban_salah()
-                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
-
-                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
-            "Slenthem":
-                $ jawab_benar += 1
-                python:
-                    jawaban_benar()
-            "Saron":
-                python:
-                    jawaban_salah()
-                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
-
-                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
-            "Gong":
-                python:
-                    jawaban_salah()
-                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
-
-                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
-            "Bonang":
-                python:
-                    jawaban_salah()
-                kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
-
-                kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+        kg "manakah gamelan yang saya deskripsikan?"
+        
+        call screen opsi_gambar_slenthem()
 
         #pertanyaan 7
         #tampilin gambar Saron
@@ -1237,38 +1764,10 @@ label pertanyaan_gamelan_1:
 
         kg "Gamelan ini dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus,"
 
-        menu:
-            kg "manakah gamelan yang saya deskripsikan?"
-            #opsi dalam bentuk gambar
-            "Saron":
-                python:
-                    jawaban_salah()
-                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
-                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
-                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
-            "Kendhang":
-                python:
-                    jawaban_salah()
-                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
-                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
-                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
-            "Slenthem":
-                python:
-                    jawaban_salah()
-                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
-                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
-                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
-            "Gong":
-                $ jawab_benar += 1
-                python:
-                    jawaban_benar()
-            "Bonang":
-                python:
-                    jawaban_salah()
-                kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
-                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
-                kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
-        
+        kg "manakah gamelan yang saya deskripsikan?"
+
+        call screen opsi_gambar_gong()
+
         #pertanyaan 9
         #tampilin gambar Slenthem
         kg "Gamelan ini masuk dalam keluarga balungan.  Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain,"
@@ -1309,29 +1808,9 @@ label pertanyaan_gamelan_1:
 
         kg "Gamelan ini termasuk pencon yaitu dari logam,"
 
-        menu:
-            kg "manakah gamelan yang saya deskripsikan?"
-            #opsi dalam bentuk gambar
-            "Bonang":
-                $ jawab_benar += 1
-                python:
-                    jawaban_benar()
-            "Saron":
-                python:
-                    jawaban_salah()
-                kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
-            "Gambang":
-                python:
-                    jawaban_salah()
-                kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam"
-            "Slenthem":
-                python:
-                    jawaban_salah()
-                kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam"
-            "Gong":
-                python:
-                    jawaban_salah()
-                kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam"
+        kg "manakah gamelan yang saya deskripsikan?"
+
+        call screen opsi_gambar_bonang()
 return
 
 label pertanyaan_gamelan_2:
@@ -1393,45 +1872,9 @@ label pertanyaan_gamelan_2:
 
     kg "Gamelan ini masuk dalam keluarga pencon, bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan,"
 
-    menu:
-        kg "manakah gamelan yang saya deskripsikan?"
-        #opsi dalam bentuk gambar
-        "Rebab":
-            python:
-                jawaban_salah()
-            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
+    kg "manakah gamelan yang saya deskripsikan?"
 
-            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
-
-            kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
-        "Gong":
-            python:
-                jawaban_salah()
-            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
-
-            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
-
-            kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
-        "Kendhang":
-            python:
-                jawaban_salah()
-            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
-
-            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
-
-            kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
-        "Siter":
-            python:
-                jawaban_salah()
-            kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
-
-            kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
-
-            kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
-        "Kempul":
-            $ jawab_benar += 1
-            python:
-                jawaban_benar()
+    call screen opsi_gambar_kempul()
     
     #pertanyaan 13
     #tampilin gambar Kenong
@@ -1495,45 +1938,9 @@ label pertanyaan_gamelan_2:
 
     kg "Gamelan ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka,"
 
-    menu:
-        kg "manakah gamelan yang saya deskripsikan?"
-        #opsi dalam bentuk gambar
-        "Slenthem":
-            python:
-                jawaban_salah()
-            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
+    kg "manakah gamelan yang saya deskripsikan?"
 
-            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
-
-            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
-        "Saron":
-            python:
-                jawaban_salah()
-            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
-
-            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
-
-            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
-        "Rebab":
-            $ jawab_benar += 1
-            python:
-                jawaban_benar()
-        "Kenong":
-            python:
-                jawaban_salah()
-            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
-
-            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
-
-            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
-        "Kendhang":
-            python:
-                jawaban_salah()
-            kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
-
-            kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
-
-            kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+    call screen opsi_gambar_rebab()
 
     #pertanyaan 15
     #tampilin gambar Kempul
@@ -1587,45 +1994,9 @@ label pertanyaan_gamelan_3:
 
     kg "Gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India,"
 
-    menu:
-        kg "manakah gamelan yang saya deskripsikan?"
-        #opsi dalam bentuk gambar
-        "Kendhang":
-            python:
-                jawaban_salah()
-            kg "Siter adalah salah satu instrumen gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India."
+    kg "manakah gamelan yang saya deskripsikan?"
 
-            kg "Alat musik ini sudah jarang ditemukan atau digunakan dalam set-set gamelan saat ini."
-
-            kg "Alat musik ini biasa juga disebut gitar Jawa yang memiliki suara yang khas."
-        "Slenthem":
-            python:
-                jawaban_salah()
-            kg "Siter adalah salah satu instrumen gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India."
-
-            kg "Alat musik ini sudah jarang ditemukan atau digunakan dalam set-set gamelan saat ini."
-
-            kg "Alat musik ini biasa juga disebut gitar Jawa yang memiliki suara yang khas."
-        "Saron":
-            python:
-                jawaban_salah()
-            kg "Siter adalah salah satu instrumen gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India."
-
-            kg "Alat musik ini sudah jarang ditemukan atau digunakan dalam set-set gamelan saat ini."
-
-            kg "Alat musik ini biasa juga disebut gitar Jawa yang memiliki suara yang khas."
-        "Siter":
-            $ jawab_benar += 1
-            python:
-                jawaban_benar()
-        "Kenong":
-            python:
-                jawaban_salah()
-            kg "Siter adalah salah satu instrumen gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India."
-
-            kg "Alat musik ini sudah jarang ditemukan atau digunakan dalam set-set gamelan saat ini."
-
-            kg "Alat musik ini biasa juga disebut gitar Jawa yang memiliki suara yang khas."
+    call screen opsi_gambar_siter()
 
     #pertanyaan 17
     #tampilin gambar Demung
@@ -1687,45 +2058,9 @@ label pertanyaan_gamelan_3:
 
     kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang,"
 
-    menu:
-        kg "manakah gamelan yang saya deskripsikan?"
-        #opsi dalam bentuk gambar
-        "Bonang":
-            python:
-                jawaban_salah()
-            kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
+    kg "manakah gamelan yang saya deskripsikan?"
 
-            kg "Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
-
-            kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
-        "Slenthem":
-            python:
-                jawaban_salah()
-            kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
-
-            kg "Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
-
-            kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
-        "Gong":
-            python:
-                jawaban_salah()
-            kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
-
-            kg "Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
-
-            kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
-        "Saron":
-            python:
-                jawaban_salah()
-            kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
-
-            kg "Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
-
-            kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
-        "Gambang":
-            $ jawab_benar += 1
-            python:
-                jawaban_benar()
+    call screen opsi_gambar_gambang()
 
     #pertanyaan 19
     #tampilin gambar Rebab
@@ -1781,53 +2116,9 @@ label pertanyaan_gamelan_3:
 
     kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas,"
 
-    menu:
-        kg "manakah gamelan yang saya deskripsikan?"
-        #opsi dalam bentuk gambar
-        "Rebab":
-            python:
-                jawaban_salah()
-            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
+    kg "manakah gamelan yang saya deskripsikan?"
 
-            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
-
-            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
-
-            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
-        "Kenong":
-            $ jawab_benar += 1
-            python:
-                jawaban_benar()
-        "Kendhang":
-            python:
-                jawaban_salah()
-            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
-
-            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
-
-            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
-
-            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
-        "Slenthem":
-            python:
-                jawaban_salah()
-            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
-
-            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
-
-            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
-
-            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
-        "Saron":
-            python:
-                jawaban_salah()
-            kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
-
-            kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
-
-            kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
-
-            kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+    call screen opsi_gambar_kenong()
 return
 
 label hitung_skor_gamelan:
