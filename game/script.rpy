@@ -9,18 +9,18 @@ init python:
     def jawaban_benar():
         randombenar = random.randint(1, 2)
         if randombenar == 1:
-            renpy.say("Kakek Gamelan", "Bagus sekali")
+            renpy.say("{color=#7ABA78}Kakek Gamelan", "Bagus sekali")
         elif randombenar == 2:
-            renpy.say("Kakek Gamelan", "Yap, betul sekali")
+            renpy.say("{color=#7ABA78}Kakek Gamelan", "Yap, betul sekali")
 
     def jawaban_salah():
         randomsalah = random.randint(1, 3)
         if randomsalah == 1:
-            renpy.say("Kakek Gamelan", "Tebakan yang bagus nak, tetapi")
+            renpy.say("{color=#7ABA78}Kakek Gamelan", "Tebakan yang bagus nak, tetapi")
         elif randomsalah == 2:
-            renpy.say("Kakek Gamelan", "Haha, bukan gamelan yang itu nak,")
+            renpy.say("{color=#7ABA78}Kakek Gamelan", "Haha, bukan gamelan yang itu nak,")
         elif randomsalah == 3:
-            renpy.say("Kakek Gamelan", "Tidak apa apa, kesalahan adalah bagian dari perjalanan,")
+            renpy.say("{color=#7ABA78}Kakek Gamelan", "Tidak apa apa, kesalahan adalah bagian dari perjalanan,")
 
 init:
     transform customzoom:
