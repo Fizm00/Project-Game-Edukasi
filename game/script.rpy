@@ -27,7 +27,76 @@ init:
         zoom 0.3
 
 #Define picture button
- 
+image bonang:
+    "bonang.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image saron:
+    "saron.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image kendang:
+    "kendang.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image slenthem:
+    "slenthem.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image gong:
+    "gong.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image kempul:
+    "kempul.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image rebab:
+    "rebab.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image siter:
+    "siter.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image gambang:
+    "gambang.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image kenong:
+    "kenong.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image gender:
+    "gender.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image kempul:
+    "kempul.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image demung:
+    "demung.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
+image siter:
+    "siter.png"
+    zoom 0.7
+    xpos 0.5
+    ypos 0.75
 
 screen opsi_gambar_saron():
     imagebutton:
@@ -603,79 +672,97 @@ return
 label jawab_salah_saron:
     python:
         jawaban_salah()
+    show saron with dissolve
     kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+    hide saron with dissolve
 return
 
 label jawab_salah_kendang:
     python:
         jawaban_salah()
+    show kendang with dissolve
     kg "Kendhang dapat mengatur irama musik gamelan."
     kg "Cara memainkan gamelan ini adalah dengan memukul dengan telapak tangan bagian pinggir gamelan yang terbuat dari kulit hewan."
+    hide kendang with dissolve
 return
 
 label jawab_salah_slenthem:
     python:
         jawaban_salah()
+    show slenthem with dissolve
     kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
     kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+    hide slenthem with dissolve
 return
 
 label jawab_salah_gong:
     python:
         jawaban_salah()
+    show gong with dissolve
     kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
     kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
     kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+    hide gong with dissolve
 return
 
 label jawab_salah_bonang:
     python:
         jawaban_salah()
+    show bonang with dissolve
     kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak)."
     kg "Bonang termasuk pencon yaitu dari logam."
+    hide bonang with dissolve
 return
 
 label jawab_salah_kempul:
     python:
         jawaban_salah()
+    show kempul with dissolve
     kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
     kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
     kg "Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+    hide kempul with dissolve
 return
 
 label jawab_salah_rebab:
     python:
         jawaban_salah()
+    show rebab with dissolve
     kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
     kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
     kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+    hide rebab with dissolve
 return
 
 label jawab_salah_siter:
     python:
         jawaban_salah()
+    show siter with dissolve
     kg "Siter adalah salah satu instrumen gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India."
-
     kg "Alat musik ini sudah jarang ditemukan atau digunakan dalam set-set gamelan saat ini."
-
     kg "Alat musik ini biasa juga disebut gitar Jawa yang memiliki suara yang khas."
+    hide siter with dissolve
 return
 
 label jawab_salah_gambang:
     python:
         jawaban_salah()
+    show gambang with dissolve
     kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
     kg "Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
     kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+    hide gambang with dissolve
 return
 
 label jawab_salah_kenong:
     python:
         jawaban_salah()
+    show kenong with dissolve
     kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
     kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
     kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
     kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+    hide kenong with dissolve
 return
 
 # The game starts here.
@@ -1448,7 +1535,7 @@ label joglo_keraton:
 return
 
 label gamelan1:
-    #image pop up: Bonang
+        show bonang with dissolve
 
         kg "Bonang adalah instrumen gamelan berbentuk ceret atau pot yang diletakan di atas string (tali) dalam bingkai kayu (rancak)."
 
@@ -1462,7 +1549,9 @@ label gamelan1:
 
         kg "Cara bermain boning adalah memukul bagian cekungan atau penutupnya dengan tongkat pemukul khusus."
 
+        hide bonang with dissolve
         #image pop up: Saron
+        show saron with dissolve
 
         kg "Saron atau biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan (wilahan) dari logam."
 
@@ -1470,7 +1559,9 @@ label gamelan1:
 
         kg "Cara memainkan alat musik saron adalah memukul bilahan logam menggunakan tabuhan tangan kanan dan menahan bilahan yang dipukul sebelumnya menggunakan tangan kiri agar menghilangkan suara dengungan yang tersisa. Cara ini biasa disebut dengan teknik memahat atau memencet."
 
+        hide saron with dissolve
         #image pop up: Gong
+        show gong with dissolve
 
         kg "Hampir serupa dengan bonang dan kenong, gong juga memiliki bentuk cembung di bagian atas dengan ukuran yang lebih besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
 
@@ -1478,7 +1569,9 @@ label gamelan1:
 
         kg "Menyerupai bentuk piringan besar, gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas. Cara memainkan alat musik ini dipukul bagian kecembungannya menggunakan tongkat khusus."
 
+        hide gong with dissolve
         #image pop up: Kendhang
+        show kendang with dissolve
 
         kg "Kendhang atau gendang adalah salah satu instrumen gamelan Jawa yang dapat mengatur irama musik gamelan."
         
@@ -1490,7 +1583,9 @@ label gamelan1:
 
         kg "Kendang Ketipung biasanya memiliki kendang pasangan, yakni kendang gedhe atau kendhang kalih."
 
+        hide kendang with dissolve
         #image pop up: Gambang
+        show gambang with dissolve
 
         kg "Gambang mirip dengan saron dan demung, namun bilahan alat musik ini terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
 
@@ -1499,11 +1594,12 @@ label gamelan1:
         kg "Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu. Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang."
 
         kg "Cara memainkan alat musik gambang adalah memukul tiap bilangnya menggunakan pemukul khusus yang disebut tabuh. Hampir serupa dengan saron dan demung, bilang perlu ditahan setelah dipukul agar tidak meninggalkan suara."
+        hide gambang with dissolve
 return
 
 label gamelan2:
         #image pop up: Siter
-
+        show siter with dissolve
         kg "Siter adalah salah satu instrumen gamelan yang memainkannya dengan cara dipetik seperti alat musik guzheng asal cina atau sitar asal India."
 
         kg "Alat musik ini sudah jarang ditemukan atau digunakan dalam set-set gamelan saat ini. Alat musik ini biasa juga disebut gitar Jawa yang memiliki suara yang khas."
@@ -1511,9 +1607,9 @@ label gamelan2:
         aang "Hmmm, mirip gitar sedikit sih"
 
         kg "Alat musik siter memiliki dua sisi dengan nada yang berbeda, yakni sisi pelog dan slendro. Siter dianggap sebagai alat musik yang mengadopsi alat musik India karena hampir sama dengan Sitar yang merupakan alat musik tradisional india."
-
+        hide siter with dissolve
         #image pop up: Kenong
-
+        show kenong with dissolve
         kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan. Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
 
         mc "seperti Bonang kesepian, lucu sekali"
@@ -1521,27 +1617,28 @@ label gamelan2:
         kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh. Alat musik ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
 
         kg "Cara memainkan kenong serupa dengan memainkan bonang dengan memukul menggunakan tongkat khusus di bagian cekungan atau benjolan kenong."
-
+        hide kenong with dissolve
         #image pop up: Gender
-
+        show gender with dissolve
         kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya. Ada 10 sampai 14 bilah pada alat musik gender yang terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
 
         mc "Waaah, yang ini mirip gambang dan slenthem tadi"
 
         kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa). Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
-
+        hide gender with dissolve
         #image pop up: Kempul
-
+        show kempul with dissolve
         kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
 
         aang "Haha kayak Gong mini kembar"
 
         kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus. Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+        hide kempul with dissolve
 return
 
 label gamelan3:
         #image pop up: Demung
-
+        show demung with dissolve
         kg "Sama halnya dengan saron, demung juga masuk dalam golongan balungan dalam instrumen gamelan. Biasanya ada dua demung jenis pelog dan slendro dalam gamelan."
 
         mc "Mirip sekali dengan saron bentuknya"
@@ -1549,22 +1646,15 @@ label gamelan3:
         kg  "Alat musik ini menghasilkan nada oktaf paling rendah dari golongan alat musik balungan lainnya meskipun ukuran fisiknya yang paling besar."
 
         kg  "Cara bermain demung serupa dengan saron hanya saja tabuh demung memiliki ukuran yang lebih besar dan berat daripada tabuh saron."
-
+        hide demung with dissolve
         #image pop up: Rebab
-
+        show rebab with dissolve
         kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
 
         aang "Wah, namanya seperti kebab, aku jadi lapar"
 
         kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas. Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
-
-        #image pop up: Suling
-
-        kg "Suling adalah salah satu instrumen gamelan yang cara mainnya dengan ditiup dan terbuat dari bamboo."
-
-        aang "Seruling saktiiii"
-
-        kg "Suara yang lembut memberikan ciri khas pada pada kepaduan musik gamelan. Alat musik ini dianggap bersala dari Jawa barat atau Sunda."
+        hide rebab with dissolve
 return
 
 label after_gamelan:
@@ -1607,11 +1697,13 @@ label after_gamelan:
 label pertanyaan_gamelan_1:
         #pertanyaan 1
         #tampilin gambar bonang
+        show bonang with dissolve
 
         kg "Gamelan ini berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak)." 
 
         kg "Gamelan ini termasuk pencon yaitu dari logam,"
 
+        hide bonang
         menu:
                 kg "apa nama dari gamelan ini?"
                 "Bonang":
@@ -1621,19 +1713,27 @@ label pertanyaan_gamelan_1:
                 "Gong":
                     python:
                         jawaban_salah()
+                    show bonang with dissolve
                     kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+                    hide bonang with dissolve
                 "Gambang":
                     python:
                         jawaban_salah()
+                    show bonang with dissolve
                     kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+                    hide bonang with dissolve
                 "Gender":
                     python:
                         jawaban_salah()
+                    show bonang with dissolve
                     kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+                    hide bonang with dissolve
                 "Saron":
                     python:
                         jawaban_salah()
+                    show bonang with dissolve
                     kg "Bonang itu berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak). Bonang termasuk pencon yaitu dari logam."
+                    hide bonang with dissolve
         
         #pertanyaan 2
         kg "Gamelan ini biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator,"
@@ -1644,10 +1744,12 @@ label pertanyaan_gamelan_1:
 
         #pertanyaan 3
         #tampilin gambar gambang
+        show gambang with dissolve
         kg "Bilahan gamelan ini terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada yang terletak di atas sebuah rak konektor berbentuk perahu."
 
         kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang,"
 
+        hide gambang
         menu:
             kg "apa nama dari gamelan ini?"
             "Gambang":
@@ -1657,23 +1759,31 @@ label pertanyaan_gamelan_1:
             "Slenthem":
                 python:
                     jawaban_salah()
+                show gambang with dissolve
                 kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
                 kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+                hide gambang with dissolve
             "Gong":
                 python:
                     jawaban_salah()
+                show gambang with dissolve
                 kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
                 kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+                hide gambang with dissolve
             "Bonang":
                 python:
                     jawaban_salah()
+                show gambang with dissolve
                 kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
                 kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+                hide gambang with dissolve
             "Saron":
                 python:
                     jawaban_salah()
+                show gambang with dissolve
                 kg "Gambang terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik. Ada 18 bilah nada pada gambang yang terletak di atas sebuah rak konektor berbentuk perahu."
                 kg "Bilah-bilah tersebut tersusun berurutan dari bentuk bilah terkecil sampai yang paling panjang"
+                hide gambang with dissolve
 
         #pertanyaan 4
         kg "Gamelan Jawa ini dapat mengatur irama musik gamelan."
@@ -1686,32 +1796,40 @@ label pertanyaan_gamelan_1:
 
         #pertanyaan 5
         #tampilin gambar Gong
+        show gong with dissolve
         kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
         
         kg "Gamelan ini terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas."
 
         kg "Gamelan ini dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus,"
 
+        hide gong
         menu:
             kg "apa nama dari gamelan ini?"
             "Saron":
                 python:
                     jawaban_salah()
+                show gong with dissolve
                 kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
                 kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
                 kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+                hide gong with dissolve
             "Kendhang":
                 python:
                     jawaban_salah()
+                show gong with dissolve
                 kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
                 kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
                 kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+                hide gong with dissolve
             "Slenthem":
                 python:
                     jawaban_salah()
+                show gong with dissolve
                 kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
                 kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
                 kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+                hide gong with dissolve
             "Gong":
                 $ jawab_benar += 1
                 python:
@@ -1719,9 +1837,11 @@ label pertanyaan_gamelan_1:
             "Bonang":
                 python:
                     jawaban_salah()
+                show gong with dissolve
                 kg "Gong memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
-                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas."
+                kg "Gong terbuat dari leburan logam seperti perunggu dan tembaga untuk menghasilkan suara yang khas." 
                 kg "Gong dimainkan dengan memukul bagian kecembungannya menggunakan tongkat khusus."
+                hide gong with dissolve
 
         #pertanyaan 6
         kg "Gamelan ini masuk dalam keluarga balungan.  Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain,"
@@ -1732,14 +1852,18 @@ label pertanyaan_gamelan_1:
 
         #pertanyaan 7
         #tampilin gambar Saron
+        show saron with dissolve
         kg "Gamelan ini biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator,"
+        hide saron
 
         menu:
             kg "apa nama dari gamelan ini?"
             "Bonang":
                 python:
                     jawaban_salah()
+                show saron with dissolve
                 kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+                hide saron with dissolve
             "Saron":
                 $ jawab_benar += 1
                 python:
@@ -1747,15 +1871,21 @@ label pertanyaan_gamelan_1:
             "Gambang":
                 python:
                     jawaban_salah()
+                show saron with dissolve
                 kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+                hide saron with dissolve
             "Slenthem":
                 python:
                     jawaban_salah()
+                show saron with dissolve
                 kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+                hide saron with dissolve
             "Gong":
                 python:
                     jawaban_salah()
+                show saron with dissolve
                 kg "Saron itu biasa dikenal juga dengan ricik adalah salah satu instrumen gamelan yang masuk dalam golongan balungan atau alat musik jenis bilahan logam yang ditumpangkan di atas bingkai kayu yang berfungsi sebagai resonator"
+                hide saron with dissolve
 
         #pertanyaan 8
         kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang besar dan posisinya digantung, tidak diletakan pada lapisan tertentu."
@@ -1770,16 +1900,19 @@ label pertanyaan_gamelan_1:
 
         #pertanyaan 9
         #tampilin gambar Slenthem
+        show slenthem with dissolve
         kg "Gamelan ini masuk dalam keluarga balungan.  Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain,"
+        hide slenthem
 
         menu:
             kg "apa nama dari gamelan ini?"
             "Kendhang":
                 python:
                     jawaban_salah()
+                show slenthem with dissolve
                 kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
-
                 kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+                hide slenthem with dissolve
             "Slenthem":
                 $ jawab_benar += 1
                 python:
@@ -1787,21 +1920,24 @@ label pertanyaan_gamelan_1:
             "Saron":
                 python:
                     jawaban_salah()
+                show slenthem with dissolve
                 kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
-
                 kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+                hide slenthem with dissolve
             "Gong":
                 python:
                     jawaban_salah()
+                show slenthem with dissolve
                 kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
-
                 kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+                hide slenthem with dissolve
             "Bonang":
                 python:
                     jawaban_salah()
+                show slenthem with dissolve
                 kg "Gamelan slenthem adalah salah satu instrumen gamelan yang masuk dalam keluarga balungan seperti saron dan demung."
-
                 kg "Gamelan ini menghasilkan dengungan nada yang rendah atau menggema mengikuti nada instrumen alat musik balungan yang lain."
+                hide slenthem with dissolve
 
         #pertanyaan 10
         kg "Gamelan ini berbentuk ceret atau pot yang diletakkan di atas string (tali) dalam bingkai kayu (rancak)."
@@ -1816,9 +1952,11 @@ return
 label pertanyaan_gamelan_2:
     #pertanyaan 11
     #tampilin gambar Gender
+    show gender with dissolve
     kg "Gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya yang terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
 
     kg "Cara memainkan gamelan adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa),"
+    hide gender
 
     menu:
         kg "apa nama dari gamelan ini?"
@@ -1829,43 +1967,39 @@ label pertanyaan_gamelan_2:
         "Kenong":
             python:
                 jawaban_salah()
+            show gender with dissolve
             kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya."
-
             kg "Gender terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
-
             kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa)."
-
             kg "Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
+            hide gender with dissolve
         "Kempul":
             python:
                 jawaban_salah()
+            show gender with dissolve
             kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya."
-
             kg "Gender terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
-
             kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa)."
-
             kg "Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
+            hide gender with dissolve
         "Rebab":
             python:
                 jawaban_salah()
+            show gender with dissolve
             kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya."
-
             kg "Gender terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
-
             kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa)."
-
             kg "Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
+            hide gender with dissolve
         "Gong":
             python:
                 jawaban_salah()
+            show gender with dissolve
             kg "Gender adalah instrumen gamelan Jawa dan Bali dari bahan logam yang dipukul setiap bilahnya."
-
             kg "Gender terbuat dari kuningan yang kemudian digantung pada berkas diatas resonator bambu atau seng."
-
             kg "Cara memainkan alat musik ini adalah memukul tiap bilahnya dengan alat pemukul khusus yakni tabuh kayu (Bali) atau berlapis kain (Jawa)."
-
             kg "Dalam satu set gamelan lengkap, ada tiga jenis gender yang digunakan, yakni  slendro, pelog pathet nem lan lima, dan pelog pathet barang."
+            hide gender with dissolve
 
     #pertanyaan 12
     kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang sedang dan posisinya digantung, tidak diletakan pada lapisan tertentu."
@@ -1878,24 +2012,25 @@ label pertanyaan_gamelan_2:
     
     #pertanyaan 13
     #tampilin gambar Kenong
+    show kenong with dissolve
     kg "Gamelan ini masuk dalam keluarga pencon dan memiliki bentuk fisik lebih gemuk dari gamelan pencon lainnya."
 
     kg "Gamelan ini diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran saat ditabuh."
 
     kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas,"
+    hide kenong
 
     menu:
         kg "apa nama dari gamelan ini?"
         "Rebab":
             python:
                 jawaban_salah()
+            show kenong with dissolve
             kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
-
             kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
-
             kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
-
             kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+            hide kenong with dissolve
         "Kenong":
             $ jawab_benar += 1
             python:
@@ -1903,33 +2038,30 @@ label pertanyaan_gamelan_2:
         "Kendhang":
             python:
                 jawaban_salah()
+            show kenong with dissolve
             kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
-
             kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
-
             kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
-
             kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+            hide kenong with dissolve
         "Slenthem":
             python:
                 jawaban_salah()
+            show kenong with dissolve
             kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
-
             kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
-
             kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
-
             kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+            hide kenong with dissolve
         "Saron":
             python:
                 jawaban_salah()
+            show kenong with dissolve
             kg "Kenong juga masuk dalam keluarga pencon seperti bonang dalam instrumen gamelan."
-
             kg "Perbedaan Nya, kenong memiliki bentuk fisik lebih gemuk dari alat musik pencon lainnya."
-
             kg "Kenong kemudian diletakan pada pangkon dari kayu yang beralas tali agar tidak menghambat getaran kenong saat ditabuh."
-
             kg "Gamelan ini menghasilkan suara yang rendah namun tetap nyaring dengan timbre yang khas."
+            hide kenong with dissolve
     
     #pertanyaan 14
     kg "Gamelan ini penting untuk mengelaborasi dan menghiasi melodi dasar."
@@ -1944,44 +2076,45 @@ label pertanyaan_gamelan_2:
 
     #pertanyaan 15
     #tampilin gambar Kempul
+    show kempul with dissolve
     kg "Gamelan ini memiliki bentuk cembung di bagian atas dengan ukuran yang sedang dan posisinya digantung, tidak diletakan pada lapisan tertentu."
 
     kg "Gamelan ini masuk dalam keluarga pencon, bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan,"
-
+    hide kempul
     menu:
         kg "apa nama dari gamelan ini?"
         "Rebab":
             python:
                 jawaban_salah()
+            show kempul with dissolve
             kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
-
             kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
-
             kg " Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+            hide kempul with dissolve
         "Gong":
             python:
                 jawaban_salah()
+            show kempul with dissolve
             kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
-
             kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
-
             kg " Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+            hide kempul with dissolve
         "Kendhang":
             python:
                 jawaban_salah()
+            show kempul with dissolve
             kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
-
             kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
-
             kg " Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+            hide kempul with dissolve
         "Siter":
             python:
                 jawaban_salah()
+            show kempul with dissolve
             kg "Kempul adalah instrumen gamelan yang ditabuh yang hampir serupa dengan gong tetapi memiliki ukuran yang lebih kecil."
-
             kg "Cara bermainnya pun sama dengan gong yakni dipukul dengan tongkat khusus."
-
             kg " Meskipun kempul masuk dalam keluarga alat musik pencon, namun kempul bisa dimainkan dengan nada seperti musik balungan dan bisa juga mendahului nada balungan."
+            hide kempul with dissolve
         "Kempul":
             $ jawab_benar += 1
             python:
@@ -2000,22 +2133,22 @@ label pertanyaan_gamelan_3:
 
     #pertanyaan 17
     #tampilin gambar Demung
+    show demung with dissolve
     kg "Gamelan ini masuk dalam golongan balungan dalam instrumen gamelan."
 
     kg "Gamelan ini dimainkan dengan cara ditabuh dan menghasilkan nada oktaf paling rendah dari golongan alat musik balungan lainnya meskipun ukuran fisiknya yang paling besar,"
-
+    hide demung
     menu:
         kg "apa nama dari gamelan ini?"
         "Gender":
             python:
                 jawaban_salah()
+            show demung with dissolve
             kg "Demung masuk dalam golongan balungan dalam instrumen gamelan."
-
             kg "Biasanya ada dua demung jenis pelog dan slendro dalam gamelan."
-
             kg "Alat musik ini menghasilkan nada oktaf paling rendah dari golongan alat musik balungan lainnya meskipun ukuran fisiknya yang paling besar."
-
             kg "Cara bermain demung serupa dengan saron hanya saja tabuh demung memiliki ukuran yang lebih besar dan berat daripada tabuh saron."
+            hide demung with dissolve
         "Demung":
             $ jawab_benar += 1
             python:
@@ -2023,33 +2156,30 @@ label pertanyaan_gamelan_3:
         "Bonang":
             python:
                 jawaban_salah()
+            show demung with dissolve
             kg "Demung masuk dalam golongan balungan dalam instrumen gamelan."
-
             kg "Biasanya ada dua demung jenis pelog dan slendro dalam gamelan."
-
             kg "Alat musik ini menghasilkan nada oktaf paling rendah dari golongan alat musik balungan lainnya meskipun ukuran fisiknya yang paling besar."
-
             kg "Cara bermain demung serupa dengan saron hanya saja tabuh demung memiliki ukuran yang lebih besar dan berat daripada tabuh saron."
+            hide demung with dissolve
         "Kenong":
             python:
                 jawaban_salah()
+            show demung with dissolve
             kg "Demung masuk dalam golongan balungan dalam instrumen gamelan."
-
             kg "Biasanya ada dua demung jenis pelog dan slendro dalam gamelan."
-
             kg "Alat musik ini menghasilkan nada oktaf paling rendah dari golongan alat musik balungan lainnya meskipun ukuran fisiknya yang paling besar."
-
             kg "Cara bermain demung serupa dengan saron hanya saja tabuh demung memiliki ukuran yang lebih besar dan berat daripada tabuh saron."
+            hide demung with dissolve
         "Gong":
             python:
                 jawaban_salah()
+            show demung with dissolve
             kg "Demung masuk dalam golongan balungan dalam instrumen gamelan."
-
             kg "Biasanya ada dua demung jenis pelog dan slendro dalam gamelan."
-
             kg "Alat musik ini menghasilkan nada oktaf paling rendah dari golongan alat musik balungan lainnya meskipun ukuran fisiknya yang paling besar."
-
             kg "Cara bermain demung serupa dengan saron hanya saja tabuh demung memiliki ukuran yang lebih besar dan berat daripada tabuh saron."
+            hide demung with dissolve
 
     #pertanyaan 18
     kg "Bilahan gamelan ini terbuat dari kayu atau bambu untuk menghasilkan suara yang khas dan unik."
@@ -2064,30 +2194,31 @@ label pertanyaan_gamelan_3:
 
     #pertanyaan 19
     #tampilin gambar Rebab
+    show rebab with dissolve
     kg "Gamelan ini penting untuk mengelaborasi dan menghiasi melodi dasar."
 
     kg "Cara memainkannya bisa dikreasikan secara bebas."
 
     kg "Gamelan ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka,"
-
+    hide rebab
     menu:
         kg "apa nama dari gamelan ini?"
         "Slenthem":
             python:
                 jawaban_salah()
+            show rebab with dissolve
             kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
-
             kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
-
             kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+            hide rebab with dissolve
         "Saron":
             python:
                 jawaban_salah()
+            show rebab with dissolve
             kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
-
             kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
-
             kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+            hide rebab with dissolve
         "Rebab":
             $ jawab_benar += 1
             python:
@@ -2095,19 +2226,19 @@ label pertanyaan_gamelan_3:
         "Kenong":
             python:
                 jawaban_salah()
+            show rebab with dissolve
             kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
-
             kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
-
             kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+            hide rebab with dissolve
         "Kendhang":
             python:
                 jawaban_salah()
+            show rebab with dissolve
             kg "Rebab adalah instrumen gamelan yang penting untuk mengelaborasi dan menghiasi melodi dasar."
-
             kg "Cara memainkannya tidak harus sesuai dengan skala instrumen alat musik lain, alias bisa dikreasikan secara bebas."
-
             kg "Alat musik ini juga merupakan bagian dari ansambel yang dimainkan secara terbuka."
+            hide rebab with dissolve
             
     #pertanyaan 20
     kg "Gamelan ini masuk dalam keluarga pencon dan memiliki bentuk fisik lebih gemuk dari gamelan pencon lainnya."
@@ -2128,7 +2259,7 @@ label hitung_skor_gamelan:
 
         hide kg
 
-        show mc senyum 2
+        show mc senyum 2 
         mc "Terima kasih pak, senang sekali dapat mempelajari keragaman dan keunikan alat musik tradisional."
 
         hide mc
