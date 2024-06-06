@@ -2412,7 +2412,7 @@ label hitung_skor_gamelan:
     aang "Hari sudah sore, Next stop, Alun-Alun skuy!"
 
 label alun_alun:
-    scene bg jalanan
+    scene bg trotoar
     with fade
 
     show aang netral
@@ -2434,8 +2434,10 @@ label alun_alun:
     mc "Wah, bangunan apa itu? Aang, lihat betapa megahnya bangunannya."
 
     hide mc
-    
-    #disini image pop up Benteng Vredeburg
+
+label benteng:
+    scene bg vredeburg depan
+    with fade
 
     show aang netral
     with dissolve
@@ -2502,7 +2504,7 @@ label alun_alun:
     mc "Baiklah Aang, ayo kita lanjutkan perjalanan kita"
 
 label jalanan_cuy:
-    show bg jalanan cuy    
+    show bg jalanan   
     with fade
 
     show mc netral
@@ -2578,15 +2580,13 @@ label masjid_gede_kauman:
 
     hide aang
 
-    #image pop up Masjid Gedhe Kauman
-
     show mc kaget
     with dissolve
     mc "Wah? Mengagumkan sekali, ini benar masjid kah?"
 
     hide mc
 
-    show aang senyum
+    show aang senyum 1
     with dissolve
     aang "Haha, arsitekturnya terlihat unik bukan?"
 
@@ -2616,7 +2616,7 @@ label dalam_masjid_gede_kauman:
 
     hide pu
 
-    show aang
+    show aang netral
     with dissolve
     aang "Oh, iya benar pak"
 
@@ -2666,7 +2666,7 @@ label dalam_masjid_gede_kauman:
 
     hide pu
 
-    show aang senyum
+    show aang senyum 2
     with dissolve
     aang "Tidak hanya untuk ibadah, tetapi juga mengandung nilai sejarah dan budaya"
 
@@ -2740,7 +2740,7 @@ label alun_alun_kidul_sore:
     with dissolve
     mc "aku tertarik mencobanya tetapi tidak dulu deh"
     
-    show mc senyum
+    show mc senyum 1
     with dissolve
     mc "mengayuh pedal terlihat sangat melelahkan pada jam segini, haha"
 
@@ -2798,11 +2798,9 @@ label alun_alun_kidul_sore:
     with dissolve
     aang "kita tidak perlu mempercayai mitos, cukup mencobanya agar tau saja"
 
-    hide aang
-
-    #ngga tau mau diisi apa, kur masi ngga jelas (hal 23 script). tapi aku mau lanjut dialog selanjutnya
-
     "suara perut"
+
+    hide aang
 
     show mc netral
     with dissolve
@@ -2884,7 +2882,7 @@ label tempat_duduk_pertunjukan_terang:
 
     hide mc
 
-    show pb kaget
+    show pb panik
     with dissolve
     pb "Aduuuh, bagaimana iniii, aku akan dipecat aku akan dipecat, ini baru tugas kedua ku dan aku sudah mengacaukannya"
 
@@ -2952,7 +2950,7 @@ label panggung:
 
     hide aang
 
-    show pb sedih
+    show pb panik
     with dissolve
     pb "Aku tidak tahu tempat masing-masing gamelan di panggung, aku harus dapat mengatur masing-masing gamelan di posisinya yang tepat"
 
@@ -2964,7 +2962,7 @@ label panggung:
 
     hide aang
 
-    show pb sedih
+    show pb netral
     with dissolve
     pb "A-aku sedikit ingat, jenis suara apa berasal darimana, bentuk, dan nama dari beberapa gamelan, tapi aku tidak ingat semuanya."
 
@@ -2996,11 +2994,13 @@ label bantu_persiapan_gamelan:
                                 "Akhhh Malassss":
                                         $ click += 1
                                         show aang flat
+                                        with dissolve
                                         aang "Apakah kamu yakin Tok? Kita sudah jauh jauh kesini untuk menyaksikan pertunjukan Gamelan"
 
                                         hide aang
                                         
                                         show mc flat
+                                        with dissolve
                                         mc "(Aang benar, aku kesini untuk menyaksikan pertunjukan gamelan)"
                                         hide mc
                 elif click == 1:
@@ -3011,11 +3011,13 @@ label bantu_persiapan_gamelan:
                                 "Akhhh Malassss":
                                         $ click += 1
                                         show aang flat
+                                        with dissolve
                                         aang "Kakek sudah memberi ilmu gamelan kepada kita, mas mas ini juga sedang sangat kebingungan, sebaiknya kita membantunya"
 
                                         hide aang
 
                                         show mc flat
+                                        with dissolve
                                         mc "(Semua kebaikkan pasti akan dibalas, aku juga tidak ingin melihat penampilan bapak gamelan)"
                                         hide mc
                 elif click == 2:
@@ -3026,15 +3028,18 @@ label bantu_persiapan_gamelan:
                                 "Akhhh Malassss":
                                         $ click += 1
                                         show aang flat
+                                        with dissolve
                                         aang "Apakah kamu yakin Tok? Aku yakin {color=#ff0000}pengalaman yang kita dapatkan akan berubah apabila kita tidak membantu"
 
                                         hide aang
 
                                         show mc flat
+                                        with dissolve
                                         mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
                                         hide mc
                 elif click == 3:
                         show aang flat
+                        with dissolve
                         aang "Baiklah Tok, lalu sekarang kita mau kemana?"
                         menu:
                                 "Kamu Memilih untuk:"
@@ -3043,6 +3048,7 @@ label bantu_persiapan_gamelan:
                                 "Akhhh Malassss":
                                         $ click += 1
                                         show mc flat
+                                        with dissolve
                                         mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
                                 "{color=#ff0000}Aku mengantuk, aku ingin istirahat":
                                     hide mc
@@ -3054,32 +3060,35 @@ label bantu_persiapan_gamelan:
                                         jump bantu_gamelan
                                 "Akhhh Malassss":
                                         show mc flat
+                                        with dissolve
                                         mc "Aku {color=#ff0000}sebaiknya membantu persiapan{/color}, pengalaman dan hasilnya pasti akan bermanfaat"
                                 "{color=#ff0000}Aku mengantuk, aku ingin istirahat":
                                         jump balik_hotel  
 
 label bantu_gamelan:
     show aang senyum
+    with dissolve
     aang "Hahaha, sudah kuduga kamu akan membantu Tok."
 
     aang "Jangan khawatir mas, kami akan membantumu, kami lumayan tahu juga tentang gamelan."
 
     hide aang
 
-    show pb senyum_lebar
+    show pb senyum
+    with dissolve
     pb "Be-benarkah? Kalian akan membantuku?"
 
     hide pb
 
     show mc senyum 2
+    with dissolve
     mc "Tentu saja kami akan membantumu mas, kami juga sangat bersemangat ingin menyaksikan pertunjukan gamelan."
 
     hide mc
 
-    show pb senyum_lebar
-    pb "Terima kasih banyak, baiklah, ayo kita mulai."    
-
-    #nanti cerita lanjut disini, yang balik_hotel itu ending dari chapter 1
+    show pb senyum
+    with dissolve
+    pb "Terima kasih banyak, baiklah, ayo kita mulai."  
 
     #mini game: set the stage
 
@@ -3096,16 +3105,24 @@ label bantu_gamelan:
                     "Gambang":
                         $ ulang_pertanyaan += 1
                     "Slenthem":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Bonang":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
             
             elif ulang_pertanyaan == 1:
@@ -3114,18 +3131,26 @@ label bantu_gamelan:
                 menu:
                     pb "apa nama dari gamelan ini?"
                     "Saron":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kendhang":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Slenthem":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
                         $ ulang_pertanyaan += 1
                     "Bonang":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
             elif ulang_pertanyaan == 2:
@@ -3137,16 +3162,24 @@ label bantu_gamelan:
                     "Bonang":
                         $ ulang_pertanyaan += 1
                     "Saron":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gambang":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Slenthem":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
             elif ulang_pertanyaan == 3:
@@ -3157,16 +3190,24 @@ label bantu_gamelan:
                 menu:
                     pb "gamelan apa ini?"
                     "Slenthem":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Bonang":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kendhang":
                         $ ulang_pertanyaan += 1
@@ -3182,18 +3223,26 @@ label bantu_gamelan:
                 menu:
                     pb "gamelan apa ini?"
                     "Bonang":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kenong":
                         $ ulang_pertanyaan += 1
                     "Kendhang":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Slenthem":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
             
             elif ulang_pertanyaan == 1:
@@ -3202,18 +3251,26 @@ label bantu_gamelan:
                 menu:
                     pb "yang mana gamelan rebab?"
                     "Slenthem":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Rebab":
                         $ ulang_pertanyaan += 1
                     "Kenong":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kendhang":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
             elif ulang_pertanyaan == 2:
@@ -3222,18 +3279,26 @@ label bantu_gamelan:
                 menu:
                     pb "apa nama dari gamelan ini?"
                     "Bonang":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Saron":
                         $ ulang_pertanyaan += 1
                     "Gambang":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Rebab":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
     elif pilihan == 3:
@@ -3245,18 +3310,26 @@ label bantu_gamelan:
                 menu:
                     pb "apakah kau tau gamelan yang mana Slenthem?"
                     "Kendhang":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Slenthem":
                         $ ulang_pertanyaan += 1
                     "Saron":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gender":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Bonang":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
             
             elif ulang_pertanyaan == 1:
@@ -3269,18 +3342,27 @@ label bantu_gamelan:
                     "Gender":
                         $ ulang_pertanyaan += 1
                     "Kenong":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Kempul":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Rebab":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
                     "Gong":
-                        show aang bingung
+                        hide pb
+                        show aang flat
+                        with dissolve
                         aang "Sepertinya bukan gamelan itu yang dideskripsikan, coba ingat ingat ajaran bapak gamelan."
 
+    hide aang
     show pb senyum
     with dissolve
     pb "Dengan begini, pertunjukan dapat berjalan dengan lancar!"
@@ -3394,7 +3476,6 @@ label tempat_duduk_terang:
     show mc netral
     with dissolve
     mc "Ayo, kita nikmati pertunjukan ini. Semoga malam ini menjadi pengalaman yang tidak terlupakan."
-
     hide mc
 
     show aang senyum
@@ -3419,6 +3500,7 @@ label tempat_duduk_terang:
     mc "Semoga mereka tumbuh dengan mencintai dan melestarikan gamelan. Mungkin suatu hari nanti, mereka yang akan duduk di sana, memainkan alat-alat ini dengan penuh semangat."
 
     mc "Mendengar suara iringan gamelan ini sangat membuatku semangat."
+    hide mc
 
     show aang netral
     with dissolve
@@ -3428,6 +3510,7 @@ label tempat_duduk_terang:
     show mc netral
     with dissolve
     mc "Aku sempat mendengar kata-kata itu ketika bapak menjelaskan gamelan tadi siang. Apa maknanya Aang?"
+    hide mc
 
     show aang netral
     with dissolve
@@ -3452,6 +3535,7 @@ label tempat_duduk_terang:
     show aang netral
     with dissolve
     aang "Iya Tok, aku tidak sabar mendengarkan mendengarkan keseluruhan pertunjukan."
+    hide aang
 
     show aang senyum
     with dissolve
@@ -3478,6 +3562,7 @@ label tempat_duduk_terang:
     hide mc
 
     show aang netral
+    with dissolve
     aang "Mereka memang luar biasa. Setiap pemain membawa sentuhan pribadi mereka, tapi tetap dalam harmoni yang sempurna."
 
     aang "Orkestrasi gamelan ini begitu harmonis. Setiap instrumen saling melengkapi dan menciptakan alunan yang sangat indah."
@@ -3488,10 +3573,12 @@ label tempat_duduk_terang:
     show mc netral
     with dissolve
     mc "Aku jadi kagum dengan bagaimana mereka bisa menjaga tempo. Pasti butuh latihan yang luar biasa untuk mencapai keselarasan seperti ini."
+    hide mc
 
     show aang netral
     with dissolve
     aang "Gamelan memang tentang kerja sama dan saling mendengarkan. Kalau mereka kompak, hasilnya pasti bagus."
+    hide aang
 
     show aang senyum
     with dissolve
@@ -3569,7 +3656,7 @@ label panggung2:
 
     hide kg
 
-    show mc senyum
+    show mc senyum 2
     with dissolve
     mc "Tentu saja pak, boleh minta nomor telepon dan nama bapak siapa ya kalau boleh tau?"
 
@@ -3664,6 +3751,7 @@ label Depan_hotel_malam:
 
 label balik_hotel:
         show aang flat
+        with dissolve
         aang "B-Baiklah Tok, apabila itu yang kau inginkan."
 
         aang "Baik mas, terima kasih informasinya. Karena pertunjukannya dibatalkan kami akan pulang sekarang."
@@ -3673,13 +3761,14 @@ label balik_hotel:
         hide aang
 
         show pb panik
+        with dissolve
         pb "Ba-baiklah, mohon maaf sebesar besarnya… aduuuh bagaimana ini….. tamatlah aku!!!!"
 
         hide pb
 
         #nanti disini show bg depan hotel tapi malam hari
 
-        scene bg depan hotel malam hari
+        scene bg depan hotel malam
         with fade
         show aang flat
         aang "Padahal kau terlihat begitu bersemangat ketika mendapat tiket dari bapak tadi siang"
