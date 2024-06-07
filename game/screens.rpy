@@ -412,10 +412,6 @@ screen main_menu():
 
             textbutton _("Preferences") action ShowMenu("preferences")
 
-
-        if main_menu:
-            imagebutton auto "gui/main_menu/buttons/gallery_%s.png" xpos 820 ypos 569 focus_mask True action ShowMenu("galleryA")
-
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
