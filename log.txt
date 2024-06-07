@@ -1,66 +1,28 @@
-2024-06-06 17:47:27 UTC
+2024-06-07 13:26:22 UTC
 Windows-10-10.0.22631
 Ren'Py 8.2.1.24030407
 
 Early init took 0.04s
 Loading error handling took 0.02s
-Loading script took 0.08s
+Loading script took 0.09s
 Loading save slot metadata took 0.02s
 Loading persistent took 0.00s
-Running init code took 0.03s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Dump and make backups took 0.03s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.02s
+
+File "game/gallery/galleryA.rpy", line 1: python block expects a non-empty block.
+    init python:
+                ^
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.17s
-Cleaning stores took 0.00s
-Init translation took 0.02s
-Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Interface start took 0.05s
+Interface start took 0.25s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
-Windowed mode.
+Fullscreen mode.
 Vendor: "b'NVIDIA Corporation'"
 Renderer: b'NVIDIA GeForce RTX 4060 Laptop GPU/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 555.99'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1106, 622) drawable=(1106, 622)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 3771, in script
-    scene bg depan hotel malam hari
-  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\ast.py", line 1247, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\ast.py", line 1076, in show_imspec
-    renpy.config.show(name,
-  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\exports.py", line 739, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\display\image.py", line 421, in find_target
-    self.target = target._duplicate(a)
-  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\display\displayable.py", line 246, in _duplicate
-    args.extraneous()
-  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\display\displayable.py", line 109, in extraneous
-    raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'bg depan hotel malam' does not accept attributes 'hari'.
-
-While running game code:
-  File "game/script.rpy", line 3771, in script
-    scene bg depan hotel malam hari
-Exception: Image 'bg depan hotel malam' does not accept attributes 'hari'.

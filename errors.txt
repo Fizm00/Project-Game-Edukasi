@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 34: the action keyword argument was not given a value.
-    action jump("after_gamelan")
-           ^
+File "game/gallery/galleryA.rpy", line 1: python block expects a non-empty block.
+    init python:
+                ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Sun May 26 23:21:17 2024
+Fri Jun  7 20:26:22 2024

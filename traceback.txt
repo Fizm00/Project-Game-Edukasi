@@ -1,16 +1,16 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 3771, in script
-    scene bg depan hotel malam hari
-Exception: Image 'bg depan hotel malam' does not accept attributes 'hari'.
+  File "game/script.rpy", line 2587, in script
+    show aang senyum 1
+Exception: Image 'aang senyum' does not accept attributes '1'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 3771, in script
-    scene bg depan hotel malam hari
-  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\ast.py", line 1247, in execute
+  File "game/script.rpy", line 2587, in script
+    show aang senyum 1
+  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\ast.py", line 1113, in execute
     show_imspec(self.imspec, atl=getattr(self, "atl", None))
   File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\ast.py", line 1076, in show_imspec
     renpy.config.show(name,
@@ -18,13 +18,13 @@ Full traceback:
     if not base.find_target() and renpy.config.missing_show:
   File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\display\image.py", line 421, in find_target
     self.target = target._duplicate(a)
-  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\display\displayable.py", line 246, in _duplicate
+  File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\display\transform.py", line 1089, in _duplicate
     args.extraneous()
   File "D:\Ren'Py\renpy-8.2.1-sdk\renpy\display\displayable.py", line 109, in extraneous
     raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'bg depan hotel malam' does not accept attributes 'hari'.
+Exception: Image 'aang senyum' does not accept attributes '1'.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.2.1.24030407
-Fantasy Ren'py GUI template 1.0
-Fri Jun  7 00:48:22 2024
+Nusantara Quest 1.0
+Fri Jun  7 20:16:53 2024

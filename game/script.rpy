@@ -785,8 +785,6 @@ label start:
         Sekarang giliran ku untuk merasakannya sendiri. 
         Baiklah, pertama-tama aku harus mencari tempat untuk tinggal dan kemudian mulai menjelajahi kota ini."
 
-    #nanti kasih pop up image bg stasiun tugu ada silhouette
-
     show mc flat #gambar mc ekspresi flat
     with dissolve
     mc "Waduh, ramai sekali stasiun ini, ditambah kata kakek jumlah kendaraan di Jogja yang lumayan padat. 
@@ -2518,7 +2516,7 @@ label jalanan_cuy:
 
     hide aang
 
-    show mc senyum
+    show mc senyum 2
     with dissolve
     aang "Haha, tentu saja Aang, aku juga berencana mengunjungi berbagai kota setelah Jogja"
 
@@ -2586,7 +2584,7 @@ label masjid_gede_kauman:
 
     hide mc
 
-    show aang senyum 1
+    show aang senyum
     with dissolve
     aang "Haha, arsitekturnya terlihat unik bukan?"
 
@@ -2666,7 +2664,7 @@ label dalam_masjid_gede_kauman:
 
     hide pu
 
-    show aang senyum 2
+    show aang senyum
     with dissolve
     aang "Tidak hanya untuk ibadah, tetapi juga mengandung nilai sejarah dan budaya"
 
@@ -2712,13 +2710,13 @@ label alun_alun_kidul_sore:
 
     hide aang
 
-    show mc senyum
+    show mc senyum 1
     with dissolve
     mc "Waaah, mengagumkan sekali. Beringin kembar di tengah lapangan berdiri dengan megah"
 
     #disini image pop up beringin kembar
 
-    show mc senyum
+    show mc senyum 2
     with dissolve
     mc "Ada banyak sekali orang naik mobil sepeda juga, sungguh membuat tempat ini kelap kelip"
 
@@ -3748,6 +3746,7 @@ label Depan_hotel_malam:
     aang "Masih ada banyak tempat yang ingin ku tunjukan padamu!"
 
     aang "Selamat malam Tok, sampai jumpa besok!"
+return
 
 label balik_hotel:
         show aang flat
@@ -3781,5 +3780,5 @@ label balik_hotel:
 
         show aang senyum
         aang "Selamat malam Tok, sampai jumpa besok!"
-
         #CHAPTER 1 END DI SINI JIKA MC MEMILIH BALIK KE HOTEL
+return
