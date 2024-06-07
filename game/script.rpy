@@ -249,7 +249,7 @@ screen opsi_gambar_slenthem():
         xpos 0.7
         ypos 0.3
         at customzoom
-        action Call("jawab_slenthem")
+        action Call("jawab_salah_slenthem")
 
 screen opsi_gambar_gong():
     imagebutton:
